@@ -118,7 +118,7 @@ public class FrmDetalle_IngresoNuevo extends JInternalFrame{
     public void btnAceptarActionListener(ActionEvent e){
         
         try {
-            
+             
             Detalle_Ingreso detalleingreso = new Detalle_Ingreso();
             detalleingreso.setIddetalle_ingreso(Integer.parseInt(txtId.getText()));
             detalleingreso.setIngreso((Ingreso)cmbIngreso.getSelectedItem());            
