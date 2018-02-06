@@ -15,6 +15,7 @@ public class Categoria {
     private String descripcion;
 
     public Categoria() {
+        
     }
 
     public Categoria(int idcategoria, String nombre, String descripcion) {

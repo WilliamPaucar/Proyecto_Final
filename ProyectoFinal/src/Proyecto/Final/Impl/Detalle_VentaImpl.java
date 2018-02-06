@@ -4,12 +4,11 @@
  * and open the template in the editor.
  */
 package Proyecto.Final.Impl;
-
 import Proyecto.Final.accesodatos.*;
 import Proyecto.Final.dao.*;
 import Proyecto.Final.rnegocio.entidades.*;
 import java.util.*;
 import java.sql.*;
-public class ImplDetalle_Ingreso {
+public class Detalle_VentaImpl {
     
 }

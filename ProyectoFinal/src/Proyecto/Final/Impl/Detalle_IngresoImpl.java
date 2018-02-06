@@ -10,6 +10,6 @@ import Proyecto.Final.dao.*;
 import Proyecto.Final.rnegocio.entidades.*;
 import java.util.*;
 import java.sql.*;
-public class ImplCliente {
+public class Detalle_IngresoImpl {
     
 }

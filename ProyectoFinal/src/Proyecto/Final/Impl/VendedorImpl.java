@@ -9,6 +9,6 @@ import Proyecto.Final.dao.*;
 import Proyecto.Final.rnegocio.entidades.*;
 import java.util.*;
 import java.sql.*;
-public class ImplDetalle_Venta {
+public class VendedorImpl {
     
 }
