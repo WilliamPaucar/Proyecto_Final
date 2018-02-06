@@ -73,6 +73,22 @@ public class FrmDetalle_IngresoNuevo extends JInternalFrame{
         pnlSuperior.add(lblTitulo);
         pnlCentral.add(lblId);
         pnlCentral.add(txtId);
+        pnlCentral.add(lblIngreso);
+        pnlCentral.add(cmbIngreso);
+        pnlCentral.add(lblArticulo);
+        pnlCentral.add(cmbArticulo);
+        pnlCentral.add(lblPrecio_compra);
+        pnlCentral.add(txtPrecio_compra);
+        pnlCentral.add(lblPrecio_venta);
+        pnlCentral.add(txtPrecio_venta);
+        pnlCentral.add(lblStock_inicial);
+        pnlCentral.add(txtStock_inicial);
+        pnlCentral.add(lblStock_actual);
+        pnlCentral.add(txtStock_actual);
+        pnlCentral.add(lblFecha_produ);
+        pnlCentral.add(txtFecha_produ);
+        pnlCentral.add(lblFecha_expi);
+        pnlCentral.add(txtFecha_expi);
 
         
         btnAceptar.addActionListener(new ActionListener() {
@@ -148,8 +164,8 @@ public class FrmDetalle_IngresoNuevo extends JInternalFrame{
     }
         public void cargarArticulos() {
         try {
-       IArticulo detalleingreso=new ArticuloImpl();
-       lstarticulo=detalleingreso.obtener();
+       IArticulo art=new ArticuloImpl();
+       lstarticulo=art.obtener();
    
         } catch (Exception e) {System.out.println("ERROR"+e.getMessage());
         }
