@@ -107,8 +107,8 @@ public class FrmDetalle_IngresoNuevo extends JInternalFrame{
             detalleingreso.setIddetalle_ingreso(Integer.parseInt(txtId.getText()));
             detalleingreso.setIngreso((Ingreso)cmbIngreso.getSelectedItem());            
             detalleingreso.setArticulo((Articulo)cmbArticulo.getSelectedItem());            
-            detalleingreso.setPrecio_compra(Integer.parseInt(txtPrecio_compra.getText()));
-            detalleingreso.setPrecio_venta(Integer.parseInt(txtPrecio_venta.getText()));
+            detalleingreso.setPrecio_compra(Double.parseDouble(txtPrecio_compra.getText()));
+            detalleingreso.setPrecio_venta(Double.parseDouble(txtPrecio_venta.getText()));
             detalleingreso.setStock_inicial(Integer.parseInt(txtStock_inicial.getText()));
             detalleingreso.setStock_actual(Integer.parseInt(txtStock_actual.getText()));
             DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
