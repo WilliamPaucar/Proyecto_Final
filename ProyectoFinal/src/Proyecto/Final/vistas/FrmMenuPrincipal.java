@@ -19,6 +19,7 @@ public class FrmMenuPrincipal extends JFrame {
     JMenu mnInicio;
     JMenuItem mniLogin;
     JMenuItem mniSalir;
+    JDesktopPane dkpEscritorio;
         /*CATEGORIA */
     JMenu mnCategoria;
     JMenuItem mniNuevoCategoria;
@@ -26,7 +27,13 @@ public class FrmMenuPrincipal extends JFrame {
     JMenuItem mniEliminaCategoria;
     JMenuItem mniBuscaCategoria;
     JMenuItem mniListaCategoria;
-    JDesktopPane dkpEscritorio;
+        /*ARTICULO */
+    JMenu mnArticulo;
+    JMenuItem mniNuevoArticulo;
+    JMenuItem mniModificaArticulo;
+    JMenuItem mniEliminaArticulo;
+    JMenuItem mniBuscaArticulo;
+    JMenuItem mniListaArticulo;
 
     public FrmMenuPrincipal() {
         dkpEscritorio= new JDesktopPane();
@@ -71,9 +78,36 @@ public class FrmMenuPrincipal extends JFrame {
         mnCategoria.add(mniBuscaCategoria);
         mnCategoria.addSeparator();
         mnCategoria.add(mniListaCategoria);   
+        /*ARTICULO*/
+        mnArticulo= new JMenu("ARTICULO");
+        mnArticulo.setForeground(Color.blue);
+        mniNuevoArticulo= new JMenuItem("NUEVO");
+             
+        mniNuevoArticulo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mniNuevoArticuloActionPerformed(e);
+            }
+        });
+        
+        mniModificaArticulo= new JMenuItem("MODIFICAR");
+        mniEliminaArticulo= new JMenuItem("ELIMINAR");
+        mniBuscaArticulo= new JMenuItem("BUSCAR");
+        mniListaArticulo= new JMenuItem("LISTAR");  
+
+        mnArticulo.add(mniNuevoArticulo);
+        mnArticulo.addSeparator();
+        mnArticulo.add(mniModificaArticulo);
+        mnArticulo.addSeparator();
+        mnArticulo.add(mniEliminaArticulo);
+        mnArticulo.addSeparator();
+        mnArticulo.add(mniBuscaArticulo);
+        mnArticulo.addSeparator();
+        mnArticulo.add(mniListaArticulo);   
         
         mnbPrincipal.add(mnInicio);
         mnbPrincipal.add(mnCategoria);
+        mnbPrincipal.add(mnArticulo);
 
         mnbPrincipal.setBackground(Color.lightGray);
         mnInicio.add(mniLogin);
@@ -90,6 +124,13 @@ public class FrmMenuPrincipal extends JFrame {
 
     public void mniNuevoCategoriaActionPerformed(ActionEvent e){
         FrmCategoriaNueva frm = new FrmCategoriaNueva();
+        
+        dkpEscritorio.add(frm,BorderLayout.WEST);
+      
+        frm.setVisible(true);
+    }   
+    public void mniNuevoArticuloActionPerformed(ActionEvent e){
+        FrmArticuloNuevo frm = new FrmArticuloNuevo();
         
         dkpEscritorio.add(frm,BorderLayout.WEST);
       
