@@ -28,14 +28,14 @@ public class FrmArticuloNuevo extends JInternalFrame{
     JButton btnAceptar,btnLimpiar;
     
     public FrmArticuloNuevo(){
-        this.setSize(300,300);
+        this.setSize(300,400);
         this.setLayout(new BorderLayout());
      
         pnlSuperior= new JPanel();
         pnlCentral= new JPanel();
         pnlInferior= new JPanel();
         pnlSuperior.setLayout(new GridLayout(1, 1, 5, 5));
-        pnlCentral.setLayout(new GridLayout(4, 2, 5, 5));
+        pnlCentral.setLayout(new GridLayout(5, 2, 5, 5));
         pnlInferior.setLayout(new GridLayout(1,2,5,5));     
         
         lblTitulo = new JLabel("DATOS DEL ARTICULO");
