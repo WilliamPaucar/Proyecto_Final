@@ -112,7 +112,7 @@ public class FrmDetalle_VentaNueva extends JInternalFrame{
                 "Transacción", JOptionPane.INFORMATION_MESSAGE);
             
         }
-    }
+    } 
         public void cargarVentas() {
         try {
        IVenta detalleventa=new VentaImpl();
