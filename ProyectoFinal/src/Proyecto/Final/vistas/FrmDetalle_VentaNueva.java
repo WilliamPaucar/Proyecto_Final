@@ -29,7 +29,7 @@ public class FrmDetalle_VentaNueva extends JInternalFrame{
     JButton btnAceptar,btnLimpiar;
     
         public FrmDetalle_VentaNueva(){
-        this.setSize(400,600);
+        this.setSize(400,400);
         this.setLayout(new BorderLayout());
      
         pnlSuperior= new JPanel();
@@ -60,7 +60,14 @@ public class FrmDetalle_VentaNueva extends JInternalFrame{
         pnlSuperior.add(lblTitulo);
         pnlCentral.add(lblId);
         pnlCentral.add(txtId);
-
+        pnlCentral.add(lblVenta);
+        pnlCentral.add(cmbVenta);
+        pnlCentral.add(lblCantidad);
+        pnlCentral.add(txtCantidad);
+        pnlCentral.add(lblPrecio_venta);
+        pnlCentral.add(txtPrecio_venta);
+        pnlCentral.add(lblDescuento);
+        pnlCentral.add(txtDescuento);
         
         btnAceptar.addActionListener(new ActionListener() {
             @Override
