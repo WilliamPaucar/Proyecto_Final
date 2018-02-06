@@ -79,6 +79,7 @@ public class FrmArticuloNuevo extends JInternalFrame{
                
         pnlInferior.add(btnLimpiar);
         pnlInferior.add(btnAceptar);
+        pnlSuperior.setBackground(Color.getHSBColor(100,60,270).brighter());
         pnlCentral.setBackground(Color.getHSBColor(100,60,270).brighter());
         this.add(pnlSuperior, BorderLayout.NORTH);
         this.add(pnlCentral, BorderLayout.CENTER);
