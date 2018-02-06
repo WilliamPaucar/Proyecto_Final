@@ -96,7 +96,7 @@ public class FrmArticuloNuevo extends JInternalFrame{
     public void btnAceptarActionListener(ActionEvent e){
         
         try {
-            
+             
             Articulo articulo = new Articulo();
             articulo.setIdarticulo(Integer.parseInt(txtId.getText()));
             articulo.setCodigo(Integer.parseInt(txtCodigo.getText()));
