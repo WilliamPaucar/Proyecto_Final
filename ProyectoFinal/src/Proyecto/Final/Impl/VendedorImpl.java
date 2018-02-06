@@ -9,25 +9,27 @@ import Proyecto.Final.dao.*;
 import Proyecto.Final.rnegocio.entidades.*;
 import java.util.*;
 import java.sql.*;
-public class VendedorImpl {
+public class VendedorImpl implements IVendedor{
     
 
        @Override
     public int insertar(Vendedor vendedor) throws Exception {
         int numFilasAfectadas = 0;
         String sql = "insert into vendedor  values "
-                + "(?,?,?,?,?,?,?,?,?,?)";
+                + "(?,?,?,?,?,?,?,?,?,?,?,?)";
         List<Parametro> lstPar = new ArrayList<>();
         lstPar.add(new Parametro(1, vendedor.getIdvendedor()));
         lstPar.add(new Parametro(2, vendedor.getNombres()));
         lstPar.add(new Parametro(3, vendedor.getApellidos()));
         lstPar.add(new Parametro(4, vendedor.getSexo()));
         lstPar.add(new Parametro(5, vendedor.getFecha_nacimiento()));
-        lstPar.add(new Parametro(6, vendedor.getTipo_documento()));
-        lstPar.add(new Parametro(7, vendedor.getNum_documento()));
-        lstPar.add(new Parametro(8, vendedor.getDireccion()));
-        lstPar.add(new Parametro(9, vendedor.getTelefono()));
-        lstPar.add(new Parametro(10, vendedor.getEmail()));
+        lstPar.add(new Parametro(6, vendedor.getNumero_documento()));
+        lstPar.add(new Parametro(7, vendedor.getDireccion()));
+        lstPar.add(new Parametro(8, vendedor.getTelefono()));
+        lstPar.add(new Parametro(9, vendedor.getEmail()));
+        lstPar.add(new Parametro(10, vendedor.getAcceso()));
+        lstPar.add(new Parametro(11, vendedor.getUsuario()));
+        lstPar.add(new Parametro(12, vendedor.getPassword()));
   
         Conexion con = null;
         try {
@@ -49,8 +51,8 @@ public class VendedorImpl {
     public int modificar(Vendedor vendedor) throws Exception {
         int numFilasAfectadas = 0;
         String sql = "UPDATE vendedor"
-                + "   SET idvendedor=?, nombre=?, apellido=?, sexo=?, fecha_nacimiento=?, tipo_documento=?"
-                + ", numero_documento=?, direccion=?, telefono=?, email=?"
+                + "   SET idvendedor=?, nombres=?, apellidos=?, sexo=?, fecha_nacimiento=?"
+                + ", numero_documento=?, direccion=?, telefono=?, email=?, acceso=?, usuario=?, password=?"
                 + " where idvendedor=?";
         List<Parametro> lstPar = new ArrayList<>();
         lstPar.add(new Parametro(1, vendedor.getIdvendedor()));
@@ -58,11 +60,13 @@ public class VendedorImpl {
         lstPar.add(new Parametro(3, vendedor.getApellidos()));
         lstPar.add(new Parametro(4, vendedor.getSexo()));
         lstPar.add(new Parametro(5, vendedor.getFecha_nacimiento()));
-        lstPar.add(new Parametro(6, vendedor.getTipo_documento()));
-        lstPar.add(new Parametro(7, vendedor.getNum_documento()));
-        lstPar.add(new Parametro(8, vendedor.getDireccion()));
-        lstPar.add(new Parametro(9, vendedor.getTelefono()));
-        lstPar.add(new Parametro(10, vendedor.getEmail()));
+        lstPar.add(new Parametro(6, vendedor.getNumero_documento()));
+        lstPar.add(new Parametro(7, vendedor.getDireccion()));
+        lstPar.add(new Parametro(8, vendedor.getTelefono()));
+        lstPar.add(new Parametro(9, vendedor.getEmail()));
+        lstPar.add(new Parametro(10, vendedor.getAcceso()));
+        lstPar.add(new Parametro(11, vendedor.getUsuario()));
+        lstPar.add(new Parametro(12, vendedor.getPassword()));
    
         Conexion con = null;
         try {
@@ -118,11 +122,13 @@ public class VendedorImpl {
                 vendedor.setApellidos(rst.getString(3));
                 vendedor.setSexo(rst.getString(4));
                 vendedor.setFecha_nacimiento(rst.getDate(5));
-                vendedor.setTipo_documento(rst.getString(6));
-                vendedor.setNum_documento(rst.getString(7));
-                vendedor.setDireccion(rst.getString(8));
-                vendedor.setTelefono(rst.getString(9));
-                vendedor.setEmail(rst.getString(10));
+                vendedor.setNumero_documento(rst.getString(6));
+                vendedor.setDireccion(rst.getString(7));
+                vendedor.setTelefono(rst.getString(8));
+                vendedor.setEmail(rst.getString(9));
+                vendedor.setAcceso(rst.getString(10));
+                vendedor.setUsuario(rst.getString(11));
+                vendedor.setPassword(rst.getString(12));
 
 
             }
@@ -154,11 +160,13 @@ public class VendedorImpl {
                 vendedor.setApellidos(rst.getString(3));
                 vendedor.setSexo(rst.getString(4));
                 vendedor.setFecha_nacimiento(rst.getDate(5));
-                vendedor.setTipo_documento(rst.getString(6));
-                vendedor.setNum_documento(rst.getString(7));
-                vendedor.setDireccion(rst.getString(8));
-                vendedor.setTelefono(rst.getString(9));
-                vendedor.setEmail(rst.getString(10));
+                vendedor.setNumero_documento(rst.getString(6));
+                vendedor.setDireccion(rst.getString(7));
+                vendedor.setTelefono(rst.getString(8));
+                vendedor.setEmail(rst.getString(9));
+                vendedor.setAcceso(rst.getString(10));
+                vendedor.setUsuario(rst.getString(11));
+                vendedor.setPassword(rst.getString(12));
                 lista.add(vendedor);
             }
         } catch (Exception e) {

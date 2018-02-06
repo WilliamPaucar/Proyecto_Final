@@ -11,6 +11,6 @@ public interface IProveedor {
     public int modificar(Proveedor proveedor) throws Exception;
     public int eliminar(Proveedor proveedor) throws Exception;
     public Proveedor obtener(int codigo) throws Exception;
-    public ArrayList<Proveedor> obtener() throws Exception;
+    public List<Proveedor> obtener() throws Exception;
     
 }

@@ -7,6 +7,6 @@ public interface IVendedor {
     public int modificar(Vendedor vendedor) throws Exception;
     public int eliminar(Vendedor vendedor) throws Exception;
     public Vendedor obtener(int codigo) throws Exception;
-    public ArrayList<Vendedor> obtener() throws Exception;
+    public List<Vendedor> obtener() throws Exception;
     
 }

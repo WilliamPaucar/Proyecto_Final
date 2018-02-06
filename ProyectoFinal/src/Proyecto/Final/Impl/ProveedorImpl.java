@@ -112,15 +112,14 @@ public class ProveedorImpl implements IProveedor{
             while (rst.next()) {
                 proveedor = new Proveedor();
                 proveedor.setIdproveedor(rst.getInt(1));
-                proveedor.set(rst.getString(2));
-                proveedor.setApellidos(rst.getString(3));
-                proveedor.setSexo(rst.getString(4));
-                proveedor.setFecha_nacimiento(rst.getDate(5));
-                proveedor.setTipo_documento(rst.getString(6));
-                proveedor.setNum_documento(rst.getString(7));
-                proveedor.setDireccion(rst.getString(8));
-                proveedor.setTelefono(rst.getString(9));
-                proveedor.setEmail(rst.getString(10));
+                proveedor.setRazon_social(rst.getString(2));
+                proveedor.setSector_comercial(rst.getString(3));
+                proveedor.setTipo_documento(rst.getString(4));
+                proveedor.setNum_documento(rst.getString(5));
+                proveedor.setDireccion(rst.getString(6));
+                proveedor.setTelefono(rst.getString(7));
+                proveedor.setEmail(rst.getString(8));
+                proveedor.setUrl(rst.getString(9));
 
 
             }
@@ -148,15 +147,14 @@ public class ProveedorImpl implements IProveedor{
             while (rst.next()) {
                 proveedor=new Proveedor();
                 proveedor.setIdproveedor(rst.getInt(1));
-                proveedor.setNombres(rst.getString(2));
-                proveedor.setApellidos(rst.getString(3));
-                proveedor.setSexo(rst.getString(4));
-                proveedor.setFecha_nacimiento(rst.getDate(5));
-                proveedor.setTipo_documento(rst.getString(6));
-                proveedor.setNum_documento(rst.getString(7));
-                proveedor.setDireccion(rst.getString(8));
-                proveedor.setTelefono(rst.getString(9));
-                proveedor.setEmail(rst.getString(10));
+                proveedor.setRazon_social(rst.getString(2));
+                proveedor.setSector_comercial(rst.getString(3));
+                proveedor.setTipo_documento(rst.getString(4));
+                proveedor.setNum_documento(rst.getString(5));
+                proveedor.setDireccion(rst.getString(6));
+                proveedor.setTelefono(rst.getString(7));
+                proveedor.setEmail(rst.getString(8));
+                proveedor.setUrl(rst.getString(9));
                 lista.add(proveedor);
             }
         } catch (Exception e) {
