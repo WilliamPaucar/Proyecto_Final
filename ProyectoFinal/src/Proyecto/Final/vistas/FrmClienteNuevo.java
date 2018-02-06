@@ -28,14 +28,14 @@ public class FrmClienteNuevo extends JInternalFrame{
     JButton btnAceptar,btnLimpiar;
     
         public FrmClienteNuevo(){
-        this.setSize(300,400);
+        this.setSize(400,600);
         this.setLayout(new BorderLayout());
      
         pnlSuperior= new JPanel();
         pnlCentral= new JPanel();
         pnlInferior= new JPanel();
         pnlSuperior.setLayout(new GridLayout(1, 1, 5, 5));
-        pnlCentral.setLayout(new GridLayout(5, 2, 5, 5));
+        pnlCentral.setLayout(new GridLayout(10, 2, 5, 5));
         pnlInferior.setLayout(new GridLayout(1,2,5,5));     
         
         lblTitulo = new JLabel("DATOS DEL CLIENTE");
@@ -101,6 +101,7 @@ public class FrmClienteNuevo extends JInternalFrame{
                       
         pnlInferior.add(btnLimpiar);
         pnlInferior.add(btnAceptar);
+        pnlSuperior.setBackground(Color.getHSBColor(100,60,270).brighter());
         pnlCentral.setBackground(Color.getHSBColor(100,60,270).brighter());
         this.add(pnlSuperior, BorderLayout.NORTH);
         this.add(pnlCentral, BorderLayout.CENTER);
