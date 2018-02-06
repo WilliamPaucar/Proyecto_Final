@@ -34,6 +34,13 @@ public class FrmMenuPrincipal extends JFrame {
     JMenuItem mniEliminaArticulo;
     JMenuItem mniBuscaArticulo;
     JMenuItem mniListaArticulo;
+        /*CLIENTE */
+    JMenu mnCliente;
+    JMenuItem mniNuevoCliente;
+    JMenuItem mniModificaCliente;
+    JMenuItem mniEliminaCliente;
+    JMenuItem mniBuscaCliente;
+    JMenuItem mniListaCliente;
 
     public FrmMenuPrincipal() {
         dkpEscritorio= new JDesktopPane();
@@ -104,10 +111,37 @@ public class FrmMenuPrincipal extends JFrame {
         mnArticulo.add(mniBuscaArticulo);
         mnArticulo.addSeparator();
         mnArticulo.add(mniListaArticulo);   
+        /*CLIENTE*/
+        mnCliente= new JMenu("CLIENTE");
+        mnCliente.setForeground(Color.blue);
+        mniNuevoCliente= new JMenuItem("NUEVO");
+             
+        mniNuevoCliente.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mniNuevoClienteActionPerformed(e);
+            }
+        });
+        
+        mniModificaCliente= new JMenuItem("MODIFICAR");
+        mniEliminaCliente= new JMenuItem("ELIMINAR");
+        mniBuscaCliente= new JMenuItem("BUSCAR");
+        mniListaCliente= new JMenuItem("LISTAR");  
+
+        mnCliente.add(mniNuevoCliente);
+        mnCliente.addSeparator();
+        mnCliente.add(mniModificaCliente);
+        mnCliente.addSeparator();
+        mnCliente.add(mniEliminaCliente);
+        mnCliente.addSeparator();
+        mnCliente.add(mniBuscaCliente);
+        mnCliente.addSeparator();
+        mnCliente.add(mniListaCliente);   
         
         mnbPrincipal.add(mnInicio);
         mnbPrincipal.add(mnCategoria);
         mnbPrincipal.add(mnArticulo);
+        mnbPrincipal.add(mnCliente);
 
         mnbPrincipal.setBackground(Color.lightGray);
         mnInicio.add(mniLogin);
@@ -131,6 +165,13 @@ public class FrmMenuPrincipal extends JFrame {
     }   
     public void mniNuevoArticuloActionPerformed(ActionEvent e){
         FrmArticuloNuevo frm = new FrmArticuloNuevo();
+        
+        dkpEscritorio.add(frm,BorderLayout.WEST);
+      
+        frm.setVisible(true);
+    }   
+    public void mniNuevoClienteActionPerformed(ActionEvent e){
+        FrmClienteNuevo frm = new FrmClienteNuevo();
         
         dkpEscritorio.add(frm,BorderLayout.WEST);
       
