@@ -21,9 +21,8 @@ import javax.swing.*;
 public class FrmArticuloNuevo extends JInternalFrame{
     JLabel lblTitulo,lblId,lblCodigo,lblNombre,lblDescripcion,lblCategoria;
     JTextField txtId,txtCodigo,txtNombre,txtDescripcion;
-    JComboBox cmbCategoria;
-    List<Categoria> lstarticulo;
-    JComboBox<Categoria> cmbarticulo;
+    List<Categoria> lstcategoria;
+    JComboBox<Categoria> cmbCategoria;
     JPanel pnlSuperior,pnlCentral,pnlInferior;
     JButton btnAceptar,btnLimpiar;
     
@@ -40,16 +39,18 @@ public class FrmArticuloNuevo extends JInternalFrame{
         
         lblTitulo = new JLabel("DATOS DEL ARTICULO");
                 
-        lblId= new JLabel("CODIGO:");
+        lblId= new JLabel("ID:");
+        lblCodigo= new JLabel("CODIGO:");
         lblNombre= new JLabel(" NOMBRE:");
         lblDescripcion= new JLabel("DESCRIPCION:");
                 
         cargarCategoria();  
         
-        cmbCategoria=new JComboBox(lstarticulo.toArray());
+        cmbCategoria=new JComboBox(lstcategoria.toArray());
         
         lblCategoria=new JLabel("Categoria");
         txtId = new JTextField(2);
+        txtCodigo = new JTextField(2);
         txtNombre= new JTextField(2);
         txtDescripcion= new JTextField(2);
         
@@ -59,12 +60,14 @@ public class FrmArticuloNuevo extends JInternalFrame{
         pnlSuperior.add(lblTitulo);
         pnlCentral.add(lblId);
         pnlCentral.add(txtId);
+        pnlCentral.add(lblCodigo);
+        pnlCentral.add(txtCodigo);
         pnlCentral.add(lblNombre);
         pnlCentral.add(txtNombre);
         pnlCentral.add(lblDescripcion);
         pnlCentral.add(txtDescripcion);
         pnlCentral.add(lblCategoria);
-        pnlCentral.add(cmbarticulo);
+        pnlCentral.add(cmbCategoria);
         
         btnAceptar.addActionListener(new ActionListener() {
             @Override
@@ -120,8 +123,8 @@ public class FrmArticuloNuevo extends JInternalFrame{
     }
         public void cargarCategoria() {
         try {
-       ICategoria articulo=new CategoriaImpl();
-       lstarticulo=articulo.obtener();
+       ICategoria cat=new CategoriaImpl();
+       lstcategoria=cat.obtener();
    
         } catch (Exception e) {System.out.println("ERROR"+e.getMessage());
         }
