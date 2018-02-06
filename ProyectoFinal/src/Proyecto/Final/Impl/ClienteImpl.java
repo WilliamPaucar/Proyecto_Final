@@ -150,6 +150,7 @@ public class ClienteImpl implements ICliente{
             ResultSet rst = con.ejecutaQuery(sql, null);
             Cliente cliente=null;
             while (rst.next()) {
+                cliente=new Cliente();
                 cliente.setIdcliente(rst.getInt(1));
                 cliente.setNombres(rst.getString(2));
                 cliente.setApellidos(rst.getString(3));
