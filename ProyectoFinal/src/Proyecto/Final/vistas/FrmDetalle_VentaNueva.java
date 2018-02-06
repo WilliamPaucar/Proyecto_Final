@@ -96,7 +96,7 @@ public class FrmDetalle_VentaNueva extends JInternalFrame{
             detalleventa.setCantidad(Integer.parseInt(txtCantidad.getText()));
             detalleventa.setPrecio_venta(Double.parseDouble(txtPrecio_venta.getText()));
             detalleventa.setDescuento(Double.parseDouble(txtDescuento.getText()));
-            IDetalle_Venta detalleventaDao = new Detalle_VentaImpl();
+            IDetalleVenta detalleventaDao = new Detalle_VentaImpl();
             
             if(detalleventaDao.insertar(detalleventa)>0){
                 JOptionPane.showMessageDialog(this,"Registro Correcto!!",
