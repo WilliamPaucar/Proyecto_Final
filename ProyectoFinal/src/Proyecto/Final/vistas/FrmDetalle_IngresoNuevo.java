@@ -155,8 +155,8 @@ public class FrmDetalle_IngresoNuevo extends JInternalFrame{
     }
         public void cargarIngresos() {
         try {
-       IIngreso detalleingreso=new IngresoImpl();
-       lstingreso=detalleingreso.obtener();
+       IIngreso ingreso=new IngresoImpl();
+       lstingreso=ingreso.obtener();
    
         } catch (Exception e) {System.out.println("ERROR"+e.getMessage());
         }
