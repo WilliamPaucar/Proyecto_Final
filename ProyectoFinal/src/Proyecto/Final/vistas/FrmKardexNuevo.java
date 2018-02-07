@@ -92,12 +92,12 @@ public class FrmKardexNuevo extends JInternalFrame{
         
         try {
              
-            Kardex kardex = new Kardex();
+            kardex kardex = new kardex();
             kardex.setIdkardex(Integer.parseInt(txtId.getText()));
             kardex.setDetalle_ingreso((Detalle_Ingreso)cmbDetalle_Ingreso.getSelectedItem());            
             kardex.setDetalle_venta((Detalle_Venta)cmbDetalle_Venta.getSelectedItem());
             
-            IKardex kardexDao = new KardexImpl();
+            Ikardex kardexDao = new KardexImpl();
             
             if(kardexDao.insertar(kardex)>0){
                 JOptionPane.showMessageDialog(this,"Registro Correcto!!",

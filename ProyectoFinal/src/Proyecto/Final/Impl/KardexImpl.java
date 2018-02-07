@@ -10,10 +10,10 @@ import Proyecto.Final.dao.*;
 import Proyecto.Final.rnegocio.entidades.*;
 import java.util.*;
 import java.sql.*;
-public class KardexImpl implements IKardex{
+public class KardexImpl implements Ikardex{
     
  @Override
-    public int insertar(Kardex kardex) throws Exception {
+    public int insertar(kardex kardex) throws Exception {
         int numFilasAfectadas = 0;
         String sql = "insert into kardex  values "
                 + "(?,?,?)";
@@ -40,7 +40,7 @@ public class KardexImpl implements IKardex{
 
     @Override
     
-    public int modificar(Kardex kardex) throws Exception {
+    public int modificar(kardex kardex) throws Exception {
         int numFilasAfectadas = 0;
         String sql = "UPDATE kardex"
                 + "   SET idkardex=?, iddetalle_ingreso=?, iddetalle_venta=?"
@@ -66,7 +66,7 @@ public class KardexImpl implements IKardex{
     }
 
     @Override
-    public int eliminar(Kardex kardex) throws Exception {
+    public int eliminar(kardex kardex) throws Exception {
         int numFilasAfectadas = 0;
          String sql = "DELETE * FROM kardex  where idkardex=?";
         List<Parametro> lstPar = new ArrayList<>();
@@ -87,8 +87,8 @@ public class KardexImpl implements IKardex{
     }
 
     @Override
-    public Kardex obtener(int codigo) throws Exception {
-        Kardex kardex = null;
+    public kardex obtener(int codigo) throws Exception {
+        kardex kardex = null;
         String sql = "SELECT * FROM kardex where idkardex=?;";
         List<Parametro> lstPar = new ArrayList<>();
         lstPar.add(new Parametro(1, codigo));
@@ -98,7 +98,7 @@ public class KardexImpl implements IKardex{
             con.conectar();
             ResultSet rst = con.ejecutaQuery(sql, lstPar);
             while (rst.next()) {
-                kardex = new Kardex();
+                kardex = new kardex();
                 kardex.setIdkardex(rst.getInt(1));
                 
                 IDetalle_Ingreso detalle_ingresodao=new Detalle_IngresoImpl();
@@ -123,18 +123,18 @@ public class KardexImpl implements IKardex{
     
     @Override
     
-    public List<Kardex> obtener() throws Exception {
-        List<Kardex> lista = new ArrayList<>();
+    public List<kardex> obtener() throws Exception {
+        List<kardex> lista = new ArrayList<>();
          String sql = "SELECT *   FROM kardex ";        
         Conexion con = null;
         try {
             con = new Conexion();
             con.conectar();
             ResultSet rst = con.ejecutaQuery(sql, null);
-            Kardex kardex=null;
+            kardex kardex=null;
             
             while (rst.next()) {
-                kardex = new Kardex();
+                kardex = new kardex();
                 kardex.setIdkardex(rst.getInt(1));
                 
                 IDetalle_Ingreso detalle_ingresodao=new Detalle_IngresoImpl();
