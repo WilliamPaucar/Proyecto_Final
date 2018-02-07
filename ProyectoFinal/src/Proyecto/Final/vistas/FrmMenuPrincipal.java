@@ -4,12 +4,15 @@
  * and open the template in the editor.
  */
 package Proyecto.Final.vistas;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 import org.jvnet.substance.SubstanceLookAndFeel;
+import org.jvnet.substance.watermark.SubstanceImageWatermark;
+
 /**
  *
  * @author FABRICIO CONSTANTE
@@ -21,42 +24,42 @@ public class FrmMenuPrincipal extends JFrame {
     JMenuItem mniLogin;
     JMenuItem mniSalir;
     JDesktopPane dkpEscritorio;
-        /*CATEGORIA */
+    /*CATEGORIA */
     JMenu mnCategoria;
     JMenuItem mniNuevoCategoria;
     JMenuItem mniModificaCategoria;
     JMenuItem mniEliminaCategoria;
     JMenuItem mniBuscaCategoria;
     JMenuItem mniListaCategoria;
-        /*ARTICULO */
+    /*ARTICULO */
     JMenu mnArticulo;
     JMenuItem mniNuevoArticulo;
     JMenuItem mniModificaArticulo;
     JMenuItem mniEliminaArticulo;
     JMenuItem mniBuscaArticulo;
     JMenuItem mniListaArticulo;
-        /*CLIENTE */
+    /*CLIENTE */
     JMenu mnCliente;
     JMenuItem mniNuevoCliente;
     JMenuItem mniModificaCliente;
     JMenuItem mniEliminaCliente;
     JMenuItem mniBuscaCliente;
     JMenuItem mniListaCliente;
-        /*DETALLE INGRESO */
+    /*DETALLE INGRESO */
     JMenu mnDetalle_Ingreso;
     JMenuItem mniNuevoDetalle_Ingreso;
     JMenuItem mniModificaDetalle_Ingreso;
     JMenuItem mniEliminaDetalle_Ingreso;
     JMenuItem mniBuscaDetalle_Ingreso;
     JMenuItem mniListaDetalle_Ingreso;
-        /*DETALLE VENTA */
+    /*DETALLE VENTA */
     JMenu mnDetalleVenta;
     JMenuItem mniNuevoDetalleVenta;
     JMenuItem mniModificaDetalleVenta;
     JMenuItem mniEliminaDetalleVenta;
     JMenuItem mniBuscaDetalleVenta;
     JMenuItem mniListaDetalleVenta;
-        /*INGRESO */
+    /*INGRESO */
     JMenu mnIngreso;
     JMenuItem mniNuevoIngreso;
     JMenuItem mniModificaIngreso;
@@ -65,13 +68,13 @@ public class FrmMenuPrincipal extends JFrame {
     JMenuItem mniListaIngreso;
 
     public FrmMenuPrincipal() {
-        dkpEscritorio= new JDesktopPane();
-        dkpEscritorio.setBackground(Color.getHSBColor(10,200,200).brighter());
-        
+        dkpEscritorio = new JDesktopPane();
+  
+
         mnbPrincipal = new JMenuBar();
-        
+
         mnInicio = new JMenu("INICIO");
-        mnInicio.setForeground(Color.BLUE);
+        mnInicio.setForeground(Color.GREEN);
         mniLogin = new JMenuItem("INICIAR SESION");
         mniSalir = new JMenuItem("SALIR");
         mniSalir.addActionListener(new ActionListener() {
@@ -80,23 +83,24 @@ public class FrmMenuPrincipal extends JFrame {
                 System.exit(0);
             }
         });
-        
+
         /*CATEGORIA*/
-        mnCategoria= new JMenu("CATEGORIA");
-        mnCategoria.setForeground(Color.blue);
-        mniNuevoCategoria= new JMenuItem("NUEVO");
-             
+        
+        mnCategoria = new JMenu("CATEGORIA");
+        mnCategoria.setForeground(Color.GREEN);
+        mniNuevoCategoria = new JMenuItem("NUEVO");
+
         mniNuevoCategoria.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 mniNuevoCategoriaActionPerformed(e);
             }
         });
-        
-        mniModificaCategoria= new JMenuItem("MODIFICAR");
-        mniEliminaCategoria= new JMenuItem("ELIMINAR");
-        mniBuscaCategoria= new JMenuItem("BUSCAR");
-        mniListaCategoria= new JMenuItem("LISTAR");  
+
+        mniModificaCategoria = new JMenuItem("MODIFICAR");
+        mniEliminaCategoria = new JMenuItem("ELIMINAR");
+        mniBuscaCategoria = new JMenuItem("BUSCAR");
+        mniListaCategoria = new JMenuItem("LISTAR");
 
         mnCategoria.add(mniNuevoCategoria);
         mnCategoria.addSeparator();
@@ -106,23 +110,23 @@ public class FrmMenuPrincipal extends JFrame {
         mnCategoria.addSeparator();
         mnCategoria.add(mniBuscaCategoria);
         mnCategoria.addSeparator();
-        mnCategoria.add(mniListaCategoria);   
+        mnCategoria.add(mniListaCategoria);
         /*ARTICULO*/
-        mnArticulo= new JMenu("ARTICULO");
-        mnArticulo.setForeground(Color.blue);
-        mniNuevoArticulo= new JMenuItem("NUEVO");
-             
+        mnArticulo = new JMenu("ARTICULO");
+        mnArticulo.setForeground(Color.GREEN);
+        mniNuevoArticulo = new JMenuItem("NUEVO");
+
         mniNuevoArticulo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 mniNuevoArticuloActionPerformed(e);
             }
         });
-        
-        mniModificaArticulo= new JMenuItem("MODIFICAR");
-        mniEliminaArticulo= new JMenuItem("ELIMINAR");
-        mniBuscaArticulo= new JMenuItem("BUSCAR");
-        mniListaArticulo= new JMenuItem("LISTAR");  
+
+        mniModificaArticulo = new JMenuItem("MODIFICAR");
+        mniEliminaArticulo = new JMenuItem("ELIMINAR");
+        mniBuscaArticulo = new JMenuItem("BUSCAR");
+        mniListaArticulo = new JMenuItem("LISTAR");
 
         mnArticulo.add(mniNuevoArticulo);
         mnArticulo.addSeparator();
@@ -132,23 +136,23 @@ public class FrmMenuPrincipal extends JFrame {
         mnArticulo.addSeparator();
         mnArticulo.add(mniBuscaArticulo);
         mnArticulo.addSeparator();
-        mnArticulo.add(mniListaArticulo);   
+        mnArticulo.add(mniListaArticulo);
         /*CLIENTE*/
-        mnCliente= new JMenu("CLIENTE");
-        mnCliente.setForeground(Color.blue);
-        mniNuevoCliente= new JMenuItem("NUEVO");
-             
+        mnCliente = new JMenu("CLIENTE");
+        mnCliente.setForeground(Color.GREEN);
+        mniNuevoCliente = new JMenuItem("NUEVO");
+
         mniNuevoCliente.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 mniNuevoClienteActionPerformed(e);
             }
         });
-        
-        mniModificaCliente= new JMenuItem("MODIFICAR");
-        mniEliminaCliente= new JMenuItem("ELIMINAR");
-        mniBuscaCliente= new JMenuItem("BUSCAR");
-        mniListaCliente= new JMenuItem("LISTAR");  
+
+        mniModificaCliente = new JMenuItem("MODIFICAR");
+        mniEliminaCliente = new JMenuItem("ELIMINAR");
+        mniBuscaCliente = new JMenuItem("BUSCAR");
+        mniListaCliente = new JMenuItem("LISTAR");
 
         mnCliente.add(mniNuevoCliente);
         mnCliente.addSeparator();
@@ -158,25 +162,25 @@ public class FrmMenuPrincipal extends JFrame {
         mnCliente.addSeparator();
         mnCliente.add(mniBuscaCliente);
         mnCliente.addSeparator();
-        mnCliente.add(mniListaCliente);   
-        
+        mnCliente.add(mniListaCliente);
+
         /*DETALLE INGRESO*/
-        mnDetalle_Ingreso= new JMenu("DETALLE INGRESO");
-        mnDetalle_Ingreso.setForeground(Color.blue);
-    
-        mniNuevoDetalle_Ingreso= new JMenuItem("NUEVO");
-             
+        mnDetalle_Ingreso = new JMenu("DETALLE INGRESO");
+        mnDetalle_Ingreso.setForeground(Color.GREEN);
+
+        mniNuevoDetalle_Ingreso = new JMenuItem("NUEVO");
+
         mniNuevoDetalle_Ingreso.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 mniNuevoDetalle_IngresoActionPerformed(e);
             }
         });
-        
-        mniModificaDetalle_Ingreso= new JMenuItem("MODIFICAR");
-        mniEliminaDetalle_Ingreso= new JMenuItem("ELIMINAR");
-        mniBuscaDetalle_Ingreso= new JMenuItem("BUSCAR");
-        mniListaDetalle_Ingreso= new JMenuItem("LISTAR");  
+
+        mniModificaDetalle_Ingreso = new JMenuItem("MODIFICAR");
+        mniEliminaDetalle_Ingreso = new JMenuItem("ELIMINAR");
+        mniBuscaDetalle_Ingreso = new JMenuItem("BUSCAR");
+        mniListaDetalle_Ingreso = new JMenuItem("LISTAR");
 
         mnDetalle_Ingreso.add(mniNuevoDetalle_Ingreso);
         mnDetalle_Ingreso.addSeparator();
@@ -186,24 +190,24 @@ public class FrmMenuPrincipal extends JFrame {
         mnDetalle_Ingreso.addSeparator();
         mnDetalle_Ingreso.add(mniBuscaDetalle_Ingreso);
         mnDetalle_Ingreso.addSeparator();
-        mnDetalle_Ingreso.add(mniListaDetalle_Ingreso);   
-         /*DETALLE VENTA*/
-        mnDetalleVenta= new JMenu("DETALLE VENTA");
-        mnDetalleVenta.setForeground(Color.blue);
-    
-        mniNuevoDetalleVenta= new JMenuItem("NUEVO");
-             
+        mnDetalle_Ingreso.add(mniListaDetalle_Ingreso);
+        /*DETALLE VENTA*/
+        mnDetalleVenta = new JMenu("DETALLE VENTA");
+        mnDetalleVenta.setForeground(Color.GREEN);
+
+        mniNuevoDetalleVenta = new JMenuItem("NUEVO");
+
         mniNuevoDetalleVenta.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 mniNuevoDetalleVentaActionPerformed(e);
             }
         });
-        
-        mniModificaDetalleVenta= new JMenuItem("MODIFICAR");
-        mniEliminaDetalleVenta= new JMenuItem("ELIMINAR");
-        mniBuscaDetalleVenta= new JMenuItem("BUSCAR");
-        mniListaDetalleVenta= new JMenuItem("LISTAR");  
+
+        mniModificaDetalleVenta = new JMenuItem("MODIFICAR");
+        mniEliminaDetalleVenta = new JMenuItem("ELIMINAR");
+        mniBuscaDetalleVenta = new JMenuItem("BUSCAR");
+        mniListaDetalleVenta = new JMenuItem("LISTAR");
 
         mnDetalleVenta.add(mniNuevoDetalleVenta);
         mnDetalleVenta.addSeparator();
@@ -213,24 +217,24 @@ public class FrmMenuPrincipal extends JFrame {
         mnDetalleVenta.addSeparator();
         mnDetalleVenta.add(mniBuscaDetalleVenta);
         mnDetalleVenta.addSeparator();
-        mnDetalleVenta.add(mniListaDetalleVenta);   
-         /*INGRESO*/
-        mnIngreso= new JMenu("INGRESO");
-        mnIngreso.setForeground(Color.blue);
-    
-        mniNuevoIngreso= new JMenuItem("NUEVO");
-             
+        mnDetalleVenta.add(mniListaDetalleVenta);
+        /*INGRESO*/
+        mnIngreso = new JMenu("INGRESO");
+        mnIngreso.setForeground(Color.GREEN);
+
+        mniNuevoIngreso = new JMenuItem("NUEVO");
+
         mniNuevoIngreso.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 mniNuevoIngresoActionPerformed(e);
             }
         });
-        
-        mniModificaIngreso= new JMenuItem("MODIFICAR");
-        mniEliminaIngreso= new JMenuItem("ELIMINAR");
-        mniBuscaIngreso= new JMenuItem("BUSCAR");
-        mniListaIngreso= new JMenuItem("LISTAR");  
+
+        mniModificaIngreso = new JMenuItem("MODIFICAR");
+        mniEliminaIngreso = new JMenuItem("ELIMINAR");
+        mniBuscaIngreso = new JMenuItem("BUSCAR");
+        mniListaIngreso = new JMenuItem("LISTAR");
 
         mnIngreso.add(mniNuevoIngreso);
         mnIngreso.addSeparator();
@@ -240,8 +244,8 @@ public class FrmMenuPrincipal extends JFrame {
         mnIngreso.addSeparator();
         mnIngreso.add(mniBuscaIngreso);
         mnIngreso.addSeparator();
-        mnIngreso.add(mniListaIngreso);   
-       
+        mnIngreso.add(mniListaIngreso);
+
         mnbPrincipal.add(mnInicio);
         mnbPrincipal.add(mnCategoria);
         mnbPrincipal.add(mnArticulo);
@@ -258,57 +262,68 @@ public class FrmMenuPrincipal extends JFrame {
         this.add(mnbPrincipal, BorderLayout.NORTH);
         this.add(dkpEscritorio, BorderLayout.CENTER);
         this.setExtendedState(MAXIMIZED_BOTH); //Para maximizar
-        this.setDefaultLookAndFeelDecorated(true); 
-        this.setBounds(0,0,500,450);
-        SubstanceLookAndFeel.setSkin("org.jvnet.substance.skin.BusinessBlueSteelSkin"); 
+        //this.setDefaultLookAndFeelDecorated(true);
+        this.setBounds(0, 0, 500, 450);
+        //SubstanceLookAndFeel.setSkin("org.jvnet.substance.skin.BusinessBlueSteelSkin");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE); //Para terminar el programa
-             
+
     }
 
-    public void mniNuevoCategoriaActionPerformed(ActionEvent e){
+    public void mniNuevoCategoriaActionPerformed(ActionEvent e) {
         FrmCategoriaNueva frm = new FrmCategoriaNueva();
-        
-        dkpEscritorio.add(frm,BorderLayout.WEST);
-      
+
+        dkpEscritorio.add(frm, BorderLayout.WEST);
+
         frm.setVisible(true);
-    }   
-    public void mniNuevoArticuloActionPerformed(ActionEvent e){
+    }
+
+    public void mniNuevoArticuloActionPerformed(ActionEvent e) {
         FrmArticuloNuevo frm = new FrmArticuloNuevo();
-        
-        dkpEscritorio.add(frm,BorderLayout.WEST);
-      
+
+        dkpEscritorio.add(frm, BorderLayout.WEST);
+
         frm.setVisible(true);
-    }   
-    public void mniNuevoClienteActionPerformed(ActionEvent e){
+    }
+
+    public void mniNuevoClienteActionPerformed(ActionEvent e) {
         FrmClienteNuevo frm = new FrmClienteNuevo();
-        
-        dkpEscritorio.add(frm,BorderLayout.WEST);
-      
+
+        dkpEscritorio.add(frm, BorderLayout.WEST);
+
         frm.setVisible(true);
-    }   
-    public void mniNuevoDetalle_IngresoActionPerformed(ActionEvent e){
+    }
+
+    public void mniNuevoDetalle_IngresoActionPerformed(ActionEvent e) {
         FrmDetalle_IngresoNuevo frm = new FrmDetalle_IngresoNuevo();
-        
-        dkpEscritorio.add(frm,BorderLayout.WEST);
-      
+
+        dkpEscritorio.add(frm, BorderLayout.WEST);
+
         frm.setVisible(true);
-    }   
-    public void mniNuevoDetalleVentaActionPerformed(ActionEvent e){
+    }
+
+    public void mniNuevoDetalleVentaActionPerformed(ActionEvent e) {
         FrmDetalle_VentaNueva frm = new FrmDetalle_VentaNueva();
-        
-        dkpEscritorio.add(frm,BorderLayout.WEST);
-      
+
+        dkpEscritorio.add(frm, BorderLayout.WEST);
+
         frm.setVisible(true);
-    }   
-    public void mniNuevoIngresoActionPerformed(ActionEvent e){
+    }
+
+    public void mniNuevoIngresoActionPerformed(ActionEvent e) {
         FrmIngresoNuevo frm = new FrmIngresoNuevo();
-        
-        dkpEscritorio.add(frm,BorderLayout.WEST);
-      
+
+        dkpEscritorio.add(frm, BorderLayout.WEST);
+
         frm.setVisible(true);
-    }   
-        public static void main(String[] args) {
+    }
+
+    public static void main(String[] args) {
+        JFrame.setDefaultLookAndFeelDecorated(true); //que nos permite dejar a Substance la decoracion ( por asi decirlo) 
+        SubstanceLookAndFeel.setSkin("org.jvnet.substance.skin.GreenMagicSkin"); // Setencia que aplica el skin Creme de Substance
+        SubstanceLookAndFeel.setCurrentWatermark(new SubstanceImageWatermark("C:\\Users\\Usuario\\Desktop\\Proyecto_Final\\ProyectoFinal\\Images\\cfdi-33slide.jpg"));
+        SubstanceLookAndFeel.setImageWatermarkOpacity(new Float(0.8));//valor aproximado de la opacidad por default de imageWatermark
         FrmMenuPrincipal frm = new FrmMenuPrincipal();
         frm.setVisible(true);
+
     }
 }
