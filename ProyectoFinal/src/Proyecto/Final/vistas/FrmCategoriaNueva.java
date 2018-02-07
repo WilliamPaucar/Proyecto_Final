@@ -13,6 +13,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+import org.jvnet.substance.SubstanceLookAndFeel;
 /**
  *
  * @author FABRICIO CONSTANTE
@@ -73,6 +74,7 @@ public class FrmCategoriaNueva extends JInternalFrame{
         this.add(pnlSuperior, BorderLayout.NORTH);
         this.add(pnlCentral, BorderLayout.CENTER);
         this.add(pnlInferior, BorderLayout.SOUTH);  
+      
         this.setClosable(true); 
     }
         public static void main(String[] args) {

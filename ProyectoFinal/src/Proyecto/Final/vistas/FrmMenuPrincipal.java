@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+import org.jvnet.substance.SubstanceLookAndFeel;
 /**
  *
  * @author FABRICIO CONSTANTE
@@ -148,6 +149,7 @@ public class FrmMenuPrincipal extends JFrame {
         /*DETALLE INGRESO*/
         mnDetalle_Ingreso= new JMenu("DETALLE INGRESO");
         mnDetalle_Ingreso.setForeground(Color.blue);
+    
         mniNuevoDetalle_Ingreso= new JMenuItem("NUEVO");
              
         mniNuevoDetalle_Ingreso.addActionListener(new ActionListener() {
@@ -186,7 +188,9 @@ public class FrmMenuPrincipal extends JFrame {
         this.add(mnbPrincipal, BorderLayout.NORTH);
         this.add(dkpEscritorio, BorderLayout.CENTER);
         this.setExtendedState(MAXIMIZED_BOTH); //Para maximizar
-     
+        this.setDefaultLookAndFeelDecorated(true); 
+        this.setBounds(0,0,500,450);
+        SubstanceLookAndFeel.setSkin("org.jvnet.substance.skin.BusinessBlueSteelSkin"); 
         this.setDefaultCloseOperation(EXIT_ON_CLOSE); //Para terminar el programa
              
     }
