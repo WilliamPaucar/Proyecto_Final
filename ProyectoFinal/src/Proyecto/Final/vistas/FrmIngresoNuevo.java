@@ -56,7 +56,7 @@ public class FrmIngresoNuevo extends JInternalFrame{
         txtId = new JTextField(2);
         cargarVendedores();  
         cmbVendedor=new JComboBox(lstvendedor.toArray());
-        cargarProveedors();  
+        cargarProveedores();  
         cmbProveedor=new JComboBox(lstproveedor.toArray());
         txtFecha = new JTextField(2);
         txtTipo_comprobante = new JTextField(2);
@@ -157,7 +157,7 @@ public class FrmIngresoNuevo extends JInternalFrame{
         }
  
     }
-        public void cargarProveedors() {
+        public void cargarProveedores() {
         try {
        IProveedor art=new ProveedorImpl();
        lstproveedor=art.obtener();
