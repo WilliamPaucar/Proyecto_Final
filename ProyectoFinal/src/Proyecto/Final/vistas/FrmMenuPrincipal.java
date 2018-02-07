@@ -49,6 +49,20 @@ public class FrmMenuPrincipal extends JFrame {
     JMenuItem mniEliminaDetalle_Ingreso;
     JMenuItem mniBuscaDetalle_Ingreso;
     JMenuItem mniListaDetalle_Ingreso;
+        /*DETALLE VENTA */
+    JMenu mnDetalleVenta;
+    JMenuItem mniNuevoDetalleVenta;
+    JMenuItem mniModificaDetalleVenta;
+    JMenuItem mniEliminaDetalleVenta;
+    JMenuItem mniBuscaDetalleVenta;
+    JMenuItem mniListaDetalleVenta;
+        /*INGRESO */
+    JMenu mnIngreso;
+    JMenuItem mniNuevoIngreso;
+    JMenuItem mniModificaIngreso;
+    JMenuItem mniEliminaIngreso;
+    JMenuItem mniBuscaIngreso;
+    JMenuItem mniListaIngreso;
 
     public FrmMenuPrincipal() {
         dkpEscritorio= new JDesktopPane();
@@ -173,12 +187,68 @@ public class FrmMenuPrincipal extends JFrame {
         mnDetalle_Ingreso.add(mniBuscaDetalle_Ingreso);
         mnDetalle_Ingreso.addSeparator();
         mnDetalle_Ingreso.add(mniListaDetalle_Ingreso);   
+         /*DETALLE VENTA*/
+        mnDetalleVenta= new JMenu("DETALLE VENTA");
+        mnDetalleVenta.setForeground(Color.blue);
+    
+        mniNuevoDetalleVenta= new JMenuItem("NUEVO");
+             
+        mniNuevoDetalleVenta.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mniNuevoDetalleVentaActionPerformed(e);
+            }
+        });
         
+        mniModificaDetalleVenta= new JMenuItem("MODIFICAR");
+        mniEliminaDetalleVenta= new JMenuItem("ELIMINAR");
+        mniBuscaDetalleVenta= new JMenuItem("BUSCAR");
+        mniListaDetalleVenta= new JMenuItem("LISTAR");  
+
+        mnDetalleVenta.add(mniNuevoDetalleVenta);
+        mnDetalleVenta.addSeparator();
+        mnDetalleVenta.add(mniModificaDetalleVenta);
+        mnDetalleVenta.addSeparator();
+        mnDetalleVenta.add(mniEliminaDetalleVenta);
+        mnDetalleVenta.addSeparator();
+        mnDetalleVenta.add(mniBuscaDetalleVenta);
+        mnDetalleVenta.addSeparator();
+        mnDetalleVenta.add(mniListaDetalleVenta);   
+         /*INGRESO*/
+        mnIngreso= new JMenu("INGRESO");
+        mnIngreso.setForeground(Color.blue);
+    
+        mniNuevoIngreso= new JMenuItem("NUEVO");
+             
+        mniNuevoIngreso.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mniNuevoIngresoActionPerformed(e);
+            }
+        });
+        
+        mniModificaIngreso= new JMenuItem("MODIFICAR");
+        mniEliminaIngreso= new JMenuItem("ELIMINAR");
+        mniBuscaIngreso= new JMenuItem("BUSCAR");
+        mniListaIngreso= new JMenuItem("LISTAR");  
+
+        mnIngreso.add(mniNuevoIngreso);
+        mnIngreso.addSeparator();
+        mnIngreso.add(mniModificaIngreso);
+        mnIngreso.addSeparator();
+        mnIngreso.add(mniEliminaIngreso);
+        mnIngreso.addSeparator();
+        mnIngreso.add(mniBuscaIngreso);
+        mnIngreso.addSeparator();
+        mnIngreso.add(mniListaIngreso);   
+       
         mnbPrincipal.add(mnInicio);
         mnbPrincipal.add(mnCategoria);
         mnbPrincipal.add(mnArticulo);
         mnbPrincipal.add(mnCliente);
         mnbPrincipal.add(mnDetalle_Ingreso);
+        mnbPrincipal.add(mnDetalleVenta);
+        mnbPrincipal.add(mnIngreso);
 
         mnbPrincipal.setBackground(Color.lightGray);
         mnInicio.add(mniLogin);
@@ -218,6 +288,20 @@ public class FrmMenuPrincipal extends JFrame {
     }   
     public void mniNuevoDetalle_IngresoActionPerformed(ActionEvent e){
         FrmDetalle_IngresoNuevo frm = new FrmDetalle_IngresoNuevo();
+        
+        dkpEscritorio.add(frm,BorderLayout.WEST);
+      
+        frm.setVisible(true);
+    }   
+    public void mniNuevoDetalleVentaActionPerformed(ActionEvent e){
+        FrmDetalle_VentaNueva frm = new FrmDetalle_VentaNueva();
+        
+        dkpEscritorio.add(frm,BorderLayout.WEST);
+      
+        frm.setVisible(true);
+    }   
+    public void mniNuevoIngresoActionPerformed(ActionEvent e){
+        FrmIngresoNuevo frm = new FrmIngresoNuevo();
         
         dkpEscritorio.add(frm,BorderLayout.WEST);
       
