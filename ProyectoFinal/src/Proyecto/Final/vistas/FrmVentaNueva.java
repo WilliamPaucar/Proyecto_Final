@@ -31,7 +31,7 @@ public class FrmVentaNueva extends JInternalFrame{
     JButton btnAceptar,btnLimpiar;
     
         public FrmVentaNueva(){
-        this.setSize(400,600);
+        this.setSize(400,600); 
         this.setLayout(new BorderLayout());
      
         pnlSuperior= new JPanel();
