@@ -69,9 +69,9 @@ public class FrmMenuPrincipal extends JFrame {
 
     public FrmMenuPrincipal() {
         dkpEscritorio = new JDesktopPane();
-  
 
         mnbPrincipal = new JMenuBar();
+        mnbPrincipal.setBackground(Color.getHSBColor(100, 102, 250).brighter());
 
         mnInicio = new JMenu("INICIO");
         mnInicio.setForeground(Color.GREEN);
@@ -85,7 +85,6 @@ public class FrmMenuPrincipal extends JFrame {
         });
 
         /*CATEGORIA*/
-        
         mnCategoria = new JMenu("CATEGORIA");
         mnCategoria.setForeground(Color.GREEN);
         mniNuevoCategoria = new JMenuItem("NUEVO");
@@ -101,6 +100,12 @@ public class FrmMenuPrincipal extends JFrame {
         mniEliminaCategoria = new JMenuItem("ELIMINAR");
         mniBuscaCategoria = new JMenuItem("BUSCAR");
         mniListaCategoria = new JMenuItem("LISTAR");
+        mniListaCategoria.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mniCategoriaListaActionPerformed(e);
+            }
+        });
 
         mnCategoria.add(mniNuevoCategoria);
         mnCategoria.addSeparator();
@@ -127,6 +132,12 @@ public class FrmMenuPrincipal extends JFrame {
         mniEliminaArticulo = new JMenuItem("ELIMINAR");
         mniBuscaArticulo = new JMenuItem("BUSCAR");
         mniListaArticulo = new JMenuItem("LISTAR");
+        mniListaArticulo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mniArticuloListaActionPerformed(e);
+            }
+        });
 
         mnArticulo.add(mniNuevoArticulo);
         mnArticulo.addSeparator();
@@ -317,10 +328,22 @@ public class FrmMenuPrincipal extends JFrame {
         frm.setVisible(true);
     }
 
+    public void mniCategoriaListaActionPerformed(ActionEvent e) {
+        FrmCategoriaLista frm = new FrmCategoriaLista();
+        dkpEscritorio.add(frm);
+        frm.setVisible(true);
+    }
+    
+    public void mniArticuloListaActionPerformed(ActionEvent e) {
+        FrmArticuloLista frm = new FrmArticuloLista();
+        dkpEscritorio.add(frm);
+        frm.setVisible(true);
+    }
+
     public static void main(String[] args) {
         JFrame.setDefaultLookAndFeelDecorated(true); //que nos permite dejar a Substance la decoracion ( por asi decirlo) 
         SubstanceLookAndFeel.setSkin("org.jvnet.substance.skin.GreenMagicSkin"); // Setencia que aplica el skin Creme de Substance
-        SubstanceLookAndFeel.setCurrentWatermark(new SubstanceImageWatermark("C:\\Users\\Usuario\\Desktop\\Proyecto_Final\\ProyectoFinal\\Images\\cfdi-33slide.jpg"));
+        SubstanceLookAndFeel.setCurrentWatermark(new SubstanceImageWatermark("C:\\Users\\Usuario\\Documents\\Proyecto_Final\\ProyectoFinal\\src\\Proyecto\\Final\\Img\\cfdi-33slide.jpg"));
         SubstanceLookAndFeel.setImageWatermarkOpacity(new Float(0.8));//valor aproximado de la opacidad por default de imageWatermark
         FrmMenuPrincipal frm = new FrmMenuPrincipal();
         frm.setVisible(true);
