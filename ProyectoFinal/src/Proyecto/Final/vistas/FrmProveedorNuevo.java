@@ -28,7 +28,7 @@ public class FrmProveedorNuevo extends JInternalFrame{
     JButton btnAceptar,btnLimpiar;
     
         public FrmProveedorNuevo(){
-        this.setSize(400,600);
+        this.setSize(400,700);
         this.setLayout(new BorderLayout());
      
         pnlSuperior= new JPanel();
