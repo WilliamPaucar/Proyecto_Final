@@ -129,7 +129,7 @@ public class FrmIngresoNuevo extends JInternalFrame{
             ingreso.setTipo_comprobante(txtTipo_comprobante.getText());
             ingreso.setSerie(txtSerie.getText());
             ingreso.setCorrelativo(txtCorrelativo.getText());
-            ingreso.setIgv(Float.parseFloat(txtCorrelativo.getText()));
+            ingreso.setIgv(Float.parseFloat(txtIgv.getText()));
 
             IIngreso ingresoDao = new IngresoImpl();
             
