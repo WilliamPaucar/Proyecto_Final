@@ -38,7 +38,7 @@ public class FrmProveedorNuevo extends JInternalFrame{
         pnlCentral.setLayout(new GridLayout(9, 2, 5, 5));
         pnlInferior.setLayout(new GridLayout(1,2,5,5));     
         
-        lblTitulo = new JLabel("DETALLE DEL NUEVO INGRESO");
+        lblTitulo = new JLabel("DETALLE DEL NUEVO PROVEEDOR");
                 
         lblId= new JLabel("CODIGO:");
         lblRazonSoc= new JLabel("RAZÓN SOCIAL:");
