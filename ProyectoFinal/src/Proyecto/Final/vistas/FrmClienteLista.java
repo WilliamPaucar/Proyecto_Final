@@ -25,7 +25,8 @@ public class FrmClienteLista extends JInternalFrame {
         tabla= new JTable();
         this.add(lblTitulo,BorderLayout.NORTH);
         this.add(tabla,BorderLayout.NORTH);
-        cargarTabla();        
+        cargarTabla();  
+    }
         public void cargarTabla(){
 
 
