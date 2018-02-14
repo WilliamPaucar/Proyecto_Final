@@ -44,13 +44,13 @@ public class FrmIngresoNuevo extends JInternalFrame{
         lblTitulo = new JLabel("DETALLE DEL NUEVO INGRESO");
                 
         lblId= new JLabel("CODIGO:");
-        lblVendedor= new JLabel("INGRESO:");
-        lblProveedor= new JLabel("ARTICULO:");
-        lblFecha= new JLabel("PRECIO DE COMPRA:");
-        lblTipo_comprobante= new JLabel("PRECIO DE VENTA:");
-        lblSerie= new JLabel("STOCK INICIAL:");
-        lblCorrelativo= new JLabel("STOCK ACTUAL:");
-        lblIgv= new JLabel("FECHA DE PRODUCCION:");
+        lblVendedor= new JLabel("ID VENDEDOR:");
+        lblProveedor= new JLabel("ID PROVEEDOR:");
+        lblFecha= new JLabel("FECHA:");
+        lblTipo_comprobante= new JLabel("TIPO DE COMPROBANTE:");
+        lblSerie= new JLabel("SERIE:");
+        lblCorrelativo= new JLabel("CORRELATIVO:");
+        lblIgv= new JLabel("IGV:");
         
         
         txtId = new JTextField(2);
