@@ -68,6 +68,11 @@ public class Articulo {
         this.categoria = categoria;
     }
 
+    @Override
+    public String toString() {
+        return nombre ;
+    }
+
 
 
 }
