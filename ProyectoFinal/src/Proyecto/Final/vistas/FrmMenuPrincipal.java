@@ -206,6 +206,13 @@ public class FrmMenuPrincipal extends JFrame {
         mniEliminaDetalle_Ingreso = new JMenuItem("ELIMINAR");
         mniBuscaDetalle_Ingreso = new JMenuItem("BUSCAR");
         mniListaDetalle_Ingreso = new JMenuItem("LISTAR");
+        
+        mniListaDetalle_Ingreso.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mniDetalle_IngresoListaActionPerformed(e);
+            }
+        });
 
         mnDetalle_Ingreso.add(mniNuevoDetalle_Ingreso);
         mnDetalle_Ingreso.addSeparator();
@@ -234,6 +241,13 @@ public class FrmMenuPrincipal extends JFrame {
         mniBuscaDetalleVenta = new JMenuItem("BUSCAR");
         mniListaDetalleVenta = new JMenuItem("LISTAR");
 
+        mniListaDetalleVenta.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mniDetalle_VentaListaActionPerformed(e);
+            }
+        });
+        
         mnDetalleVenta.add(mniNuevoDetalleVenta);
         mnDetalleVenta.addSeparator();
         mnDetalleVenta.add(mniModificaDetalleVenta);
@@ -261,6 +275,13 @@ public class FrmMenuPrincipal extends JFrame {
         mniBuscaIngreso = new JMenuItem("BUSCAR");
         mniListaIngreso = new JMenuItem("LISTAR");
 
+        mniListaIngreso.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mniIngresoListaActionPerformed(e);
+            }
+        });
+        
         mnIngreso.add(mniNuevoIngreso);
         mnIngreso.addSeparator();
         mnIngreso.add(mniModificaIngreso);
@@ -383,6 +404,26 @@ public class FrmMenuPrincipal extends JFrame {
         frm.setVisible(true);
     }
     
+    public void mniIngresoListaActionPerformed(ActionEvent e) {
+        FrmIngresoLista frm = new FrmIngresoLista();
+        dkpEscritorio.add(frm);
+        frm.setVisible(true);
+    }
+    
+    public void mniDetalle_IngresoListaActionPerformed(ActionEvent e) {
+        FrmDetalle_IngresoLista frm = new FrmDetalle_IngresoLista();
+        dkpEscritorio.add(frm);
+        frm.setVisible(true);
+    }
+    
+    public void mniDetalle_VentaListaActionPerformed(ActionEvent e) {
+        FrmDetalle_VentaLista frm = new FrmDetalle_VentaLista();
+        dkpEscritorio.add(frm);
+        frm.setVisible(true);
+    }
+    
+    
+    
     public void mniClienteListaActionPerformed(ActionEvent e) {
         FrmClienteLista frm = new FrmClienteLista();
         dkpEscritorio.add(frm);
@@ -398,7 +439,7 @@ public class FrmMenuPrincipal extends JFrame {
     public static void main(String[] args) {
         JFrame.setDefaultLookAndFeelDecorated(true); //que nos permite dejar a Substance la decoracion ( por asi decirlo) 
         SubstanceLookAndFeel.setSkin("org.jvnet.substance.skin.GreenMagicSkin"); // Setencia que aplica el skin Creme de Substance
-        SubstanceLookAndFeel.setCurrentWatermark(new SubstanceImageWatermark("D:\\Proyecto_Final\\ProyectoFinal\\src\\Proyecto\\Final\\Img\\cfdi-33slide.jpg"));
+        SubstanceLookAndFeel.setCurrentWatermark(new SubstanceImageWatermark("C:\\Users\\Usuario\\Documents\\Proyecto_Final\\ProyectoFinal\\src\\Proyecto\\Final\\Img\\cfdi-33slide.jpg"));
         SubstanceLookAndFeel.setImageWatermarkOpacity(new Float(0.8));//valor aproximado de la opacidad por default de imageWatermark
         FrmMenuPrincipal frm = new FrmMenuPrincipal();
         frm.setVisible(true);
