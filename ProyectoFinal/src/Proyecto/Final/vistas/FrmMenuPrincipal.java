@@ -164,6 +164,13 @@ public class FrmMenuPrincipal extends JFrame {
         mniEliminaCliente = new JMenuItem("ELIMINAR");
         mniBuscaCliente = new JMenuItem("BUSCAR");
         mniListaCliente = new JMenuItem("LISTAR");
+        
+        mniListaCliente.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mniClienteListaActionPerformed(e);
+            }
+        });
 
         mnCliente.add(mniNuevoCliente);
         mnCliente.addSeparator();
@@ -330,6 +337,12 @@ public class FrmMenuPrincipal extends JFrame {
 
     public void mniCategoriaListaActionPerformed(ActionEvent e) {
         FrmCategoriaLista frm = new FrmCategoriaLista();
+        dkpEscritorio.add(frm);
+        frm.setVisible(true);
+    }
+    
+    public void mniClienteListaActionPerformed(ActionEvent e) {
+        FrmClienteLista frm = new FrmClienteLista();
         dkpEscritorio.add(frm);
         frm.setVisible(true);
     }
