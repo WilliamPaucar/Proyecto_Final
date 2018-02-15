@@ -399,10 +399,10 @@ public class FrmMenuPrincipal extends JFrame {
         mnbPrincipal.add(mnCliente);
         mnbPrincipal.add(mnIngreso);
         mnbPrincipal.add(mnDetalle_Ingreso);
+        mnbPrincipal.add(mnVenta);
         mnbPrincipal.add(mnDetalleVenta);
         mnbPrincipal.add(mnProveedor);
         mnbPrincipal.add(mnVendedor);
-        mnbPrincipal.add(mnVenta);
         mnbPrincipal.add(mnKardex);
 
         mnbPrincipal.setBackground(Color.lightGray);
