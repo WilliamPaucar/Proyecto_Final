@@ -66,6 +66,13 @@ public class FrmMenuPrincipal extends JFrame {
     JMenuItem mniEliminaIngreso;
     JMenuItem mniBuscaIngreso;
     JMenuItem mniListaIngreso;
+    /*KARDEX */
+    JMenu mnKardex;
+    JMenuItem mniNuevoKardex;
+    JMenuItem mniModificaKardex;
+    JMenuItem mniEliminaKardex;
+    JMenuItem mniBuscaKardex;
+    JMenuItem mniListaKardex;
 
     public FrmMenuPrincipal() {
         dkpEscritorio = new JDesktopPane();
@@ -256,6 +263,33 @@ public class FrmMenuPrincipal extends JFrame {
         mnIngreso.add(mniBuscaIngreso);
         mnIngreso.addSeparator();
         mnIngreso.add(mniListaIngreso);
+        /*Kardex*/
+        mnKardex = new JMenu("KARDEX");
+        mnKardex.setForeground(Color.GREEN);
+
+        mniNuevoKardex = new JMenuItem("NUEVO");
+
+        mniNuevoKardex.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mniNuevoKardexActionPerformed(e);
+            }
+        });
+
+        mniModificaKardex = new JMenuItem("MODIFICAR");
+        mniEliminaKardex = new JMenuItem("ELIMINAR");
+        mniBuscaKardex = new JMenuItem("BUSCAR");
+        mniListaKardex = new JMenuItem("LISTAR");
+
+        mnKardex.add(mniNuevoKardex);
+        mnKardex.addSeparator();
+        mnKardex.add(mniModificaKardex);
+        mnKardex.addSeparator();
+        mnKardex.add(mniEliminaKardex);
+        mnKardex.addSeparator();
+        mnKardex.add(mniBuscaKardex);
+        mnKardex.addSeparator();
+        mnKardex.add(mniListaKardex);
 
         mnbPrincipal.add(mnInicio);
         mnbPrincipal.add(mnCategoria);
@@ -264,6 +298,7 @@ public class FrmMenuPrincipal extends JFrame {
         mnbPrincipal.add(mnDetalle_Ingreso);
         mnbPrincipal.add(mnDetalleVenta);
         mnbPrincipal.add(mnIngreso);
+        mnbPrincipal.add(mnKardex);
 
         mnbPrincipal.setBackground(Color.lightGray);
         mnInicio.add(mniLogin);
@@ -327,6 +362,13 @@ public class FrmMenuPrincipal extends JFrame {
 
         frm.setVisible(true);
     }
+    public void mniNuevoKardexActionPerformed(ActionEvent e) {
+        FrmKardexNuevo frm = new FrmKardexNuevo();
+
+        dkpEscritorio.add(frm, BorderLayout.WEST);
+
+        frm.setVisible(true);
+    }
 
     public void mniCategoriaListaActionPerformed(ActionEvent e) {
         FrmCategoriaLista frm = new FrmCategoriaLista();
@@ -343,7 +385,7 @@ public class FrmMenuPrincipal extends JFrame {
     public static void main(String[] args) {
         JFrame.setDefaultLookAndFeelDecorated(true); //que nos permite dejar a Substance la decoracion ( por asi decirlo) 
         SubstanceLookAndFeel.setSkin("org.jvnet.substance.skin.GreenMagicSkin"); // Setencia que aplica el skin Creme de Substance
-        SubstanceLookAndFeel.setCurrentWatermark(new SubstanceImageWatermark("C:\\Users\\Usuario\\Desktop\\Proyecto_Final\\ProyectoFinal\\src\\Proyecto\\Final\\Img\\cfdi-33slide.jpg"));
+        SubstanceLookAndFeel.setCurrentWatermark(new SubstanceImageWatermark("D:\\Proyecto_Final\\ProyectoFinal\\src\\Proyecto\\Final\\Img\\cfdi-33slide.jpg"));
         SubstanceLookAndFeel.setImageWatermarkOpacity(new Float(0.8));//valor aproximado de la opacidad por default de imageWatermark
         FrmMenuPrincipal frm = new FrmMenuPrincipal();
         frm.setVisible(true);
