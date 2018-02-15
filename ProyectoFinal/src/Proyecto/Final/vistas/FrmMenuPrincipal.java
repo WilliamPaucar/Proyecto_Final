@@ -357,6 +357,13 @@ public class FrmMenuPrincipal extends JFrame {
         mniBuscaProveedor = new JMenuItem("BUSCAR");
         mniListaProveedor = new JMenuItem("LISTAR");
 
+        mniListaProveedor.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mniProveedorListaActionPerformed(e);
+            }
+        });
+        
         mnProveedor.add(mniNuevoProveedor);
         mnProveedor.addSeparator();
         mnProveedor.add(mniModificaProveedor);
@@ -384,6 +391,13 @@ public class FrmMenuPrincipal extends JFrame {
         mniBuscaVendedor = new JMenuItem("BUSCAR");
         mniListaVendedor = new JMenuItem("LISTAR");
 
+        mniListaVendedor.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mniVendedorListaActionPerformed(e);
+            }
+        });
+        
         mnVendedor.add(mniNuevoVendedor);
         mnVendedor.addSeparator();
         mnVendedor.add(mniModificaVendedor);
@@ -411,6 +425,13 @@ public class FrmMenuPrincipal extends JFrame {
         mniBuscaVenta = new JMenuItem("BUSCAR");
         mniListaVenta = new JMenuItem("LISTAR");
 
+        mniListaVenta.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mniVentaListaActionPerformed(e);
+            }
+        });
+        
         mnVenta.add(mniNuevoVenta);
         mnVenta.addSeparator();
         mnVenta.add(mniModificaVenta);
@@ -442,7 +463,7 @@ public class FrmMenuPrincipal extends JFrame {
         this.add(dkpEscritorio, BorderLayout.CENTER);
         this.setExtendedState(MAXIMIZED_BOTH); //Para maximizar
         //this.setDefaultLookAndFeelDecorated(true);
-        this.setBounds(0, 0, 500, 450);
+        this.setBounds(0, 0, 900, 750);
         //SubstanceLookAndFeel.setSkin("org.jvnet.substance.skin.BusinessBlueSteelSkin");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE); //Para terminar el programa
 
@@ -558,6 +579,24 @@ public class FrmMenuPrincipal extends JFrame {
     
     public void mniArticuloListaActionPerformed(ActionEvent e) {
         FrmArticuloLista frm = new FrmArticuloLista();
+        dkpEscritorio.add(frm);
+        frm.setVisible(true);
+    }
+    
+    public void mniProveedorListaActionPerformed(ActionEvent e) {
+        FrmProveedorLista frm = new FrmProveedorLista();
+        dkpEscritorio.add(frm);
+        frm.setVisible(true);
+    }
+    
+    public void mniVendedorListaActionPerformed(ActionEvent e) {
+        FrmVendedorLista frm = new FrmVendedorLista();
+        dkpEscritorio.add(frm);
+        frm.setVisible(true);
+    }
+    
+    public void mniVentaListaActionPerformed(ActionEvent e) {
+        FrmVentaLista frm = new FrmVentaLista();
         dkpEscritorio.add(frm);
         frm.setVisible(true);
     }
