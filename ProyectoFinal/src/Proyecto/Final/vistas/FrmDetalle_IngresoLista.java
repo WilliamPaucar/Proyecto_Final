@@ -55,7 +55,7 @@ public class FrmDetalle_IngresoLista extends JInternalFrame{
         }
         
         for(Detalle_Ingreso est:lista){
-            modelo.addRow(new Object[]{est.getIddetalle_ingreso(),est.getIngreso().getIdingreso(),est.getArticulo().getNombre(),est.getPrecio_compra(),est.getPrecio_venta(),est.getStock_inicial(),est.getStock_actual(),est.getFecha_produccion(),est.getFecha_vencimiento().toString()});
+            modelo.addRow(new Object[]{est.getIddetalle_ingreso(),est.getIngreso().getIdingreso(),est.getArticulo().getNombre(),est.getPrecio_compra(),est.getPrecio_venta(),est.getStock_inicial(),est.getStock_actual(),est.getFecha_produccion(),est.getFecha_vencimiento()});
         }
         tabla.setModel(modelo);
     }

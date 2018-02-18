@@ -53,7 +53,7 @@ public class FrmIngresoLista extends JInternalFrame{
         }
         
         for(Ingreso est:lista){
-            modelo.addRow(new Object[]{est.getIdingreso(),est.getVendedor().getNombres(),est.getProveedor().getIdproveedor(),est.getFecha(),est.getTipo_comprobante(),est.getSerie(),est.getCorrelativo(),est.getIgv()});
+            modelo.addRow(new Object[]{est.getIdingreso(),est.getVendedor().getNumero_documento(),est.getProveedor().getSector_comercial(),est.getFecha(),est.getTipo_comprobante(),est.getSerie(),est.getCorrelativo(),est.getIgv(),toString()});
         }
         tabla.setModel(modelo);
     }

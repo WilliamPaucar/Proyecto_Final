@@ -139,5 +139,12 @@ public class Vendedor {
     public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
+
+    @Override
+    public String toString() {
+        return numero_documento;
+    }
+
+ 
     
 }

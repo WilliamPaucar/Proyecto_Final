@@ -102,7 +102,7 @@ public class FrmMenuPrincipal extends JFrame {
         mnbPrincipal.setBackground(Color.getHSBColor(100, 102, 250).brighter());
 
         mnInicio = new JMenu("INICIO");
-        mnInicio.setForeground(Color.GREEN);
+        mnInicio.setForeground(Color.WHITE);
         mniLogin = new JMenuItem("INICIAR SESION");
         mniSalir = new JMenuItem("SALIR");
         mniSalir.addActionListener(new ActionListener() {
@@ -114,7 +114,7 @@ public class FrmMenuPrincipal extends JFrame {
 
         /*CATEGORIA*/
         mnCategoria = new JMenu("CATEGORIA");
-        mnCategoria.setForeground(Color.GREEN);
+        mnCategoria.setForeground(Color.WHITE);
         mniNuevoCategoria = new JMenuItem("NUEVO");
 
         mniNuevoCategoria.addActionListener(new ActionListener() {
@@ -146,7 +146,7 @@ public class FrmMenuPrincipal extends JFrame {
         mnCategoria.add(mniListaCategoria);
         /*ARTICULO*/
         mnArticulo = new JMenu("ARTICULO");
-        mnArticulo.setForeground(Color.GREEN);
+        mnArticulo.setForeground(Color.WHITE);
         mniNuevoArticulo = new JMenuItem("NUEVO");
 
         mniNuevoArticulo.addActionListener(new ActionListener() {
@@ -178,7 +178,7 @@ public class FrmMenuPrincipal extends JFrame {
         mnArticulo.add(mniListaArticulo);
         /*CLIENTE*/
         mnCliente = new JMenu("CLIENTE");
-        mnCliente.setForeground(Color.GREEN);
+        mnCliente.setForeground(Color.WHITE);
         mniNuevoCliente = new JMenuItem("NUEVO");
 
         mniNuevoCliente.addActionListener(new ActionListener() {
@@ -212,7 +212,7 @@ public class FrmMenuPrincipal extends JFrame {
 
         /*DETALLE INGRESO*/
         mnDetalle_Ingreso = new JMenu("DETALLE INGRESO");
-        mnDetalle_Ingreso.setForeground(Color.GREEN);
+        mnDetalle_Ingreso.setForeground(Color.WHITE);
 
         mniNuevoDetalle_Ingreso = new JMenuItem("NUEVO");
 
@@ -246,7 +246,7 @@ public class FrmMenuPrincipal extends JFrame {
         mnDetalle_Ingreso.add(mniListaDetalle_Ingreso);
         /*DETALLE VENTA*/
         mnDetalleVenta = new JMenu("DETALLE VENTA");
-        mnDetalleVenta.setForeground(Color.GREEN);
+        mnDetalleVenta.setForeground(Color.WHITE);
 
         mniNuevoDetalleVenta = new JMenuItem("NUEVO");
 
@@ -280,7 +280,7 @@ public class FrmMenuPrincipal extends JFrame {
         mnDetalleVenta.add(mniListaDetalleVenta);
         /*INGRESO*/
         mnIngreso = new JMenu("INGRESO");
-        mnIngreso.setForeground(Color.GREEN);
+        mnIngreso.setForeground(Color.WHITE);
 
         mniNuevoIngreso = new JMenuItem("NUEVO");
 
@@ -314,7 +314,7 @@ public class FrmMenuPrincipal extends JFrame {
         mnIngreso.add(mniListaIngreso);
         /*Kardex*/
         mnKardex = new JMenu("KARDEX");
-        mnKardex.setForeground(Color.GREEN);
+        mnKardex.setForeground(Color.WHITE);
 
         mniNuevoKardex = new JMenuItem("NUEVO");
 
@@ -341,7 +341,7 @@ public class FrmMenuPrincipal extends JFrame {
         mnKardex.add(mniListaKardex);
         /*PROVEEDOR*/
         mnProveedor = new JMenu("PROVEEDOR");
-        mnProveedor.setForeground(Color.GREEN);
+        mnProveedor.setForeground(Color.WHITE);
 
         mniNuevoProveedor = new JMenuItem("NUEVO");
 
@@ -375,7 +375,7 @@ public class FrmMenuPrincipal extends JFrame {
         mnProveedor.add(mniListaProveedor);
         /*VENDEDOR*/
         mnVendedor = new JMenu("VENDEDOR");
-        mnVendedor.setForeground(Color.GREEN);
+        mnVendedor.setForeground(Color.WHITE);
 
         mniNuevoVendedor = new JMenuItem("NUEVO");
 
@@ -409,7 +409,7 @@ public class FrmMenuPrincipal extends JFrame {
         mnVendedor.add(mniListaVendedor);
         /*VENTA*/
         mnVenta = new JMenu("VENTA");
-        mnVenta.setForeground(Color.GREEN);
+        mnVenta.setForeground(Color.WHITE);
 
         mniNuevoVenta = new JMenuItem("NUEVO");
 
@@ -453,11 +453,9 @@ public class FrmMenuPrincipal extends JFrame {
         mnbPrincipal.add(mnVenta);
         mnbPrincipal.add(mnDetalleVenta);
         mnbPrincipal.add(mnKardex);
-
         mnbPrincipal.setBackground(Color.lightGray);
         mnInicio.add(mniLogin);
         mnInicio.add(mniSalir);
-
         this.setLayout(new BorderLayout());
         this.add(mnbPrincipal, BorderLayout.NORTH);
         this.add(dkpEscritorio, BorderLayout.CENTER);
@@ -602,10 +600,6 @@ public class FrmMenuPrincipal extends JFrame {
     }
 
     public static void main(String[] args) {
-        JFrame.setDefaultLookAndFeelDecorated(true); //que nos permite dejar a Substance la decoracion ( por asi decirlo) 
-        SubstanceLookAndFeel.setSkin("org.jvnet.substance.skin.GreenMagicSkin"); // Setencia que aplica el skin Creme de Substance
-        SubstanceLookAndFeel.setCurrentWatermark(new SubstanceImageWatermark("C:\\Users\\Usuario\\Documents\\Proyecto_Final\\ProyectoFinal\\src\\Proyecto\\Final\\Img\\cfdi-33slide.jpg"));
-        SubstanceLookAndFeel.setImageWatermarkOpacity(new Float(0.8));//valor aproximado de la opacidad por default de imageWatermark
         FrmMenuPrincipal frm = new FrmMenuPrincipal();
         frm.setVisible(true);
 

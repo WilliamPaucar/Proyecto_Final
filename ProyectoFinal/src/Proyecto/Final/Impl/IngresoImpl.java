@@ -19,13 +19,13 @@ public class IngresoImpl implements IIngreso{
                 + "(?,?,?,?,?,?,?,?)";
         List<Parametro> lstPar = new ArrayList<>();
         lstPar.add(new Parametro(1, ingreso.getIdingreso()));
-        lstPar.add(new Parametro(2, ingreso.getVendedor().getIdvendedor()));
-        lstPar.add(new Parametro(3, ingreso.getProveedor().getIdproveedor()));
-        lstPar.add(new Parametro(4, ingreso.getFecha()));
-        lstPar.add(new Parametro(5, ingreso.getTipo_comprobante()));
-        lstPar.add(new Parametro(6, ingreso.getSerie()));
-        lstPar.add(new Parametro(7, ingreso.getCorrelativo()));
-        lstPar.add(new Parametro(8, ingreso.getIgv()));
+        lstPar.add(new Parametro(7, ingreso.getVendedor().getIdvendedor()));
+        lstPar.add(new Parametro(8, ingreso.getProveedor().getIdproveedor()));
+        lstPar.add(new Parametro(2, ingreso.getFecha()));
+        lstPar.add(new Parametro(3, ingreso.getTipo_comprobante()));
+        lstPar.add(new Parametro(4, ingreso.getSerie()));
+        lstPar.add(new Parametro(5, ingreso.getCorrelativo()));
+        lstPar.add(new Parametro(6, ingreso.getIgv()));
    
   
         Conexion con = null;
@@ -53,13 +53,13 @@ public class IngresoImpl implements IIngreso{
                 + " where idingreso=?";
         List<Parametro> lstPar = new ArrayList<>();
         lstPar.add(new Parametro(1, ingreso.getIdingreso()));
-        lstPar.add(new Parametro(2, ingreso.getVendedor().getIdvendedor()));
-        lstPar.add(new Parametro(3, ingreso.getProveedor().getIdproveedor()));
-        lstPar.add(new Parametro(4, ingreso.getFecha()));
-        lstPar.add(new Parametro(5, ingreso.getTipo_comprobante()));
-        lstPar.add(new Parametro(6, ingreso.getSerie()));
-        lstPar.add(new Parametro(7, ingreso.getCorrelativo()));
-        lstPar.add(new Parametro(8, ingreso.getIgv()));
+        lstPar.add(new Parametro(7, ingreso.getVendedor().getIdvendedor()));
+        lstPar.add(new Parametro(8, ingreso.getProveedor().getIdproveedor()));
+        lstPar.add(new Parametro(2, ingreso.getFecha()));
+        lstPar.add(new Parametro(3, ingreso.getTipo_comprobante()));
+        lstPar.add(new Parametro(4, ingreso.getSerie()));
+        lstPar.add(new Parametro(5, ingreso.getCorrelativo()));
+        lstPar.add(new Parametro(6, ingreso.getIgv()));
    
    
         Conexion con = null;
@@ -114,18 +114,18 @@ public class IngresoImpl implements IIngreso{
                 ingreso.setIdingreso(rst.getInt(1));
                 
                 IVendedor vendedordao=new VendedorImpl();
-                Vendedor vendedor=vendedordao.obtener(rst.getInt(2));
+                Vendedor vendedor=vendedordao.obtener(rst.getInt(7));
                 ingreso.setVendedor(vendedor);
                 IProveedor proveedordao=new ProveedorImpl();
-                Proveedor proveedor=proveedordao.obtener(rst.getInt(3));
+                Proveedor proveedor=proveedordao.obtener(rst.getInt(8));
                 ingreso.setProveedor(proveedor);
                 
    
-                ingreso.setFecha(rst.getDate(4));
-                ingreso.setTipo_comprobante(rst.getString(5));
-                ingreso.setSerie(rst.getString(6));
-                ingreso.setCorrelativo(rst.getString(7));
-                ingreso.setIgv(rst.getFloat(8));
+                ingreso.setFecha(rst.getDate(2));
+                ingreso.setTipo_comprobante(rst.getString(3));
+                ingreso.setSerie(rst.getString(4));
+                ingreso.setCorrelativo(rst.getString(5));
+                ingreso.setIgv(rst.getFloat(6));
   
 
 
@@ -156,18 +156,16 @@ public class IngresoImpl implements IIngreso{
                 ingreso.setIdingreso(rst.getInt(1));
                 
                 IVendedor vendedordao=new VendedorImpl();
-                Vendedor vendedor=vendedordao.obtener(rst.getInt(2));
+                Vendedor vendedor=vendedordao.obtener(rst.getInt(7));
                 ingreso.setVendedor(vendedor);
                 IProveedor proveedordao=new ProveedorImpl();
-                Proveedor proveedor=proveedordao.obtener(rst.getInt(3));
+                Proveedor proveedor=proveedordao.obtener(rst.getInt(8));
                 ingreso.setProveedor(proveedor);
-                
-   
-                ingreso.setFecha(rst.getDate(4));
-                ingreso.setTipo_comprobante(rst.getString(5));
-                ingreso.setSerie(rst.getString(6));
-                ingreso.setCorrelativo(rst.getString(7));
-                ingreso.setIgv(rst.getFloat(8));
+                ingreso.setFecha(rst.getDate(2));
+                ingreso.setTipo_comprobante(rst.getString(3));
+                ingreso.setSerie(rst.getString(4));
+                ingreso.setCorrelativo(rst.getString(5));
+                ingreso.setIgv(rst.getFloat(6));
                 lista.add(ingreso);
             }
         } catch (Exception e) {

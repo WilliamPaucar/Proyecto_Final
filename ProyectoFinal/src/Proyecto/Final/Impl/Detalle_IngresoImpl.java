@@ -16,7 +16,7 @@ public class Detalle_IngresoImpl implements IDetalle_Ingreso{
     public int insertar(Detalle_Ingreso detalle_ingreso) throws Exception {
         int numFilasAfectadas = 0;
         String sql = "insert into detalle_ingreso  values "
-                + "(?,?,?,?,?)";
+                + "(?,?,?,?,?,?,?,?,?)";
         List<Parametro> lstPar = new ArrayList<>();
              lstPar.add(new Parametro(1, detalle_ingreso.getIddetalle_ingreso()));
         lstPar.add(new Parametro(2, detalle_ingreso.getIngreso().getIdingreso()));

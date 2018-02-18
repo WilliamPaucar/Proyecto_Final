@@ -44,25 +44,25 @@ public class FrmVentaNueva extends JInternalFrame{
         lblTitulo = new JLabel("DETALLE DE LA VENTA NUEVA");
                 
         lblId= new JLabel("CODIGO:");
-        lblCliente= new JLabel("ID CLIENTE:");
-        lblVendedor= new JLabel("ID VENDEDOR:");
         lblFecha= new JLabel("FECHA:");
         lblTipo_comprobante= new JLabel("TIPO DE COMPROBANTE:");
         lblSerie= new JLabel("SERIE:");
         lblCorrelativo= new JLabel("CORRELATIVO:");
         lblIgv= new JLabel("IGV:");
-        
+        lblCliente= new JLabel("ID CLIENTE:");
+        lblVendedor= new JLabel("ID VENDEDOR:");
         
         txtId = new JTextField(2);
-        cargarClientees();  
-        cmbCliente=new JComboBox(lstproveedor.toArray());
-        cargarVendedores();  
-        cmbVendedor=new JComboBox(lstvendedor.toArray());
+        
         txtFecha = new JTextField(2);
         txtTipo_comprobante = new JTextField(2);
         txtSerie = new JTextField(2);
         txtCorrelativo = new JTextField(2);
         txtIgv = new JTextField(2);
+        cargarClientees();  
+        cmbCliente=new JComboBox(lstproveedor.toArray());
+        cargarVendedores();  
+        cmbVendedor=new JComboBox(lstvendedor.toArray());
 
 
         btnLimpiar= new JButton("Limpiar");
@@ -71,10 +71,7 @@ public class FrmVentaNueva extends JInternalFrame{
         pnlSuperior.add(lblTitulo);
         pnlCentral.add(lblId);
         pnlCentral.add(txtId);
-        pnlCentral.add(lblVendedor);
-        pnlCentral.add(cmbVendedor);
-        pnlCentral.add(lblCliente);
-        pnlCentral.add(cmbCliente);
+        
         pnlCentral.add(lblFecha);
         pnlCentral.add(txtFecha);
         pnlCentral.add(lblTipo_comprobante);
@@ -85,7 +82,10 @@ public class FrmVentaNueva extends JInternalFrame{
         pnlCentral.add(txtCorrelativo);
         pnlCentral.add(lblIgv);
         pnlCentral.add(txtIgv);
-
+        pnlCentral.add(lblVendedor);
+        pnlCentral.add(cmbVendedor);
+        pnlCentral.add(lblCliente);
+        pnlCentral.add(cmbCliente);
         
         btnAceptar.addActionListener(new ActionListener() {
             @Override
@@ -117,8 +117,6 @@ public class FrmVentaNueva extends JInternalFrame{
              
             Venta venta = new Venta();
             venta.setIdventa(Integer.parseInt(txtId.getText()));
-            venta.setVendedor((Vendedor)cmbVendedor.getSelectedItem());            
-            venta.setCliente((Cliente)cmbCliente.getSelectedItem());
             DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
             try {
             venta.setFecha(format.parse(txtFecha.getText()));
@@ -130,7 +128,8 @@ public class FrmVentaNueva extends JInternalFrame{
             venta.setSerie(txtSerie.getText());
             venta.setCorrelativo(txtCorrelativo.getText());
             venta.setIgv(Float.parseFloat(txtIgv.getText()));
-
+            venta.setVendedor((Vendedor)cmbVendedor.getSelectedItem());            
+            venta.setCliente((Cliente)cmbCliente.getSelectedItem());
             IVenta ventaDao = new VentaImpl();
             
             if(ventaDao.insertar(venta)>0){
@@ -152,7 +151,6 @@ public class FrmVentaNueva extends JInternalFrame{
         try {
        IVendedor ven=new VendedorImpl();
        lstvendedor=ven.obtener();
-   
         } catch (Exception e) {System.out.println("ERROR"+e.getMessage());
         }
  

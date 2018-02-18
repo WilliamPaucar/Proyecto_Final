@@ -16,13 +16,13 @@ public class VentaImpl implements IVenta{
                 + "(?,?,?,?,?,?,?,?)";
         List<Parametro> lstPar = new ArrayList<>();
           lstPar.add(new Parametro(1, venta.getIdventa()));
-        lstPar.add(new Parametro(2, venta.getCliente().getIdcliente()));
-        lstPar.add(new Parametro(3, venta.getVendedor().getIdvendedor()));
-        lstPar.add(new Parametro(4, venta.getFecha()));
-        lstPar.add(new Parametro(5, venta.getTipo_coprobante()));
-        lstPar.add(new Parametro(6, venta.getSerie()));
-        lstPar.add(new Parametro(7, venta.getCorrelativo()));
-        lstPar.add(new Parametro(8, venta.getIgv()));
+        lstPar.add(new Parametro(7, venta.getCliente().getIdcliente()));
+        lstPar.add(new Parametro(8, venta.getVendedor().getIdvendedor()));
+        lstPar.add(new Parametro(2, venta.getFecha()));
+        lstPar.add(new Parametro(3, venta.getTipo_coprobante()));
+        lstPar.add(new Parametro(4, venta.getSerie()));
+        lstPar.add(new Parametro(5, venta.getCorrelativo()));
+        lstPar.add(new Parametro(6, venta.getIgv()));
   
         Conexion con = null;
         try {
@@ -48,14 +48,14 @@ public class VentaImpl implements IVenta{
                 + ",igv=?"
                 + " where idventa=?";
         List<Parametro> lstPar = new ArrayList<>();
-         lstPar.add(new Parametro(1, venta.getIdventa()));
-        lstPar.add(new Parametro(2, venta.getCliente().getIdcliente()));
-        lstPar.add(new Parametro(3, venta.getVendedor().getIdvendedor()));
-        lstPar.add(new Parametro(4, venta.getFecha()));
-        lstPar.add(new Parametro(5, venta.getTipo_coprobante()));
-        lstPar.add(new Parametro(6, venta.getSerie()));
-        lstPar.add(new Parametro(7, venta.getCorrelativo()));
-        lstPar.add(new Parametro(8, venta.getIgv()));
+          lstPar.add(new Parametro(1, venta.getIdventa()));
+        lstPar.add(new Parametro(7, venta.getCliente().getIdcliente()));
+        lstPar.add(new Parametro(8, venta.getVendedor().getIdvendedor()));
+        lstPar.add(new Parametro(2, venta.getFecha()));
+        lstPar.add(new Parametro(3, venta.getTipo_coprobante()));
+        lstPar.add(new Parametro(4, venta.getSerie()));
+        lstPar.add(new Parametro(5, venta.getCorrelativo()));
+        lstPar.add(new Parametro(6, venta.getIgv()));
    
         Conexion con = null;
         try {
@@ -108,17 +108,17 @@ public class VentaImpl implements IVenta{
                 venta = new Venta();
                 venta.setIdventa(rst.getInt(1));
                 ICliente clientedao=new ClienteImpl();
-                Cliente cliente=clientedao.obtener(rst.getInt(2));
+                Cliente cliente=clientedao.obtener(rst.getInt(7));
                 IVendedor vendedordao=new VendedorImpl();
-                Vendedor vendedor=vendedordao.obtener(rst.getInt(3));
+                Vendedor vendedor=vendedordao.obtener(rst.getInt(8));
                 venta.setVendedor(vendedor);
                 venta.setCliente(cliente);
                 
-                venta.setFecha(rst.getDate(4));
-                venta.setTipo_coprobante(rst.getString(5));
-                venta.setSerie(rst.getString(6));
-                venta.setCorrelativo(rst.getString(7));
-                venta.setIgv(rst.getFloat(8));
+                venta.setFecha(rst.getDate(2));
+                venta.setTipo_coprobante(rst.getString(3));
+                venta.setSerie(rst.getString(4));
+                venta.setCorrelativo(rst.getString(5));
+                venta.setIgv(rst.getFloat(6));
                 
         
 
@@ -146,19 +146,19 @@ public class VentaImpl implements IVenta{
             Venta venta=null;
             while (rst.next()) {
                 venta = new Venta();
-                 venta.setIdventa(rst.getInt(1));
+                venta.setIdventa(rst.getInt(1));
                 ICliente clientedao=new ClienteImpl();
-                Cliente cliente=clientedao.obtener(rst.getInt(2));
+                Cliente cliente=clientedao.obtener(rst.getInt(7));
                 IVendedor vendedordao=new VendedorImpl();
-                Vendedor vendedor=vendedordao.obtener(rst.getInt(3));
+                Vendedor vendedor=vendedordao.obtener(rst.getInt(8));
                 venta.setVendedor(vendedor);
                 venta.setCliente(cliente);
                 
-                venta.setFecha(rst.getDate(4));
-                venta.setTipo_coprobante(rst.getString(5));
-                venta.setSerie(rst.getString(6));
-                venta.setCorrelativo(rst.getString(7));
-                venta.setIgv(rst.getFloat(8));
+                venta.setFecha(rst.getDate(2));
+                venta.setTipo_coprobante(rst.getString(3));
+                venta.setSerie(rst.getString(4));
+                venta.setCorrelativo(rst.getString(5));
+                venta.setIgv(rst.getFloat(6));
 
                 lista.add(venta);
             }

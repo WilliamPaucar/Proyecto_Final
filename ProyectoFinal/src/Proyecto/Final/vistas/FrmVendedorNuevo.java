@@ -30,13 +30,13 @@ public class FrmVendedorNuevo extends JInternalFrame{
     JButton btnAceptar,btnLimpiar;
     
         public FrmVendedorNuevo(){
-        this.setSize(400,700);
+        this.setSize(400,600);
         this.setLayout(new BorderLayout());
      
         pnlSuperior= new JPanel();
         pnlCentral= new JPanel();
         pnlInferior= new JPanel();
-        pnlSuperior.setLayout(new GridLayout(1, 1, 5, 5));
+        pnlSuperior.setLayout(new GridLayout(1, 2, 5, 5));
         pnlCentral.setLayout(new GridLayout(12, 2, 5, 5));
         pnlInferior.setLayout(new GridLayout(1,2,5,5));     
         
@@ -67,6 +67,7 @@ public class FrmVendedorNuevo extends JInternalFrame{
         txtTelefono = new JTextField(2);
         txtEmail = new JTextField(2);
         txtUsuario = new JTextField(2);
+        txtPassword=new JTextField(2);
 
 
         btnLimpiar= new JButton("Limpiar");
@@ -79,6 +80,10 @@ public class FrmVendedorNuevo extends JInternalFrame{
         pnlCentral.add(txtNombres);
         pnlCentral.add(lblApellidos);
         pnlCentral.add(txtApellidos);
+        pnlCentral.add(lblSexo);
+        pnlCentral.add(cmbSexo);
+        pnlCentral.add(lblFechaNac);
+        pnlCentral.add(txtFecha);
         pnlCentral.add(lblAcceso);
         pnlCentral.add(txtAcceso);
         pnlCentral.add(lblNumDoc);
