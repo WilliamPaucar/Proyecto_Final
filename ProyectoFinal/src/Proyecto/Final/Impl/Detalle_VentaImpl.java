@@ -19,10 +19,10 @@ public class Detalle_VentaImpl implements IDetalleVenta{
                 + "(?,?,?,?,?)";
         List<Parametro> lstPar = new ArrayList<>();
         lstPar.add(new Parametro(1, detalle_venta.getIddetalle_venta()));
-        lstPar.add(new Parametro(2, detalle_venta.getVenta().getIdventa()));
-        lstPar.add(new Parametro(3, detalle_venta.getCantidad()));
-        lstPar.add(new Parametro(4, detalle_venta.getPrecio_venta()));
-        lstPar.add(new Parametro(5, detalle_venta.getDescuento()));
+        lstPar.add(new Parametro(5, detalle_venta.getVenta().getIdventa()));
+        lstPar.add(new Parametro(2, detalle_venta.getCantidad()));
+        lstPar.add(new Parametro(3, detalle_venta.getPrecio_venta()));
+        lstPar.add(new Parametro(4, detalle_venta.getDescuento()));
   
         Conexion con = null;
         try {
@@ -48,10 +48,10 @@ public class Detalle_VentaImpl implements IDetalleVenta{
                 + " where iddetalle_venta=?";
         List<Parametro> lstPar = new ArrayList<>();
         lstPar.add(new Parametro(1, detalle_venta.getIddetalle_venta()));
-        lstPar.add(new Parametro(2, detalle_venta.getVenta().getIdventa()));
-        lstPar.add(new Parametro(3, detalle_venta.getCantidad()));
-        lstPar.add(new Parametro(4, detalle_venta.getPrecio_venta()));
-        lstPar.add(new Parametro(5, detalle_venta.getDescuento()));
+        lstPar.add(new Parametro(5, detalle_venta.getVenta().getIdventa()));
+        lstPar.add(new Parametro(2, detalle_venta.getCantidad()));
+        lstPar.add(new Parametro(3, detalle_venta.getPrecio_venta()));
+        lstPar.add(new Parametro(4, detalle_venta.getDescuento()));
    
         Conexion con = null;
         try {
@@ -71,7 +71,7 @@ public class Detalle_VentaImpl implements IDetalleVenta{
     @Override
     public int eliminar(Detalle_Venta detalle_venta) throws Exception {
         int numFilasAfectadas = 0;
-         String sql = "DELETE * FROM detalle_venta  where iddetalle_venta=?";
+         String sql = "DELETE FROM detalle_venta  where iddetalle_venta=?";
         List<Parametro> lstPar = new ArrayList<>();
         lstPar.add(new Parametro(1, detalle_venta.getIddetalle_venta()));       
         Conexion con = null;
@@ -105,12 +105,12 @@ public class Detalle_VentaImpl implements IDetalleVenta{
                 detalle_venta.setIddetalle_venta(rst.getInt(1));
       
                 IVenta ventadao=new VentaImpl();
-                Venta venta=ventadao.obtener(rst.getInt(2));
+                Venta venta=ventadao.obtener(rst.getInt(5));
                 
                 detalle_venta.setVenta(venta);
-                detalle_venta.setCantidad(rst.getInt(3));
-                detalle_venta.setPrecio_venta(rst.getDouble(4));
-                detalle_venta.setDescuento(rst.getDouble(5));
+                detalle_venta.setCantidad(rst.getInt(2));
+                detalle_venta.setPrecio_venta(rst.getDouble(3));
+                detalle_venta.setDescuento(rst.getDouble(4));
                 
 
 
@@ -142,12 +142,12 @@ public class Detalle_VentaImpl implements IDetalleVenta{
                 detalle_venta.setIddetalle_venta(rst.getInt(1));
       
                 IVenta ventadao=new VentaImpl();
-                Venta venta=ventadao.obtener(rst.getInt(2));
+                Venta venta=ventadao.obtener(rst.getInt(5));
                 
                 detalle_venta.setVenta(venta);
-                detalle_venta.setCantidad(rst.getInt(3));
-                detalle_venta.setPrecio_venta(rst.getDouble(4));
-                detalle_venta.setDescuento(rst.getDouble(5));
+                detalle_venta.setCantidad(rst.getInt(2));
+                detalle_venta.setPrecio_venta(rst.getDouble(3));
+                detalle_venta.setDescuento(rst.getDouble(4));
 
                 lista.add(detalle_venta);
             }

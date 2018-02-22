@@ -89,8 +89,8 @@ public class FrmLogin extends JFrame{
         frmlogin.setVisible(true);
     } 
         public void btnEntrarActionListener(ActionEvent e){
-            String Usuario = "administrador";
-            String Contraseña = "12345";
+            String Usuario = "1";
+            String Contraseña = "1";
             
             
             String Pass= new String(Password.getPassword());

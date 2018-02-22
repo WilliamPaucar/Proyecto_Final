@@ -80,7 +80,7 @@ public class ProveedorImpl implements IProveedor{
     @Override
     public int eliminar(Proveedor proveedor) throws Exception {
         int numFilasAfectadas = 0;
-         String sql = "DELETE * FROM proveedor  where idproveedor=?";
+         String sql = "DELETE FROM proveedor  where idproveedor=?";
         List<Parametro> lstPar = new ArrayList<>();
         lstPar.add(new Parametro(1, proveedor.getIdproveedor()));       
         Conexion con = null;

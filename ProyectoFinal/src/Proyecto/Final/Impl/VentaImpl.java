@@ -75,7 +75,7 @@ public class VentaImpl implements IVenta{
     @Override
     public int eliminar(Venta venta) throws Exception {
         int numFilasAfectadas = 0;
-         String sql = "DELETE * FROM venta  where idventa=?";
+         String sql = "DELETE FROM venta  where idventa=?";
         List<Parametro> lstPar = new ArrayList<>();
         lstPar.add(new Parametro(1, venta.getIdventa()));       
         Conexion con = null;

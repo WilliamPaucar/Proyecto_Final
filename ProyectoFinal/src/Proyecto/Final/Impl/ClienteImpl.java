@@ -84,7 +84,7 @@ public class ClienteImpl implements ICliente{
     @Override
     public int eliminar(Cliente cliente) throws Exception {
         int numFilasAfectadas = 0;
-         String sql = "DELETE * FROM cliente  where idcliente=?";
+         String sql = "DELETE FROM cliente  where idcliente=?";
         List<Parametro> lstPar = new ArrayList<>();
         lstPar.add(new Parametro(1, cliente.getIdcliente()));       
         Conexion con = null;

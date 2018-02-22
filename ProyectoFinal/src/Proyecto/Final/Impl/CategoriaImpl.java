@@ -62,9 +62,9 @@ public class CategoriaImpl implements ICategoria{
 
     
     @Override
-    public int eliminar(Categoria categoria) throws Exception {
+    public int eliminar(Categoria categoria){
         int numFilasAfectadas = 0;
-         String sql = "DELETE * FROM categoria  where idcategoria=?";
+         String sql = "DELETE FROM categoria  where idcategoria=?";
         List<Parametro> lstPar = new ArrayList<>();
         lstPar.add(new Parametro(1, categoria.getIdcategoria()));       
         Conexion con = null;

@@ -99,6 +99,11 @@ public class Ingreso {
     public void setCorrelativo(String correlativo) {
         this.correlativo = correlativo;
     }
+
+    @Override
+    public String toString() {
+        return serie;
+    }
     
     
 }

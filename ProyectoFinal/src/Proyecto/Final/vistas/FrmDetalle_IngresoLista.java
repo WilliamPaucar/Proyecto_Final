@@ -23,10 +23,10 @@ public class FrmDetalle_IngresoLista extends JInternalFrame{
     JScrollPane jscTabla;
     DefaultTableModel modelo;
     public FrmDetalle_IngresoLista(){
-    this.setSize(800,600);
+    this.setSize(600,700);
     this.setLayout(new BorderLayout());
     this.setClosable(true);
-    lblTitulo=new JLabel("Detalle_Ingresos Ingresadas");
+    lblTitulo=new JLabel("Detalle_Ingresos");
     tabla = new JTable();
     jscTabla=new JScrollPane(tabla);
     this.add(lblTitulo,BorderLayout.NORTH);
@@ -40,22 +40,21 @@ public class FrmDetalle_IngresoLista extends JInternalFrame{
         modelo.addColumn("Articulo");
         modelo.addColumn("Precio de compra");
         modelo.addColumn("Precio de venta");
-        modelo.addColumn("Stock inicial");
+        modelo.addColumn("Stock Inicial");
         modelo.addColumn("Stock Actual");
-        modelo.addColumn("Fecha de produccion");
-        modelo.addColumn("Fecha de vencimiento");
-        
+        modelo.addColumn("Fecha produccion ");
+        modelo.addColumn("fecha de vencimiento");
         
         List<Detalle_Ingreso> lista = new ArrayList<>();
         try {
-            IDetalle_Ingreso Detalle_IngresoDao= new Detalle_IngresoImpl();
-            lista = Detalle_IngresoDao.obtener();
+            IDetalle_Ingreso detalle_ingresoDao= new Detalle_IngresoImpl();
+            lista = detalle_ingresoDao.obtener();
         } catch (Exception e) {
         JOptionPane.showMessageDialog(this,e.getMessage(),"ERROR"+e.getMessage(),JOptionPane.ERROR_MESSAGE);
         }
         
         for(Detalle_Ingreso est:lista){
-            modelo.addRow(new Object[]{est.getIddetalle_ingreso(),est.getIngreso().getIdingreso(),est.getArticulo().getNombre(),est.getPrecio_compra(),est.getPrecio_venta(),est.getStock_inicial(),est.getStock_actual(),est.getFecha_produccion(),est.getFecha_vencimiento()});
+            modelo.addRow(new Object[]{est.getIddetalle_ingreso(),est.getIngreso().getIdingreso(),est.getArticulo().getIdarticulo(),est.getPrecio_compra(),est.getPrecio_venta(),est.getStock_inicial(),est.getStock_actual(),est.getFecha_produccion(),est.getFecha_vencimiento()});
         }
         tabla.setModel(modelo);
     }

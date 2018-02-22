@@ -80,7 +80,7 @@ public class IngresoImpl implements IIngreso{
     @Override
     public int eliminar(Ingreso ingreso) throws Exception {
         int numFilasAfectadas = 0;
-         String sql = "DELETE * FROM ingreso  where idingreso=?";
+         String sql = "DELETE FROM ingreso  where idingreso=?";
         List<Parametro> lstPar = new ArrayList<>();
         lstPar.add(new Parametro(1, ingreso.getIdingreso()));       
         Conexion con = null;

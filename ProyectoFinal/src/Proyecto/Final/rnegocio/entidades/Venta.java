@@ -98,5 +98,10 @@ public class Venta {
     public void setCorrelativo(String correlativo) {
         this.correlativo = correlativo;
     }
+
+    @Override
+    public String toString() {
+        return serie;
+    }
     
 }

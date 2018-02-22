@@ -23,7 +23,7 @@ public class FrmDetalle_VentaLista extends JInternalFrame{
     JScrollPane jscTabla;
     DefaultTableModel modelo;
     public FrmDetalle_VentaLista(){
-    this.setSize(800,600);
+    this.setSize(600,500);
     this.setLayout(new BorderLayout());
     this.setClosable(true);
     lblTitulo=new JLabel("Detalle_Ventas Ingresadas");

@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package Proyecto.Final.Impl;
-
 import Proyecto.Final.accesodatos.*;
 import Proyecto.Final.dao.*;
 import Proyecto.Final.rnegocio.entidades.*;
@@ -15,8 +14,7 @@ public class Detalle_IngresoImpl implements IDetalle_Ingreso{
    @Override
     public int insertar(Detalle_Ingreso detalle_ingreso) throws Exception {
         int numFilasAfectadas = 0;
-        String sql = "insert into detalle_ingreso  values "
-                + "(?,?,?,?,?,?,?,?,?)";
+        String sql = "insert into detalle_ingreso  values(?,?,?,?,?,?,?,?,?)";
         List<Parametro> lstPar = new ArrayList<>();
              lstPar.add(new Parametro(1, detalle_ingreso.getIddetalle_ingreso()));
         lstPar.add(new Parametro(2, detalle_ingreso.getIngreso().getIdingreso()));
@@ -82,7 +80,7 @@ public class Detalle_IngresoImpl implements IDetalle_Ingreso{
     @Override
     public int eliminar(Detalle_Ingreso detalle_ingreso) throws Exception {
         int numFilasAfectadas = 0;
-         String sql = "DELETE * FROM detalle_ingreso  where idartidulo=?";
+         String sql = "DELETE FROM detalle_ingreso  where idartidulo=?";
         List<Parametro> lstPar = new ArrayList<>();
         lstPar.add(new Parametro(1, detalle_ingreso.getIddetalle_ingreso()));       
         Conexion con = null;
@@ -120,7 +118,7 @@ public class Detalle_IngresoImpl implements IDetalle_Ingreso{
                 detalle_ingreso.setIngreso(ingreso);
                 IArticulo articulodao=new ArticuloImpl();
                 Articulo articulo=articulodao.obtener(rst.getInt(3));
-                
+                detalle_ingreso.setArticulo(articulo);
                 detalle_ingreso.setPrecio_compra(rst.getDouble(4));
                 detalle_ingreso.setPrecio_venta(rst.getDouble(5));
                 detalle_ingreso.setStock_inicial(rst.getInt(6));
@@ -159,7 +157,7 @@ public class Detalle_IngresoImpl implements IDetalle_Ingreso{
                 detalle_ingreso.setIngreso(ingreso);
                 IArticulo articulodao=new ArticuloImpl();
                 Articulo articulo=articulodao.obtener(rst.getInt(3));
-                
+                detalle_ingreso.setArticulo(articulo);
                 detalle_ingreso.setPrecio_compra(rst.getDouble(4));
                 detalle_ingreso.setPrecio_venta(rst.getDouble(5));
                 detalle_ingreso.setStock_inicial(rst.getInt(6));
