@@ -26,7 +26,7 @@ public class FrmDetalle_IngresoLista extends JInternalFrame{
     this.setSize(600,700);
     this.setLayout(new BorderLayout());
     this.setClosable(true);
-    lblTitulo=new JLabel("Detalle_Ingresos");
+    lblTitulo=new JLabel("Detalle Ingresos");
     tabla = new JTable();
     jscTabla=new JScrollPane(tabla);
     this.add(lblTitulo,BorderLayout.NORTH);
@@ -54,7 +54,8 @@ public class FrmDetalle_IngresoLista extends JInternalFrame{
         }
         
         for(Detalle_Ingreso est:lista){
-            modelo.addRow(new Object[]{est.getIddetalle_ingreso(),est.getIngreso().getIdingreso(),est.getArticulo().getIdarticulo(),est.getPrecio_compra(),est.getPrecio_venta(),est.getStock_inicial(),est.getStock_actual(),est.getFecha_produccion(),est.getFecha_vencimiento()});
+            modelo.addRow(new Object[]{est.getIddetalle_ingreso(),est.getIngreso().getIdingreso(),est.getArticulo().getIdarticulo(),est.getPrecio_compra()
+                    ,est.getPrecio_venta(),est.getStock_inicial(),est.getStock_actual(),est.getFecha_produccion(),est.getFecha_vencimiento()});
         }
         tabla.setModel(modelo);
     }
