@@ -10,10 +10,6 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import org.jvnet.substance.SubstanceLookAndFeel;
 import org.jvnet.substance.watermark.SubstanceImageWatermark;
-/**
- *
- * @author FABRICIO CONSTANTE
- */
 public class FrmLogin extends JFrame{
     JLabel lblTitulo,lblId,lblNombre,lblTitulo0;
     JTextField txtUsuario;
