@@ -11,6 +11,8 @@ public interface ICliente {
     public int eliminar(Cliente cliente) throws Exception;
 
     public Cliente obtener(int codigo) throws Exception;
+    
+    public Cliente obtener_x_nombre(String nombre) throws Exception;
 
     public List<Cliente> obtener() throws Exception;
 

@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import org.w3c.dom.events.MouseEvent;
 
 
 public class FrmClienteLista extends JInternalFrame {
@@ -17,14 +18,16 @@ public class FrmClienteLista extends JInternalFrame {
     JTable tabla;
     DefaultTableModel modelo;
     public FrmClienteLista(){
-        this.setSize(800, 600);
+        this.setSize(852, 600);
         this.setLayout(new BorderLayout());
-        this.setClosable(true);
+        this.setClosable(false);
         this.setBackground(Color.getHSBColor(100,60,270).brighter());
         lblTitulo=new JLabel("CLIENTES REGISTRADOS ");
         tabla= new JTable();
         this.add(lblTitulo,BorderLayout.NORTH);
         this.add(tabla,BorderLayout.NORTH);
+        
+        
         cargarTabla();  
     }
         public void cargarTabla(){
@@ -60,5 +63,5 @@ public class FrmClienteLista extends JInternalFrame {
             ,clt.getTelefono(),clt.getEmail()});
         }
         tabla.setModel(modelo);
-    }
-}
+            
+}}

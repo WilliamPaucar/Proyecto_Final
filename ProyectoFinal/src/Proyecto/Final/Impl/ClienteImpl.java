@@ -45,6 +45,41 @@ public class ClienteImpl implements ICliente{
         }
         return numFilasAfectadas;
     }
+    
+    @Override
+    public Cliente obtener_x_nombre(String nombre) throws Exception {
+        Cliente cliente = null;
+        String sql = "SELECT * FROM cliente where nombres =?";
+        List<Parametro> lstPar = new ArrayList<>();
+        lstPar.add(new Parametro(1, nombre));
+        Conexion con = null;
+        try {
+            con = new Conexion();
+            con.conectar();
+            ResultSet rst = con.ejecutaQuery(sql, lstPar);
+            while (rst.next()) {
+                cliente = new Cliente();
+                cliente.setIdcliente(rst.getInt(1));
+                cliente.setNombres(rst.getString(2));
+                cliente.setApellidos(rst.getString(3));
+                cliente.setSexo(rst.getString(4));
+                cliente.setFecha_nacimiento(rst.getDate(5));
+                cliente.setTipo_documento(rst.getString(6));
+                cliente.setNum_documento(rst.getString(7));
+                cliente.setDireccion(rst.getString(8));
+                cliente.setTelefono(rst.getString(9));
+                cliente.setEmail(rst.getString(10));
+
+
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            if(con!=null)
+            con.desconectar();
+        }
+        return cliente;
+    }
 
     @Override
     
