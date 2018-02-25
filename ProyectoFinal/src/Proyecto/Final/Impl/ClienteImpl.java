@@ -86,20 +86,20 @@ public class ClienteImpl implements ICliente{
     public int modificar(Cliente cliente) throws Exception {
         int numFilasAfectadas = 0;
         String sql = "UPDATE cliente"
-                + "   SET idcliente=?, nombre=?, apellido=?, sexo=?, fecha_nacimiento=?, tipo_documento=?"
-                + ", numero_documento=?, direccion=?, telefono=?, email=?"
+                + "   SET nombres=?, apellidos=?, sexo=?, fecha_nacimiento=?, tipo_documento=?"
+                + ", num_documento=?, direccion=?, telefono=?, email=?"
                 + " where idcliente=?";
         List<Parametro> lstPar = new ArrayList<>();
-        lstPar.add(new Parametro(1, cliente.getIdcliente()));
-        lstPar.add(new Parametro(2, cliente.getNombres()));
-        lstPar.add(new Parametro(3, cliente.getApellidos()));
-        lstPar.add(new Parametro(4, cliente.getSexo()));
-        lstPar.add(new Parametro(5, cliente.getFecha_nacimiento()));
-        lstPar.add(new Parametro(6, cliente.getTipo_documento()));
-        lstPar.add(new Parametro(7, cliente.getNum_documento()));
-        lstPar.add(new Parametro(8, cliente.getDireccion()));
-        lstPar.add(new Parametro(9, cliente.getTelefono()));
-        lstPar.add(new Parametro(10, cliente.getEmail()));
+        lstPar.add(new Parametro(10, cliente.getIdcliente()));
+        lstPar.add(new Parametro(1, cliente.getNombres()));
+        lstPar.add(new Parametro(2, cliente.getApellidos()));
+        lstPar.add(new Parametro(3, cliente.getSexo()));
+        lstPar.add(new Parametro(4, cliente.getFecha_nacimiento()));
+        lstPar.add(new Parametro(5, cliente.getTipo_documento()));
+        lstPar.add(new Parametro(6, cliente.getNum_documento()));
+        lstPar.add(new Parametro(7, cliente.getDireccion()));
+        lstPar.add(new Parametro(8, cliente.getTelefono()));
+        lstPar.add(new Parametro(9, cliente.getEmail()));
    
         Conexion con = null;
         try {

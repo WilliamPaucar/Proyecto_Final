@@ -21,7 +21,7 @@ public class FrmClienteLista extends JInternalFrame {
         this.setSize(852, 600);
         this.setLayout(new BorderLayout());
         this.setClosable(false);
-        this.setBackground(Color.getHSBColor(100,60,270).brighter());
+        this.setBackground(Color.BLACK);
         lblTitulo=new JLabel("CLIENTES REGISTRADOS ");
         tabla= new JTable();
         this.add(lblTitulo,BorderLayout.NORTH);

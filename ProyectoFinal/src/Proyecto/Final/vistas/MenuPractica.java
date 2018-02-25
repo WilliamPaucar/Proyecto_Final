@@ -410,6 +410,7 @@ public class MenuPractica extends javax.swing.JFrame {
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
         // TODO add your handling code here:
         limpiar();
+        txtCodigo.setEnabled(true);
 
     }//GEN-LAST:event_btnNuevoActionPerformed
 
@@ -470,6 +471,7 @@ public class MenuPractica extends javax.swing.JFrame {
                     "Error", JOptionPane.ERROR_MESSAGE);
 
         }
+        txtCodigo.setEnabled(false);
     }//GEN-LAST:event_btnBuscarNombreActionPerformed
 
     private void btnBuscarCodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarCodActionPerformed
@@ -494,6 +496,7 @@ public class MenuPractica extends javax.swing.JFrame {
                     "Error", JOptionPane.ERROR_MESSAGE);
 
         }
+        txtCodigo.setEnabled(false);
     }//GEN-LAST:event_btnBuscarCodActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
@@ -520,19 +523,7 @@ public class MenuPractica extends javax.swing.JFrame {
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
         // TODO add your handling code here:
-        ICliente clientedao= new ClienteImpl();
-           int respuesta = JOptionPane.YES_NO_CANCEL_OPTION;
-        try {
-                 if(clientedao.modificar(clienteB)>1){
-                          
-   
-            respuesta = JOptionPane.showConfirmDialog(null, "Esta Seguro que desea modificar el Cliente "
-                    + clienteB.getIdcliente()+ " ?" + respuesta);
-                 }
-                 
-        } catch (Exception e) {        System.out.println("Error al modificar:"+e.getMessage());
-        }
-   
+        btnModificarActionListener(evt);
         
     }//GEN-LAST:event_btnModificarActionPerformed
 
@@ -615,6 +606,7 @@ public class MenuPractica extends javax.swing.JFrame {
 
     }
 
+    
     public void limpiar() {
         txtApellido.setText("");
         txtNombre.setText("");
@@ -626,6 +618,45 @@ public class MenuPractica extends javax.swing.JFrame {
         txtDocumento.setText("");
 
     }
+    public void btnModificarActionListener(ActionEvent e){
+             try {
+
+            Cliente cliente = new Cliente();
+            cliente.setIdcliente(Integer.parseInt(txtCodigo.getText()));
+            cliente.setNombres(txtNombre.getText());
+            cliente.setApellidos(txtApellido.getText());
+            cliente.setSexo(cmbGenero.getSelectedIndex() == 1 ? "m" : "f");
+            DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+            try {
+                cliente.setFecha_nacimiento(format.parse(txtFechaNacimineto.getText()));
+            } catch (Exception x) {
+                JOptionPane.showMessageDialog(this, "Error de fecha!!",
+                        "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
+
+            cliente.setTipo_documento(cmbDocumento.getSelectedIndex() == 1 ? "CEDULA" : "PASAPORTE");
+            cliente.setNum_documento(txtDocumento.getText());
+            cliente.setDireccion(txtDireccion.getText());
+            cliente.setTelefono(txtTelefono.getText());
+            cliente.setEmail(txtEmail.getText());
+            ICliente clienteDao = new ClienteImpl();
+
+            if (clienteDao.modificar(cliente) > 0) {
+                JOptionPane.showMessageDialog(this, "Registro Correcto!!",
+                        "Transacción correcta", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Error al modificar!!",
+                        "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
+
+        } catch (Exception x) {
+            JOptionPane.showMessageDialog(this, "Proceso incorrecto!!" + x.getMessage(),
+                    "Transacción", JOptionPane.INFORMATION_MESSAGE);
+
+        }
+        
+       
+            }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizar;
