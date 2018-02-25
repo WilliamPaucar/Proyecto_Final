@@ -224,7 +224,7 @@ public class MenuPractica extends javax.swing.JFrame {
                             .addComponent(txtFechaNacimineto, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cmbDocumento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cmbGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 44, Short.MAX_VALUE)))
+                        .addGap(0, 69, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -292,7 +292,7 @@ public class MenuPractica extends javax.swing.JFrame {
         jdkListar.setLayout(jdkListarLayout);
         jdkListarLayout.setHorizontalGroup(
             jdkListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 862, Short.MAX_VALUE)
         );
         jdkListarLayout.setVerticalGroup(
             jdkListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
