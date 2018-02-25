@@ -7,6 +7,7 @@ package Proyecto.Final.rnegocio.entidades;
 
 import java.util.Date;
 
+
 /**
  *
  * @author WILCXMAC
