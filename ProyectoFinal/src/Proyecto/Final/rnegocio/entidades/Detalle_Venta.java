@@ -66,5 +66,13 @@ public class Detalle_Venta {
     public void setPrecio_venta(double precio_venta) {
         this.precio_venta = precio_venta;
     }
+
+    public String getIdkardex() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Object getDetalle_Ingreso() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
