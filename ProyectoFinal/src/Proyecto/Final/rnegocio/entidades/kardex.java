@@ -5,6 +5,8 @@
  */
 package Proyecto.Final.rnegocio.entidades;
 
+import java.util.Date;
+
 /**
  *
  * @author WILCXMAC
@@ -13,7 +15,7 @@ public class kardex {
     private int idkardex;
     private Detalle_Ingreso detalle_ingreso;
     private Detalle_Venta detalle_venta;
-
+   
     public kardex() {
     }
 
@@ -21,7 +23,10 @@ public class kardex {
         this.idkardex = idkardex;
         this.detalle_ingreso = detalle_ingreso;
         this.detalle_venta = detalle_venta;
+       
     }
+
+
 
     public Detalle_Venta getDetalle_venta() {
         return detalle_venta;
@@ -46,5 +51,8 @@ public class kardex {
     public void setDetalle_ingreso(Detalle_Ingreso detalle_ingreso) {
         this.detalle_ingreso = detalle_ingreso;
     }
+
+
+    
     
 }

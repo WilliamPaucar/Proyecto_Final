@@ -6,6 +6,7 @@ import Proyecto.Final.accesodatos.*;
 import Proyecto.Final.dao.*;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.*;
@@ -13,26 +14,24 @@ import javax.swing.table.DefaultTableModel;
 import org.w3c.dom.events.MouseEvent;
 
 
-public class FrmClienteLista extends JInternalFrame {
+public class FrmClienteLista extends JInternalFrame{
     JLabel lblTitulo;
     JTable tabla;
     DefaultTableModel modelo;
     public FrmClienteLista(){
-        this.setSize(852, 600);
+        this.setSize(852,300);
         this.setLayout(new BorderLayout());
-        this.setClosable(false);
+
         this.setBackground(Color.BLACK);
         lblTitulo=new JLabel("CLIENTES REGISTRADOS ");
         tabla= new JTable();
         this.add(lblTitulo,BorderLayout.NORTH);
         this.add(tabla,BorderLayout.NORTH);
         
-        
+
         cargarTabla();  
     }
         public void cargarTabla(){
-
-
         modelo = new DefaultTableModel();
         modelo.addColumn("");
         modelo.addColumn("");
@@ -44,8 +43,7 @@ public class FrmClienteLista extends JInternalFrame {
         modelo.addColumn("");
         modelo.addColumn("");
         modelo.addColumn("");
-     
-   
+
         modelo.addRow(new Object[]{"idcliente","nombres","apellidos","sexo","fecha_nacimiento","tipo_documento","num_documento",
         "direccion","telefono","email"});
      

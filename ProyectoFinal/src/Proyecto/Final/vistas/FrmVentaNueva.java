@@ -21,12 +21,14 @@ import javax.swing.*;
  * @author FABRICIO CONSTANTE
  */
 public class FrmVentaNueva extends JInternalFrame{
-    JLabel lblTitulo,lblId,lblCliente,lblVendedor,lblFecha,lblTipo_comprobante,lblSerie,lblCorrelativo,lblIgv;
+    JLabel lblTitulo,lblId,lblCliente,lblVendedor,lblFecha,lblTipo_comprobante,lblSerie,lblCorrelativo,lblIgv,lblArticulo;
     JTextField txtId,txtFecha,txtTipo_comprobante,txtSerie,txtCorrelativo,txtIgv;
     List<Cliente> lstproveedor;
     JComboBox<Cliente> cmbCliente;
     List<Vendedor> lstvendedor;
     JComboBox<Vendedor> cmbVendedor;
+        List<Articulo> lstarticulo;
+    JComboBox<Articulo> cmbArticulo;
     JPanel pnlSuperior,pnlCentral,pnlInferior;
     JButton btnAceptar,btnLimpiar;
     
@@ -38,7 +40,7 @@ public class FrmVentaNueva extends JInternalFrame{
         pnlCentral= new JPanel();
         pnlInferior= new JPanel();
         pnlSuperior.setLayout(new GridLayout(1, 1, 5, 5));
-        pnlCentral.setLayout(new GridLayout(8, 2, 5, 5));
+        pnlCentral.setLayout(new GridLayout(9, 2, 5, 5));
         pnlInferior.setLayout(new GridLayout(1,2,5,5));     
         
         lblTitulo = new JLabel("DETALLE DE LA VENTA NUEVA");
@@ -51,7 +53,7 @@ public class FrmVentaNueva extends JInternalFrame{
         lblIgv= new JLabel("IGV:");
         lblCliente= new JLabel("ID CLIENTE:");
         lblVendedor= new JLabel("ID VENDEDOR:");
-        
+        lblArticulo= new JLabel("ID ARTICULO:");
         txtId = new JTextField(2);
         
         txtFecha = new JTextField(2);
@@ -63,7 +65,8 @@ public class FrmVentaNueva extends JInternalFrame{
         cmbCliente=new JComboBox(lstproveedor.toArray());
         cargarVendedores();  
         cmbVendedor=new JComboBox(lstvendedor.toArray());
-
+        cargarArticulo();  
+        cmbArticulo=new JComboBox(lstarticulo.toArray());
 
         btnLimpiar= new JButton("Limpiar");
         btnAceptar= new JButton("Aceptar");
@@ -86,6 +89,8 @@ public class FrmVentaNueva extends JInternalFrame{
         pnlCentral.add(cmbVendedor);
         pnlCentral.add(lblCliente);
         pnlCentral.add(cmbCliente);
+        pnlCentral.add(lblArticulo);
+        pnlCentral.add(cmbArticulo);
         
         btnAceptar.addActionListener(new ActionListener() {
             @Override
@@ -130,6 +135,7 @@ public class FrmVentaNueva extends JInternalFrame{
             venta.setIgv(Float.parseFloat(txtIgv.getText()));
             venta.setVendedor((Vendedor)cmbVendedor.getSelectedItem());            
             venta.setCliente((Cliente)cmbCliente.getSelectedItem());
+            venta.setArticulo((Articulo)cmbArticulo.getSelectedItem());
             IVenta ventaDao = new VentaImpl();
             
             if(ventaDao.insertar(venta)>0){
@@ -155,6 +161,15 @@ public class FrmVentaNueva extends JInternalFrame{
         }
  
     }
+        public void cargarArticulo() {
+        try {
+       IArticulo art=new ArticuloImpl();
+       lstarticulo=art.obtener();
+        } catch (Exception e) {System.out.println("ERROR"+e.getMessage());
+        }
+ 
+    }
+        
         public void cargarClientees() {
         try {
        ICliente art=new ClienteImpl();

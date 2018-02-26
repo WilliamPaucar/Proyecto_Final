@@ -21,7 +21,7 @@ import javax.swing.*;
  * @author FABRICIO CONSTANTE
  */
 public class FrmIngresoNuevo extends JInternalFrame{
-    JLabel lblTitulo,lblId,lblVendedor,lblProveedor,lblFecha,lblTipo_comprobante,lblSerie,lblCorrelativo,lblIgv;
+    JLabel lblTitulo,lblId,lblVendedor,lblProveedor,lblFecha,lblTipo_comprobante,lblSerie,lblCorrelativo,lblIgv ;
     JTextField txtId,txtFecha,txtTipo_comprobante,txtSerie,txtCorrelativo,txtIgv;
     List<Vendedor> lstvendedor;
     JComboBox<Vendedor> cmbVendedor;

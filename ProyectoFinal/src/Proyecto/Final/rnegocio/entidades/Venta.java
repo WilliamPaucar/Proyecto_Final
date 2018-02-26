@@ -15,6 +15,7 @@ public class Venta {
     private int idventa;
     private Cliente cliente;
     private Vendedor vendedor;
+    private Articulo articulo;
     private Date fecha;
     private String tipo_coprobante;
     private String serie;
@@ -24,16 +25,19 @@ public class Venta {
     public Venta() {
     }
 
-    public Venta(int idventa, Cliente cliente, Vendedor vendedor, Date fecha, String tipo_coprobante, String serie, String correlativo, float igv) {
+    public Venta(int idventa, Cliente cliente, Vendedor vendedor, Articulo articulo, Date fecha, String tipo_coprobante, String serie, String correlativo, float igv) {
         this.idventa = idventa;
         this.cliente = cliente;
         this.vendedor = vendedor;
+        this.articulo = articulo;
         this.fecha = fecha;
         this.tipo_coprobante = tipo_coprobante;
         this.serie = serie;
         this.correlativo = correlativo;
         this.igv = igv;
     }
+
+    
 
     public float getIgv() {
         return igv;
@@ -102,6 +106,14 @@ public class Venta {
     @Override
     public String toString() {
         return serie;
+    }
+
+    public Articulo getArticulo() {
+        return articulo;
+    }
+
+    public void setArticulo(Articulo articulo) {
+        this.articulo = articulo;
     }
     
 }

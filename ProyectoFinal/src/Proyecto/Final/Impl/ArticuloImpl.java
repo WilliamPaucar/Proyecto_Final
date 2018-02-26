@@ -89,7 +89,7 @@ public class ArticuloImpl implements IArticulo{
     @Override
     public Articulo obtener(int codigo) throws Exception {
         Articulo articulo = null;
-        String sql = "SELECT * FROM articulo where codigo=?;";
+        String sql = "SELECT * FROM articulo where idarticulo=?;";
         List<Parametro> lstPar = new ArrayList<>();
         lstPar.add(new Parametro(1, codigo));
         Conexion con = null;

@@ -25,6 +25,7 @@ public class FrmDetalle_VentaNueva extends JInternalFrame{
     JTextField txtId,txtCantidad,txtPrecio_venta,txtDescuento;
     List<Venta> lstventa;
     JComboBox<Venta> cmbVenta;
+
     JPanel pnlSuperior,pnlCentral,pnlInferior;
     JButton btnAceptar,btnLimpiar;
     

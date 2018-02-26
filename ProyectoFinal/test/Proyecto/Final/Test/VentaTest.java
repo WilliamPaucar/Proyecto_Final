@@ -31,7 +31,9 @@ public class VentaTest {
         Vendedor vendedor = vendedorDao.obtener(1);
         ICliente clienteDao = new  ClienteImpl();
         Cliente cliente = clienteDao.obtener(1);
-        Venta venta = new Venta(3, cliente,vendedor,new Date(),"Egresos","NC",  "Tiendas", 14 );
+        IArticulo articuloDao = new  ArticuloImpl();
+        Articulo articulo = articuloDao.obtener(1);
+        Venta venta = new Venta(3, cliente,vendedor,articulo,new Date(),"Egresos","NC",  "Tiendas", 14);
 
         try{
             filasAfectadas = ventaDao.insertar(venta);

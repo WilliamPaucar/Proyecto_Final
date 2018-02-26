@@ -19,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author WILCXMAC
  */
-public class FrmVentaLista extends JInternalFrame{
+public class FrmVentaLista extends JFrame{
     
     JLabel lblTitulo;
     JTable tabla;
@@ -27,7 +27,7 @@ public class FrmVentaLista extends JInternalFrame{
     public FrmVentaLista(){
         this.setSize(800, 600);
         this.setLayout(new BorderLayout());
-        this.setClosable(true);
+//        this.setClosable(true);
         this.setBackground(Color.getHSBColor(100,60,270).brighter());
         lblTitulo=new JLabel("VENTAS REGISTRADAS ");
         tabla= new JTable();
@@ -47,8 +47,9 @@ public class FrmVentaLista extends JInternalFrame{
         modelo.addColumn("");
         modelo.addColumn("");
         modelo.addColumn("");
+        modelo.addColumn("");
    
-        modelo.addRow(new Object[]{"ID","COD_CLENTE","COD_VENDEDOR","FECHA","TIPO DE COMPROBANTE","SERIE","CORRELATIVO",
+        modelo.addRow(new Object[]{"ID","COD_CLENTE","COD_VENDEDOR","COD_ARTICULO","FECHA","TIPO DE COMPROBANTE","SERIE","CORRELATIVO",
         "IGV"});
         
         List<Venta> list = new ArrayList<>();
@@ -59,9 +60,13 @@ public class FrmVentaLista extends JInternalFrame{
             JOptionPane.showMessageDialog(this, e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
         }
         for(Venta vent : list){
-            modelo.addRow(new Object[]{vent.getIdventa(),vent.getCliente(),vent.getVendedor(),vent.getFecha(),
+            modelo.addRow(new Object[]{vent.getIdventa(),vent.getCliente(),vent.getVendedor(),vent.getArticulo(),vent.getFecha(),
                 vent.getTipo_coprobante(),vent.getSerie(),vent.getCorrelativo(),vent.getIgv()});
         }
         tabla.setModel(modelo);
+    }
+    public static void main(String[] args) {
+        FrmVentaLista frm=new FrmVentaLista();
+        frm.setVisible(true);
     }
 }

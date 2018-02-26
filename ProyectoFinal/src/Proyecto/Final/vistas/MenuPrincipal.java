@@ -129,6 +129,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jButtonKardex1.setContentAreaFilled(false);
         jButtonKardex1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonKardex1.setPreferredSize(new java.awt.Dimension(67, 67));
+        jButtonKardex1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonKardex1ActionPerformed(evt);
+            }
+        });
 
         jLabelArticulo1.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         jLabelArticulo1.setForeground(new java.awt.Color(0, 51, 102));
@@ -331,6 +336,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         dispose();
 
     }//GEN-LAST:event_jButtonCliente1ActionPerformed
+
+    private void jButtonKardex1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonKardex1ActionPerformed
+        // TODO add your handling code here:
+        JfrmKardex menu = new JfrmKardex();
+        menu.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButtonKardex1ActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
