@@ -51,7 +51,7 @@ public class VendedorImpl implements IVendedor{
     public int modificar(Vendedor vendedor) throws Exception {
         int numFilasAfectadas = 0;
         String sql = "UPDATE vendedor"
-                + "   SET idvendedor=?, nombres=?, apellidos=?, sexo=?, fecha_nacimiento=?"
+                + "    nombres=?, apellidos=?, sexo=?, fecha_nacimiento=?"
                 + ", numero_documento=?, direccion=?, telefono=?, email=?, acceso=?, usuario=?, password=?"
                 + " where idvendedor=?";
         List<Parametro> lstPar = new ArrayList<>();
@@ -140,7 +140,41 @@ public class VendedorImpl implements IVendedor{
         }
         return vendedor;
     }
+@Override
+    public Vendedor obtener_x_nombre(String nombre) throws Exception {
+        Vendedor vendedor = null;
+        String sql = "SELECT * FROMvendedor where nombre =?";
+        List<Parametro> lstPar = new ArrayList<>();
+        lstPar.add(new Parametro(1, nombre));
+        Conexion con = null;
+        try {
+            con = new Conexion();
+            con.conectar();
+            ResultSet rst = con.ejecutaQuery(sql, lstPar);
+            while (rst.next()) {
+               vendedor = new Vendedor();
+               vendedor.setIdvendedor(rst.getInt(1));
+                vendedor.setNombres(rst.getString(2));
+                vendedor.setApellidos(rst.getString(3));
+                vendedor.setSexo(rst.getString(4));
+                vendedor.setFecha_nacimiento(rst.getDate(5));
+                vendedor.setNumero_documento(rst.getString(6));
+                vendedor.setDireccion(rst.getString(7));
+                vendedor.setTelefono(rst.getString(8));
+                vendedor.setEmail(rst.getString(9));
+                vendedor.setAcceso(rst.getString(10));
+                vendedor.setUsuario(rst.getString(11));
+                vendedor.setPassword(rst.getString(12));
 
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            if(con!=null)
+            con.desconectar();
+        }
+        return vendedor;
+    }
     
     @Override
     
@@ -177,6 +211,9 @@ public class VendedorImpl implements IVendedor{
         }
         return lista;
     }
+     
+
+
 }
 
 

@@ -13,6 +13,7 @@ public interface ICategoria {
         public int modificar(Categoria categoria) throws Exception;
        public int eliminar(Categoria categoria) throws Exception;
     public Categoria obtener(int codigo) throws Exception;
+     public Categoria obtener_x_nombre(String nombre) throws Exception;
     public List<Categoria> obtener() throws Exception;
     
 }

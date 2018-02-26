@@ -31,7 +31,37 @@ public class CategoriaImpl implements ICategoria{
             }
         }
         return numFilasAfectadas;
+    }  
+    
+    @Override
+    public Categoria obtener_x_nombre(String nombre) throws Exception {
+        Categoria categoria = null;
+        String sql = "SELECT * FROM categoria where nombre =?";
+        List<Parametro> lstPar = new ArrayList<>();
+        lstPar.add(new Parametro(1, nombre));
+        Conexion con = null;
+        try {
+            con = new Conexion();
+            con.conectar();
+            ResultSet rst = con.ejecutaQuery(sql, lstPar);
+            while (rst.next()) {
+                categoria = new Categoria();
+                categoria.setIdcategoria(rst.getInt(1));
+                categoria.setNombre(rst.getString(2));
+                categoria.setDescripcion(rst.getString(3));
+               
+
+
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            if(con!=null)
+            con.desconectar();
+        }
+        return categoria;
     }
+
 
     @Override
     
