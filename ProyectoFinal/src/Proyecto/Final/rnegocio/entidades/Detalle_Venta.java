@@ -15,17 +15,20 @@ public class Detalle_Venta {
     private int cantidad;
     private double precio_venta;
     private double descuento;
-
+    private Articulo articulo;
     public Detalle_Venta() {
     }
 
-    public Detalle_Venta(int iddetalle_venta, Venta venta, int cantidad, double precio_venta, double descuento) {
+    public Detalle_Venta(int iddetalle_venta, Venta venta, int cantidad, double precio_venta, double descuento, Articulo articulo) {
         this.iddetalle_venta = iddetalle_venta;
         this.venta = venta;
         this.cantidad = cantidad;
         this.precio_venta = precio_venta;
         this.descuento = descuento;
+        this.articulo = articulo;
     }
+
+  
 
     public double getDescuento() {
         return descuento;
@@ -73,6 +76,14 @@ public class Detalle_Venta {
 
     public Object getDetalle_Ingreso() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Articulo getArticulo() {
+        return articulo;
+    }
+
+    public void setArticulo(Articulo articulo) {
+        this.articulo = articulo;
     }
     
 }
