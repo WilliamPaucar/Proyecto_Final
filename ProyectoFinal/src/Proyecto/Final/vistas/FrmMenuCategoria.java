@@ -43,11 +43,10 @@ Categoria categoriaB = new Categoria();
         jLabel4 = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
         txtNombre = new javax.swing.JTextField();
-        txtDescripcion = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        txtDireccion = new javax.swing.JTextArea();
+        Descripcion = new javax.swing.JLabel();
         btnBuscarCod = new javax.swing.JButton();
         btnBuscarNombre = new javax.swing.JButton();
+        txtDescripcion = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         btnNuevo = new javax.swing.JButton();
@@ -78,13 +77,8 @@ Categoria categoriaB = new Categoria();
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setText("NOMBRE");
 
-        txtDescripcion.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        txtDescripcion.setText("DESCRIPCION");
-
-        txtDireccion.setColumns(20);
-        txtDireccion.setRows(4);
-        txtDireccion.setTabSize(6);
-        jScrollPane3.setViewportView(txtDireccion);
+        Descripcion.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Descripcion.setText("DESCRIPCION");
 
         btnBuscarCod.setText("BUSCAR");
         btnBuscarCod.addActionListener(new java.awt.event.ActionListener() {
@@ -97,6 +91,12 @@ Categoria categoriaB = new Categoria();
         btnBuscarNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarNombreActionPerformed(evt);
+            }
+        });
+
+        txtDescripcion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDescripcionActionPerformed(evt);
             }
         });
 
@@ -113,17 +113,17 @@ Categoria categoriaB = new Categoria();
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(47, 47, 47)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(txtDescripcion)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel4)
-                                .addGap(34, 34, 34)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtCodigo, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
-                                    .addComponent(txtNombre)))))
+                                .addGap(67, 67, 67))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addComponent(Descripcion)
+                                .addGap(35, 35, 35)))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+                            .addComponent(txtCodigo)
+                            .addComponent(txtDescripcion)))
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel3)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -155,36 +155,42 @@ Categoria categoriaB = new Categoria();
                     .addComponent(btnBuscarNombre))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtDescripcion)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(55, Short.MAX_VALUE))
+                    .addComponent(Descripcion)
+                    .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(121, 187, 220));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(204, 204, 255)));
 
+        jDesktopPane1.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(204, 204, 204)));
         jDesktopPane1.setAutoscrolls(true);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 880, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 295, Short.MAX_VALUE)
+            .addGap(0, 424, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jDesktopPane1))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jDesktopPane1)
+                .addContainerGap())
         );
 
         btnNuevo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -283,7 +289,9 @@ Categoria categoriaB = new Categoria();
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(11, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -320,6 +328,8 @@ Categoria categoriaB = new Categoria();
             categoriaB = categoriaDao.obtener_x_nombre(txtNombre.getText());
             if (categoriaB != null) {
                 txtCodigo.setText(Integer.toString(categoriaB.getIdcategoria()));
+                txtDescripcion.setText(categoriaB.getDescripcion());
+              
                 
             }
         } catch (Exception e) {
@@ -334,7 +344,13 @@ Categoria categoriaB = new Categoria();
         limpiar();
         txtCodigo.setEnabled(true);
     }//GEN-LAST:event_btnNuevoActionPerformed
+ private void cmbGeneroActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+    }                                         
 
+    private void cmbGeneroItemStateChanged(java.awt.event.ItemEvent evt) {                                           
+        // TODO add your handling code here:
+    } 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
         // TODO add your handling code here:
         btnModificarActionListener(evt);
@@ -387,6 +403,10 @@ Categoria categoriaB = new Categoria();
         frm.cargarTabla();
     }//GEN-LAST:event_btnActualizarActionPerformed
 
+    private void txtDescripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescripcionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDescripcionActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -412,6 +432,7 @@ Categoria categoriaB = new Categoria();
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(FrmMenuCategoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
@@ -456,8 +477,6 @@ Categoria categoriaB = new Categoria();
         txtNombre.setText("");
         txtCodigo.setText("");
         txtDescripcion.setText("");
-      
-
     }
 
     public void btnModificarActionListener(ActionEvent e) {
@@ -467,8 +486,8 @@ Categoria categoriaB = new Categoria();
             categoria.setIdcategoria(Integer.parseInt(txtCodigo.getText()));
             categoria.setNombre(txtNombre.getText());
             categoria.setDescripcion(txtDescripcion.getText());
+            
             ICategoria categoriaDao = new CategoriaImpl();
-
             if (categoriaDao.modificar(categoria) > 0) {
                 JOptionPane.showMessageDialog(this, "Registro Correcto!!",
                         "Transacción correcta", JOptionPane.INFORMATION_MESSAGE);
@@ -484,9 +503,8 @@ Categoria categoriaB = new Categoria();
         }
 
     }
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Descripcion;
     private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnBuscarCod;
     private javax.swing.JButton btnBuscarNombre;
@@ -503,11 +521,10 @@ Categoria categoriaB = new Categoria();
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField txtCodigo;
-    private javax.swing.JLabel txtDescripcion;
-    private javax.swing.JTextArea txtDireccion;
+    private javax.swing.JTextField txtDescripcion;
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }
+

@@ -21,9 +21,9 @@ public class Detalle_VentaTest {
         IDetalleVenta detalleVentaDao = new Detalle_VentaImpl();
         IVenta ventaDao = new VentaImpl();
         Venta venta = ventaDao.obtener(1);
-        Detalle_Venta detalleVenta = new Detalle_Venta(1,venta ,200,150,30 );
+        //Detalle_Venta detalleVenta = new Detalle_Venta(1,venta ,200,150,30,Articulo);
         try{
-            filasAfectadas = detalleVentaDao.insertar(detalleVenta);
+            //filasAfectadas = detalleVentaDao.insertar(detalleVenta);
             System.out.println("Ingresado!!!\n");
         }catch(Exception e){
             System.out.println("Error: "+e.getMessage());

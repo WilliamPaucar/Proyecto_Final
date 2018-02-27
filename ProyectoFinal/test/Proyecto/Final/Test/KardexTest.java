@@ -23,7 +23,7 @@ public class KardexTest {
         Detalle_Ingreso detalle_Ingreso = detalle_IngresoDao.obtener(1);
         IDetalleVenta detalle_VentaDao = new Detalle_VentaImpl();
         Detalle_Venta detalleVenta = detalle_VentaDao.obtener(1);
-        kardex kardex = new kardex(1,detalle_Ingreso,detalleVenta );
+        //kardex kardex = new kardex(1,detalle_Ingreso,detalleVenta );
         try{
             filasAfectadas = detalle_VentaDao.insertar(detalleVenta);
             System.out.println("Ingresado!!!\n");

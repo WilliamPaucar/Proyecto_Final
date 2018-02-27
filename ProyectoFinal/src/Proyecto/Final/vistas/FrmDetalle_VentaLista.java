@@ -17,7 +17,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 
-public class FrmDetalle_VentaLista extends JInternalFrame{
+public class FrmDetalle_VentaLista extends JFrame{
     JLabel lblTitulo;
     JTable tabla;
     JScrollPane jscTabla;
@@ -25,7 +25,7 @@ public class FrmDetalle_VentaLista extends JInternalFrame{
     public FrmDetalle_VentaLista(){
     this.setSize(600,500);
     this.setLayout(new BorderLayout());
-    this.setClosable(true);
+   
     lblTitulo=new JLabel("Detalle_Ventas Ingresadas");
     tabla = new JTable();
     jscTabla=new JScrollPane(tabla);
@@ -53,6 +53,11 @@ public class FrmDetalle_VentaLista extends JInternalFrame{
             modelo.addRow(new Object[]{est.getIddetalle_venta(),est.getVenta().getIdventa(),est.getCantidad(),est.getPrecio_venta(),est.getDescuento()});
         }
         tabla.setModel(modelo);
+    }
+    
+    public static void main(String[] args) {
+        FrmDetalle_VentaLista frm= new FrmDetalle_VentaLista();
+        frm.setVisible(true);
     }
 }
 

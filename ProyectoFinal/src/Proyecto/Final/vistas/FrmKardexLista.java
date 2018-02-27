@@ -7,6 +7,7 @@ package Proyecto.Final.vistas;
 
 import Proyecto.Final.Impl.KardexImpl;
 import Proyecto.Final.dao.Ikardex;
+import Proyecto.Final.rnegocio.entidades.Detalle_Ingreso;
 import Proyecto.Final.rnegocio.entidades.kardex;
 import java.awt.BorderLayout;
 import java.util.ArrayList;
@@ -23,7 +24,8 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author JUNIOR CHAVEZ
  */
-public class FrmKardexLista extends JInternalFrame{
+public class FrmKardexLista extends JFrame{
+    kardex lstKardex=new kardex();
      JLabel lblTitulo;
     JTable tabla;
     JScrollPane jscTabla;
@@ -37,9 +39,9 @@ public class FrmKardexLista extends JInternalFrame{
     jscTabla=new JScrollPane(tabla);
     this.add(lblTitulo,BorderLayout.NORTH);
     this.add(jscTabla,BorderLayout.CENTER);
-    cargarTabla();
+    cargarTabla("");
     }
-    public void cargarTabla(){
+    public void cargarTabla(String producto){
        
         modelo = new DefaultTableModel();
        
@@ -63,13 +65,24 @@ public class FrmKardexLista extends JInternalFrame{
         } catch (Exception e) {
         JOptionPane.showMessageDialog(this,e.getMessage(),"ERROR"+e.getMessage(),JOptionPane.ERROR_MESSAGE);
         }
+       
+            
         
         for(kardex est:lista){
-            modelo.addRow(new Object[]{});
+             if(est.getDetalle_ingreso().getArticulo().getNombre().equals(producto)){
+                 
+            modelo.addRow(new Object[]{est.getDetalle_ingreso().getIngreso().getFecha(),est.getDetalle_ingreso().getIngreso().getCorrelativo(),
+            est.getDetalle_ingreso().getIngreso().getSerie(),est.getDetalle_ingreso().getPrecio_compra(),est.getCantidadCompra(),
+            est.getDetalle_venta().getCantidad(),est.getDetalle_venta().getPrecio_venta(),est.getCantidadVenta(),
+            "cantidad "," precio"," total "});
       
             
         }
         tabla.setModel(modelo);
+    }     }
+    
+    public static void main(String[] args) {
+        FrmKardexLista frm=new FrmKardexLista();
+        frm.setVisible(true);
     }
-
 }
