@@ -13,12 +13,11 @@ public class VentaImpl implements IVenta{
     public int insertar(Venta venta) throws Exception {
         int numFilasAfectadas = 0;
         String sql = "insert into venta  values "
-                + "(?,?,?,?,?,?,?,?,?)";
+                + "(?,?,?,?,?,?,?,?)";
         List<Parametro> lstPar = new ArrayList<>();
           lstPar.add(new Parametro(1, venta.getIdventa()));
         lstPar.add(new Parametro(7, venta.getCliente().getIdcliente()));
         lstPar.add(new Parametro(8, venta.getVendedor().getIdvendedor()));
-        lstPar.add(new Parametro(9, venta.getArticulo().getIdarticulo()));
         lstPar.add(new Parametro(2, venta.getFecha()));
         lstPar.add(new Parametro(3, venta.getTipo_coprobante()));
         lstPar.add(new Parametro(4, venta.getSerie()));
@@ -45,14 +44,13 @@ public class VentaImpl implements IVenta{
     public int modificar(Venta venta) throws Exception {
         int numFilasAfectadas = 0;
         String sql = "UPDATE venta"
-                + "   SET idventa=?, fecha=?, tipo_comprobante=?, serie=?, correlativo=?,igv=?, cliente=?"
-                + ",vendedor=?, articulo=?"
+                + "   SET idventa=?, idcliente=?, idvendedor=?, fecha=?, tipo_comprobante=?,serie=?, correlativo=?"
+                + ",igv=?"
                 + " where idventa=?";
         List<Parametro> lstPar = new ArrayList<>();
-           lstPar.add(new Parametro(1, venta.getIdventa()));
+          lstPar.add(new Parametro(1, venta.getIdventa()));
         lstPar.add(new Parametro(7, venta.getCliente().getIdcliente()));
         lstPar.add(new Parametro(8, venta.getVendedor().getIdvendedor()));
-        lstPar.add(new Parametro(9, venta.getArticulo().getIdarticulo()));
         lstPar.add(new Parametro(2, venta.getFecha()));
         lstPar.add(new Parametro(3, venta.getTipo_coprobante()));
         lstPar.add(new Parametro(4, venta.getSerie()));
@@ -115,9 +113,6 @@ public class VentaImpl implements IVenta{
                 Vendedor vendedor=vendedordao.obtener(rst.getInt(8));
                 venta.setVendedor(vendedor);
                 venta.setCliente(cliente);
-                IArticulo articulodao=new ArticuloImpl();
-                Articulo articulo=articulodao.obtener(rst.getInt(9));
-                venta.setArticulo(articulo);
                 
                 venta.setFecha(rst.getDate(2));
                 venta.setTipo_coprobante(rst.getString(3));
@@ -154,15 +149,10 @@ public class VentaImpl implements IVenta{
                 venta.setIdventa(rst.getInt(1));
                 ICliente clientedao=new ClienteImpl();
                 Cliente cliente=clientedao.obtener(rst.getInt(7));
-                
                 IVendedor vendedordao=new VendedorImpl();
                 Vendedor vendedor=vendedordao.obtener(rst.getInt(8));
                 venta.setVendedor(vendedor);
                 venta.setCliente(cliente);
-                
-                IArticulo articulodao=new ArticuloImpl();
-                Articulo articulo=articulodao.obtener(rst.getInt(9));
-                venta.setArticulo(articulo);
                 
                 venta.setFecha(rst.getDate(2));
                 venta.setTipo_coprobante(rst.getString(3));
@@ -179,6 +169,146 @@ public class VentaImpl implements IVenta{
             con.desconectar();
         }
         return lista;
+    }
+
+    @Override
+    public Venta obtener_x_TipoC(String tipo_comprobante) throws Exception {
+        Venta venta = null;
+        String sql = "SELECT * FROM venta where tipo_comprobante=?;";
+        List<Parametro> lstPar = new ArrayList<>();
+        lstPar.add(new Parametro(1, tipo_comprobante));
+        Conexion con = null;
+        try {
+            con = new Conexion();
+            con.conectar();
+            ResultSet rst = con.ejecutaQuery(sql, lstPar);
+            while (rst.next()) {
+                venta = new Venta();
+                venta.setIdventa(rst.getInt(1));
+                ICliente clientedao=new ClienteImpl();
+                Cliente cliente=clientedao.obtener(rst.getInt(7));
+                venta.setCliente(cliente);
+                IVendedor vendedordao=new VendedorImpl();
+                Vendedor vendedor=vendedordao.obtener(rst.getInt(8));
+                venta.setVendedor(vendedor);
+                venta.setFecha(rst.getDate(2));
+                venta.setTipo_coprobante(rst.getString(3));
+                venta.setSerie(rst.getString(4));
+                venta.setCorrelativo(rst.getString(5));
+                venta.setIgv(rst.getFloat(6));
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            if(con!=null)
+            con.desconectar();
+        }
+        return venta;
+    }
+
+    @Override
+    public Venta obtener_x_Serie(String serie) throws Exception {
+        Venta venta = null;
+        String sql = "SELECT * FROM venta where serie=?;";
+        List<Parametro> lstPar = new ArrayList<>();
+        lstPar.add(new Parametro(1, serie));
+        Conexion con = null;
+        try {
+            con = new Conexion();
+            con.conectar();
+            ResultSet rst = con.ejecutaQuery(sql, lstPar);
+            while (rst.next()) {
+                venta = new Venta();
+                venta.setIdventa(rst.getInt(1));
+                ICliente clientedao=new ClienteImpl();
+                Cliente cliente=clientedao.obtener(rst.getInt(7));
+                venta.setCliente(cliente);
+                IVendedor vendedordao=new VendedorImpl();
+                Vendedor vendedor=vendedordao.obtener(rst.getInt(8));
+                venta.setVendedor(vendedor);
+                venta.setFecha(rst.getDate(2));
+                venta.setTipo_coprobante(rst.getString(3));
+                venta.setSerie(rst.getString(4));
+                venta.setCorrelativo(rst.getString(5));
+                venta.setIgv(rst.getFloat(6));
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            if(con!=null)
+            con.desconectar();
+        }
+        return venta;
+    }
+
+    @Override
+    public Venta obtener_x_Correlativo(String correlativo) throws Exception {
+        Venta venta = null;
+        String sql = "SELECT * FROM venta where correlativo=?;";
+        List<Parametro> lstPar = new ArrayList<>();
+        lstPar.add(new Parametro(1, correlativo));
+        Conexion con = null;
+        try {
+            con = new Conexion();
+            con.conectar();
+            ResultSet rst = con.ejecutaQuery(sql, lstPar);
+            while (rst.next()) {
+                venta = new Venta();
+                venta.setIdventa(rst.getInt(1));
+                ICliente clientedao=new ClienteImpl();
+                Cliente cliente=clientedao.obtener(rst.getInt(7));
+                venta.setCliente(cliente);
+                IVendedor vendedordao=new VendedorImpl();
+                Vendedor vendedor=vendedordao.obtener(rst.getInt(8));
+                venta.setVendedor(vendedor);
+                venta.setFecha(rst.getDate(2));
+                venta.setTipo_coprobante(rst.getString(3));
+                venta.setSerie(rst.getString(4));
+                venta.setCorrelativo(rst.getString(5));
+                venta.setIgv(rst.getFloat(6));
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            if(con!=null)
+            con.desconectar();
+        }
+        return venta;
+    }
+
+    @Override
+    public Venta obtener_x_Igv(float igv) throws Exception {
+        Venta venta = null;
+        String sql = "SELECT * FROM venta where igv=?;";
+        List<Parametro> lstPar = new ArrayList<>();
+        lstPar.add(new Parametro(1, igv));
+        Conexion con = null;
+        try {
+            con = new Conexion();
+            con.conectar();
+            ResultSet rst = con.ejecutaQuery(sql, lstPar);
+            while (rst.next()) {
+                venta = new Venta();
+                venta.setIdventa(rst.getInt(1));
+                ICliente clientedao=new ClienteImpl();
+                Cliente cliente=clientedao.obtener(rst.getInt(7));
+                venta.setCliente(cliente);
+                IVendedor vendedordao=new VendedorImpl();
+                Vendedor vendedor=vendedordao.obtener(rst.getInt(8));
+                venta.setVendedor(vendedor);
+                venta.setFecha(rst.getDate(2));
+                venta.setTipo_coprobante(rst.getString(3));
+                venta.setSerie(rst.getString(4));
+                venta.setCorrelativo(rst.getString(5));
+                venta.setIgv(rst.getFloat(6));
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            if(con!=null)
+            con.desconectar();
+        }
+        return venta;
     }
 }
 

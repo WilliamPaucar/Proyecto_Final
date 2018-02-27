@@ -111,9 +111,6 @@ public class Detalle_VentaImpl implements IDetalleVenta{
                 detalle_venta.setCantidad(rst.getInt(2));
                 detalle_venta.setPrecio_venta(rst.getDouble(3));
                 detalle_venta.setDescuento(rst.getDouble(4));
-                
-
-
             }
         } catch (Exception e) {
             throw e;
@@ -123,7 +120,37 @@ public class Detalle_VentaImpl implements IDetalleVenta{
         }
         return detalle_venta;
     }
-
+        @Override
+    public Detalle_Venta obtener_x_PrecioV(double precio_venta) throws Exception {
+        Detalle_Venta detalle_venta = null;
+        String sql = "SELECT * FROM detalle_venta where precio_venta=?;";
+        List<Parametro> lstPar = new ArrayList<>();
+        lstPar.add(new Parametro(1, precio_venta));
+        Conexion con = null;
+        try {
+            con = new Conexion();
+            con.conectar();
+            ResultSet rst = con.ejecutaQuery(sql, lstPar);
+            while (rst.next()) {
+                detalle_venta = new Detalle_Venta();
+                detalle_venta.setIddetalle_venta(rst.getInt(1));
+      
+                IVenta ventadao=new VentaImpl();
+                Venta venta=ventadao.obtener(rst.getInt(5));
+                
+                detalle_venta.setVenta(venta);
+                detalle_venta.setCantidad(rst.getInt(2));
+                detalle_venta.setPrecio_venta(rst.getDouble(3));
+                detalle_venta.setDescuento(rst.getDouble(4));
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            if(con!=null)
+            con.desconectar();
+        }
+        return detalle_venta;
+    }
     
     @Override
     
@@ -159,5 +186,71 @@ public class Detalle_VentaImpl implements IDetalleVenta{
         }
         return lista;
     }
-}
 
+    @Override
+    public Detalle_Venta obtener_x_Cantidad(int cantidad) throws Exception {
+        Detalle_Venta detalle_venta = null;
+        String sql = "SELECT * FROM detalle_venta where cantidad=?;";
+        List<Parametro> lstPar = new ArrayList<>();
+        lstPar.add(new Parametro(1, cantidad));
+        Conexion con = null;
+        try {
+            con = new Conexion();
+            con.conectar();
+            ResultSet rst = con.ejecutaQuery(sql, lstPar);
+            while (rst.next()) {
+                detalle_venta = new Detalle_Venta();
+                detalle_venta.setIddetalle_venta(rst.getInt(1));
+      
+                IVenta ventadao=new VentaImpl();
+                Venta venta=ventadao.obtener(rst.getInt(5));
+                
+                detalle_venta.setVenta(venta);
+                detalle_venta.setCantidad(rst.getInt(2));
+                detalle_venta.setPrecio_venta(rst.getDouble(3));
+                detalle_venta.setDescuento(rst.getDouble(4));
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            if(con!=null)
+            con.desconectar();
+        }
+        return detalle_venta;
+    }
+
+
+
+    @Override
+    public Detalle_Venta obtener_x_Descuento(double descuento) throws Exception {
+        Detalle_Venta detalle_venta = null;
+        String sql = "SELECT * FROM detalle_venta where descuento=?;";
+        List<Parametro> lstPar = new ArrayList<>();
+        lstPar.add(new Parametro(1, descuento));
+        Conexion con = null;
+        try {
+            con = new Conexion();
+            con.conectar();
+            ResultSet rst = con.ejecutaQuery(sql, lstPar);
+            while (rst.next()) {
+                detalle_venta = new Detalle_Venta();
+                detalle_venta.setIddetalle_venta(rst.getInt(1));
+      
+                IVenta ventadao=new VentaImpl();
+                Venta venta=ventadao.obtener(rst.getInt(5));
+                
+                detalle_venta.setVenta(venta);
+                detalle_venta.setCantidad(rst.getInt(2));
+                detalle_venta.setPrecio_venta(rst.getDouble(3));
+                detalle_venta.setDescuento(rst.getDouble(4));
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            if(con!=null)
+            con.desconectar();
+        }
+        return detalle_venta;
+    }
+
+}

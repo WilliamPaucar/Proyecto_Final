@@ -23,7 +23,7 @@ public class FrmArticuloLista extends JInternalFrame{
     JScrollPane jscTabla;
     DefaultTableModel modelo;
     public FrmArticuloLista(){
-    this.setSize(800,600);
+    this.setSize(500,250);
     this.setLayout(new BorderLayout());
     this.setClosable(true);
     lblTitulo=new JLabel("Articulos Ingresadas");

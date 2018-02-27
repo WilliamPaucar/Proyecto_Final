@@ -126,9 +126,6 @@ public class IngresoImpl implements IIngreso{
                 ingreso.setSerie(rst.getString(4));
                 ingreso.setCorrelativo(rst.getString(5));
                 ingreso.setIgv(rst.getFloat(6));
-  
-
-
             }
         } catch (Exception e) {
             throw e;
@@ -176,8 +173,145 @@ public class IngresoImpl implements IIngreso{
         }
         return lista;
     }
+
+    @Override
+    public Ingreso obtener_x_TipoC(String tipo_comprobante) throws Exception {
+        Ingreso ingreso = null;
+        String sql = "SELECT * FROM ingreso where tipo_comprobante=?;";
+        List<Parametro> lstPar = new ArrayList<>();
+        lstPar.add(new Parametro(1, tipo_comprobante));
+        Conexion con = null;
+        try {
+            con = new Conexion();
+            con.conectar();
+            ResultSet rst = con.ejecutaQuery(sql, lstPar);
+            while (rst.next()) {
+                ingreso = new Ingreso();
+                ingreso.setIdingreso(rst.getInt(1));
+                IVendedor vendedordao=new VendedorImpl();
+                Vendedor vendedor=vendedordao.obtener(rst.getInt(7));
+                ingreso.setVendedor(vendedor);
+                IProveedor proveedordao=new ProveedorImpl();
+                Proveedor proveedor=proveedordao.obtener(rst.getInt(8));
+                ingreso.setProveedor(proveedor);
+                ingreso.setFecha(rst.getDate(2));
+                ingreso.setTipo_comprobante(rst.getString(3));
+                ingreso.setSerie(rst.getString(4));
+                ingreso.setCorrelativo(rst.getString(5));
+                ingreso.setIgv(rst.getFloat(6));
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            if(con!=null)
+            con.desconectar();
+        }
+        return ingreso;
+    }
+
+    @Override
+    public Ingreso obtener_x_Serie(String serie) throws Exception {
+        Ingreso ingreso = null;
+        String sql = "SELECT * FROM ingreso where serie=?;";
+        List<Parametro> lstPar = new ArrayList<>();
+        lstPar.add(new Parametro(1, serie));
+        Conexion con = null;
+        try {
+            con = new Conexion();
+            con.conectar();
+            ResultSet rst = con.ejecutaQuery(sql, lstPar);
+            while (rst.next()) {
+                ingreso = new Ingreso();
+                ingreso.setIdingreso(rst.getInt(1));
+                IVendedor vendedordao=new VendedorImpl();
+                Vendedor vendedor=vendedordao.obtener(rst.getInt(7));
+                ingreso.setVendedor(vendedor);
+                IProveedor proveedordao=new ProveedorImpl();
+                Proveedor proveedor=proveedordao.obtener(rst.getInt(8));
+                ingreso.setProveedor(proveedor);
+                ingreso.setFecha(rst.getDate(2));
+                ingreso.setTipo_comprobante(rst.getString(3));
+                ingreso.setSerie(rst.getString(4));
+                ingreso.setCorrelativo(rst.getString(5));
+                ingreso.setIgv(rst.getFloat(6));
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            if(con!=null)
+            con.desconectar();
+        }
+        return ingreso;
+    }
+
+    @Override
+    public Ingreso obtener_x_Correlativo(String correlativo) throws Exception {
+        Ingreso ingreso = null;
+        String sql = "SELECT * FROM ingreso where correlativo=?;";
+        List<Parametro> lstPar = new ArrayList<>();
+        lstPar.add(new Parametro(1, correlativo));
+        Conexion con = null;
+        try {
+            con = new Conexion();
+            con.conectar();
+            ResultSet rst = con.ejecutaQuery(sql, lstPar);
+            while (rst.next()) {
+                ingreso = new Ingreso();
+                ingreso.setIdingreso(rst.getInt(1));
+                IVendedor vendedordao=new VendedorImpl();
+                Vendedor vendedor=vendedordao.obtener(rst.getInt(7));
+                ingreso.setVendedor(vendedor);
+                IProveedor proveedordao=new ProveedorImpl();
+                Proveedor proveedor=proveedordao.obtener(rst.getInt(8));
+                ingreso.setProveedor(proveedor);
+                ingreso.setFecha(rst.getDate(2));
+                ingreso.setTipo_comprobante(rst.getString(3));
+                ingreso.setSerie(rst.getString(4));
+                ingreso.setCorrelativo(rst.getString(5));
+                ingreso.setIgv(rst.getFloat(6));
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            if(con!=null)
+            con.desconectar();
+        }
+        return ingreso;
+    }
+
+    @Override
+    public Ingreso obtener_x_Igv(float igv) throws Exception {
+        Ingreso ingreso = null;
+        String sql = "SELECT * FROM ingreso where igv=?;";
+        List<Parametro> lstPar = new ArrayList<>();
+        lstPar.add(new Parametro(1, igv));
+        Conexion con = null;
+        try {
+            con = new Conexion();
+            con.conectar();
+            ResultSet rst = con.ejecutaQuery(sql, lstPar);
+            while (rst.next()) {
+                ingreso = new Ingreso();
+                ingreso.setIdingreso(rst.getInt(1));
+                IVendedor vendedordao=new VendedorImpl();
+                Vendedor vendedor=vendedordao.obtener(rst.getInt(7));
+                ingreso.setVendedor(vendedor);
+                IProveedor proveedordao=new ProveedorImpl();
+                Proveedor proveedor=proveedordao.obtener(rst.getInt(8));
+                ingreso.setProveedor(proveedor);
+                ingreso.setFecha(rst.getDate(2));
+                ingreso.setTipo_comprobante(rst.getString(3));
+                ingreso.setSerie(rst.getString(4));
+                ingreso.setCorrelativo(rst.getString(5));
+                ingreso.setIgv(rst.getFloat(6));
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            if(con!=null)
+            con.desconectar();
+        }
+        return ingreso;
+    }
+
 }
-
-
- 
-

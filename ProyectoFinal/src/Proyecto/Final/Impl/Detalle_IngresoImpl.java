@@ -10,7 +10,7 @@ import Proyecto.Final.rnegocio.entidades.*;
 import java.util.*;
 import java.sql.*;
 public class Detalle_IngresoImpl implements IDetalle_Ingreso{
-    
+     
    @Override
     public int insertar(Detalle_Ingreso detalle_ingreso) throws Exception {
         int numFilasAfectadas = 0;
@@ -134,7 +134,154 @@ public class Detalle_IngresoImpl implements IDetalle_Ingreso{
         }
         return detalle_ingreso;
     }
-
+    
+    @Override
+    public Detalle_Ingreso obtener_x_precioC(double precio_compra) throws Exception {
+        Detalle_Ingreso detalle_ingreso = null;
+        String sql = "SELECT * FROM detalle_ingreso where precio_compra=?;";
+        List<Parametro> lstPar = new ArrayList<>();
+        lstPar.add(new Parametro(1, precio_compra));
+        Conexion con = null;
+        try {
+            con = new Conexion();
+            con.conectar();
+            ResultSet rst = con.ejecutaQuery(sql, lstPar);
+            while (rst.next()) {
+                detalle_ingreso = new Detalle_Ingreso();
+                detalle_ingreso.setIddetalle_ingreso(rst.getInt(1));
+                
+                IIngreso ingresodao=new IngresoImpl();
+                Ingreso ingreso=ingresodao.obtener(rst.getInt(2));
+                detalle_ingreso.setIngreso(ingreso);
+                IArticulo articulodao=new ArticuloImpl();
+                Articulo articulo=articulodao.obtener(rst.getInt(3));
+                detalle_ingreso.setArticulo(articulo);
+                detalle_ingreso.setPrecio_compra(rst.getDouble(4));
+                detalle_ingreso.setPrecio_venta(rst.getDouble(5));
+                detalle_ingreso.setStock_inicial(rst.getInt(6));
+                detalle_ingreso.setStock_actual(rst.getInt(7));
+                detalle_ingreso.setFecha_produccion(rst.getDate(8));
+                detalle_ingreso.setFecha_vencimiento(rst.getDate(9));
+           }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            if(con!=null)
+            con.desconectar();
+        }
+        return detalle_ingreso;
+    }
+    @Override
+    public Detalle_Ingreso obtener_x_precioV(double precio_venta) throws Exception {
+        Detalle_Ingreso detalle_ingreso = null;
+        String sql = "SELECT * FROM detalle_ingreso where precio_venta=?;";
+        List<Parametro> lstPar = new ArrayList<>();
+        lstPar.add(new Parametro(1, precio_venta));
+        Conexion con = null;
+        try {
+            con = new Conexion();
+            con.conectar();
+            ResultSet rst = con.ejecutaQuery(sql, lstPar);
+            while (rst.next()) {
+                detalle_ingreso = new Detalle_Ingreso();
+                detalle_ingreso.setIddetalle_ingreso(rst.getInt(1));
+                
+                IIngreso ingresodao=new IngresoImpl();
+                Ingreso ingreso=ingresodao.obtener(rst.getInt(2));
+                detalle_ingreso.setIngreso(ingreso);
+                IArticulo articulodao=new ArticuloImpl();
+                Articulo articulo=articulodao.obtener(rst.getInt(3));
+                detalle_ingreso.setArticulo(articulo);
+                detalle_ingreso.setPrecio_compra(rst.getDouble(4));
+                detalle_ingreso.setPrecio_venta(rst.getDouble(5));
+                detalle_ingreso.setStock_inicial(rst.getInt(6));
+                detalle_ingreso.setStock_actual(rst.getInt(7));
+                detalle_ingreso.setFecha_produccion(rst.getDate(8));
+                detalle_ingreso.setFecha_vencimiento(rst.getDate(9));
+           }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            if(con!=null)
+            con.desconectar();
+        }
+        return detalle_ingreso;
+    }
+    
+    @Override
+    public Detalle_Ingreso obtener_x_StockI(int stock_inicial) throws Exception {
+        Detalle_Ingreso detalle_ingreso = null;
+        String sql = "SELECT * FROM detalle_ingreso where stock_inicial=?;";
+        List<Parametro> lstPar = new ArrayList<>();
+        lstPar.add(new Parametro(1, stock_inicial));
+        Conexion con = null;
+        try {
+            con = new Conexion();
+            con.conectar();
+            ResultSet rst = con.ejecutaQuery(sql, lstPar);
+            while (rst.next()) {
+                detalle_ingreso = new Detalle_Ingreso();
+                detalle_ingreso.setIddetalle_ingreso(rst.getInt(1));
+                
+                IIngreso ingresodao=new IngresoImpl();
+                Ingreso ingreso=ingresodao.obtener(rst.getInt(2));
+                detalle_ingreso.setIngreso(ingreso);
+                IArticulo articulodao=new ArticuloImpl();
+                Articulo articulo=articulodao.obtener(rst.getInt(3));
+                detalle_ingreso.setArticulo(articulo);
+                detalle_ingreso.setPrecio_compra(rst.getDouble(4));
+                detalle_ingreso.setPrecio_venta(rst.getDouble(5));
+                detalle_ingreso.setStock_inicial(rst.getInt(6));
+                detalle_ingreso.setStock_actual(rst.getInt(7));
+                detalle_ingreso.setFecha_produccion(rst.getDate(8));
+                detalle_ingreso.setFecha_vencimiento(rst.getDate(9));
+           }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            if(con!=null)
+            con.desconectar();
+        }
+        return detalle_ingreso;
+    }
+    
+    
+    @Override
+    public Detalle_Ingreso obtener_x_StockA(int stock_actual) throws Exception {
+        Detalle_Ingreso detalle_ingreso = null;
+        String sql = "SELECT * FROM detalle_ingreso where stock_actual=?;";
+        List<Parametro> lstPar = new ArrayList<>();
+        lstPar.add(new Parametro(1, stock_actual));
+        Conexion con = null;
+        try {
+            con = new Conexion();
+            con.conectar();
+            ResultSet rst = con.ejecutaQuery(sql, lstPar);
+            while (rst.next()) {
+                detalle_ingreso = new Detalle_Ingreso();
+                detalle_ingreso.setIddetalle_ingreso(rst.getInt(1));
+                
+                IIngreso ingresodao=new IngresoImpl();
+                Ingreso ingreso=ingresodao.obtener(rst.getInt(2));
+                detalle_ingreso.setIngreso(ingreso);
+                IArticulo articulodao=new ArticuloImpl();
+                Articulo articulo=articulodao.obtener(rst.getInt(3));
+                detalle_ingreso.setArticulo(articulo);
+                detalle_ingreso.setPrecio_compra(rst.getDouble(4));
+                detalle_ingreso.setPrecio_venta(rst.getDouble(5));
+                detalle_ingreso.setStock_inicial(rst.getInt(6));
+                detalle_ingreso.setStock_actual(rst.getInt(7));
+                detalle_ingreso.setFecha_produccion(rst.getDate(8));
+                detalle_ingreso.setFecha_vencimiento(rst.getDate(9));
+           }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            if(con!=null)
+            con.desconectar();
+        }
+        return detalle_ingreso;
+    }
     
     @Override
     

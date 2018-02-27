@@ -5,10 +5,8 @@ import Proyecto.Final.dao.*;
 import Proyecto.Final.rnegocio.entidades.*;
 import java.util.*;
 import java.sql.*;
-    public class ArticuloImpl implements IArticulo{
-  
-    
-    
+public class ArticuloImpl implements IArticulo{
+      
        @Override
     public int insertar(Articulo articulo) throws Exception {
         int numFilasAfectadas = 0;
@@ -89,7 +87,7 @@ import java.sql.*;
     @Override
     public Articulo obtener(int codigo) throws Exception {
         Articulo articulo = null;
-        String sql = "SELECT * FROM articulo where idarticulo=?;";
+        String sql = "SELECT * FROM articulo where codigo=?;";
         List<Parametro> lstPar = new ArrayList<>();
         lstPar.add(new Parametro(1, codigo));
         Conexion con = null;
@@ -117,7 +115,59 @@ import java.sql.*;
         }
         return articulo;
     }
+    @Override
+    public Articulo obtener_x_nombre(String nombre) throws Exception {
+        Articulo articulo = null;
+        String sql = "SELECT * FROM articulo where nombres =?";
+        List<Parametro> lstPar = new ArrayList<>();
+        lstPar.add(new Parametro(1, nombre));
+        Conexion con = null;
+        try {
+            con = new Conexion();
+            con.conectar();
+            ResultSet rst = con.ejecutaQuery(sql, lstPar);
+            while (rst.next()) {
+                articulo = new Articulo();
+                articulo.setIdarticulo(rst.getInt(1));
+                articulo.setCodigo(rst.getInt(2));
+                articulo.setNombre(rst.getString(3));
+                articulo.setDescripcion(rst.getString(4));
 
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            if(con!=null)
+            con.desconectar();
+        }
+        return articulo;
+    }
+    @Override
+    public Articulo obtener_x_descripcion(String descripcion) throws Exception {
+        Articulo articulo = null;
+        String sql = "SELECT * FROM articulo where descripcion =?";
+        List<Parametro> lstPar = new ArrayList<>();
+        lstPar.add(new Parametro(1, descripcion));
+        Conexion con = null;
+        try {
+            con = new Conexion();
+            con.conectar();
+            ResultSet rst = con.ejecutaQuery(sql, lstPar);
+            while (rst.next()) {
+                articulo = new Articulo();
+                articulo.setIdarticulo(rst.getInt(1));
+                articulo.setCodigo(rst.getInt(2));
+                articulo.setNombre(rst.getString(3));
+                articulo.setDescripcion(rst.getString(4));
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            if(con!=null)
+            con.desconectar();
+        }
+        return articulo;
+    }
     
     @Override
     
@@ -151,6 +201,7 @@ import java.sql.*;
         }
         return lista;
     }
+
 }
 
 
