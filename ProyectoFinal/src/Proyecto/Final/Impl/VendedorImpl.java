@@ -55,18 +55,18 @@ public class VendedorImpl implements IVendedor{
                 + ", numero_documento=?, direccion=?, telefono=?, email=?, acceso=?, usuario=?, password=?"
                 + " where idvendedor=?";
         List<Parametro> lstPar = new ArrayList<>();
-        lstPar.add(new Parametro(1, vendedor.getIdvendedor()));
-        lstPar.add(new Parametro(2, vendedor.getNombres()));
-        lstPar.add(new Parametro(3, vendedor.getApellidos()));
-        lstPar.add(new Parametro(4, vendedor.getSexo()));
-        lstPar.add(new Parametro(5, vendedor.getFecha_nacimiento()));
-        lstPar.add(new Parametro(6, vendedor.getNumero_documento()));
-        lstPar.add(new Parametro(7, vendedor.getDireccion()));
-        lstPar.add(new Parametro(8, vendedor.getTelefono()));
-        lstPar.add(new Parametro(9, vendedor.getEmail()));
-        lstPar.add(new Parametro(10, vendedor.getAcceso()));
-        lstPar.add(new Parametro(11, vendedor.getUsuario()));
-        lstPar.add(new Parametro(12, vendedor.getPassword()));
+        lstPar.add(new Parametro(12, vendedor.getIdvendedor()));
+        lstPar.add(new Parametro(1, vendedor.getNombres()));
+        lstPar.add(new Parametro(2, vendedor.getApellidos()));
+        lstPar.add(new Parametro(3, vendedor.getSexo()));
+        lstPar.add(new Parametro(4, vendedor.getFecha_nacimiento()));
+        lstPar.add(new Parametro(5, vendedor.getNumero_documento()));
+        lstPar.add(new Parametro(6, vendedor.getDireccion()));
+        lstPar.add(new Parametro(7, vendedor.getTelefono()));
+        lstPar.add(new Parametro(8, vendedor.getEmail()));
+        lstPar.add(new Parametro(9, vendedor.getAcceso()));
+        lstPar.add(new Parametro(10, vendedor.getUsuario()));
+        lstPar.add(new Parametro(11, vendedor.getPassword()));
    
         Conexion con = null;
         try {
@@ -141,11 +141,11 @@ public class VendedorImpl implements IVendedor{
         return vendedor;
     }
 @Override
-    public Vendedor obtener_x_nombre(String nombre) throws Exception {
+    public Vendedor obtener_x_nombre(String nombres) throws Exception {
         Vendedor vendedor = null;
-        String sql = "SELECT * FROMvendedor where nombre =?";
+        String sql = "SELECT * FROM vendedor where nombres =?";
         List<Parametro> lstPar = new ArrayList<>();
-        lstPar.add(new Parametro(1, nombre));
+        lstPar.add(new Parametro(1, nombres));
         Conexion con = null;
         try {
             con = new Conexion();

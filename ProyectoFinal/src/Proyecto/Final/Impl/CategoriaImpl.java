@@ -31,7 +31,7 @@ public class CategoriaImpl implements ICategoria{
             }
         }
         return numFilasAfectadas;
-    }  
+    }
     
     @Override
     public Categoria obtener_x_nombre(String nombre) throws Exception {
@@ -49,10 +49,7 @@ public class CategoriaImpl implements ICategoria{
                 categoria.setIdcategoria(rst.getInt(1));
                 categoria.setNombre(rst.getString(2));
                 categoria.setDescripcion(rst.getString(3));
-               
-
-
-            }
+  }
         } catch (Exception e) {
             throw e;
         } finally {
@@ -61,8 +58,6 @@ public class CategoriaImpl implements ICategoria{
         }
         return categoria;
     }
-
-
     @Override
     
     public int modificar(Categoria categoria) throws Exception {
@@ -71,9 +66,9 @@ public class CategoriaImpl implements ICategoria{
                 + "   SET idcategoria=?, nombre=?, descripcion=?, "
                 + " where idcategoria=?";
         List<Parametro> lstPar = new ArrayList<>();
-        lstPar.add(new Parametro(1, categoria.getIdcategoria()));
-        lstPar.add(new Parametro(2, categoria.getNombre()));
-        lstPar.add(new Parametro(3, categoria.getDescripcion()));
+        lstPar.add(new Parametro(3, categoria.getIdcategoria()));
+        lstPar.add(new Parametro(1, categoria.getNombre()));
+        lstPar.add(new Parametro(2, categoria.getDescripcion()));
 
         Conexion con = null;
         try {
@@ -90,8 +85,7 @@ public class CategoriaImpl implements ICategoria{
         return numFilasAfectadas;
     }
 
-    
-    @Override
+        @Override
     public int eliminar(Categoria categoria){
         int numFilasAfectadas = 0;
          String sql = "DELETE FROM categoria  where idcategoria=?";
