@@ -5,7 +5,7 @@ import Proyecto.Final.dao.*;
 import Proyecto.Final.rnegocio.entidades.*;
 import java.util.*;
 import java.sql.*;
-public class ArticuloImpl implements IArticulo{
+    public class ArticuloImpl implements IArticulo{
   
     
     

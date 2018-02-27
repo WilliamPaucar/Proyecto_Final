@@ -16,7 +16,7 @@ public class ClienteTest {
         //              INSERTAR
         int filasAfectadas =0;
         ICliente clienteDao = new ClienteImpl();
-        Cliente cliente  = new Cliente(9, "Juan","Perez", "M", new Date(), "Cedula", "15", "Riobamba", "0992817879", "Bobo@gmail.com" );
+        Cliente cliente  = new Cliente(1223, "Juan","Perez", "M", new Date(), "Cedula", "15", "Riobamba", "0992817879", "Bobo@gmail.com" );
       
         try{
             filasAfectadas = clienteDao.insertar(cliente);

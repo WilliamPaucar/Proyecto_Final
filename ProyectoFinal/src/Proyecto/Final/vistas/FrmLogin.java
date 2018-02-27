@@ -96,7 +96,7 @@ public class FrmLogin extends JFrame{
                 SubstanceLookAndFeel.setSkin("org.jvnet.substance.skin.MistAquaSkin"); // Setencia que aplica el skin Creme de Substance
                 SubstanceLookAndFeel.setCurrentWatermark(new SubstanceImageWatermark("C:\\Users\\JUNIOR CHAVEZ\\Desktop\\Proyecto_Final\\ProyectoFinal\\src\\Proyecto\\Final\\Img\\cfdi-33slide.jpg"));
                 SubstanceLookAndFeel.setImageWatermarkOpacity(new Float(0.8));//valor aproximado de la opacidad por default de imageWatermark
-                FrmMenuPrincipal frm = new FrmMenuPrincipal();
+                MenuPrincipal frm = new MenuPrincipal();
                 frm.setVisible(true);
                 dispose();
                 

@@ -22,7 +22,7 @@ public class VendedorTest {
         //              INSERTAR
         int filasAfectadas =0;
         IVendedor vendedorDao = new VendedorImpl();
-        Vendedor vendedor = new Vendedor(8,"Marco" , "Bonilla", "m", new Date(), "623656","Riobamba",  "0963116523", "ejemplo@gmail.com", "2", "More","0258");
+        Vendedor vendedor = new Vendedor(9,"Marco" , "Bonilla", "m", new Date(), "623656","Riobamba",  "0963116523", "ejemplo@gmail.com", "2", "More","0258");
     
   
         try{
