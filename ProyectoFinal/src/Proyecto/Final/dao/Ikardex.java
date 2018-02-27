@@ -12,4 +12,5 @@ public interface Ikardex {
     public int eliminar(kardex kardex) throws Exception;
     public kardex obtener(int codigo) throws Exception;
     public List<kardex> obtener() throws Exception;
+     public kardex obtenerKardex(String nombre) throws Exception;
 }
