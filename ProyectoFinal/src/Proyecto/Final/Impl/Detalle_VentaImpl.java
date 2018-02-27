@@ -23,6 +23,7 @@ public class Detalle_VentaImpl implements IDetalleVenta{
         lstPar.add(new Parametro(2, detalle_venta.getCantidad()));
         lstPar.add(new Parametro(3, detalle_venta.getPrecio_venta()));
         lstPar.add(new Parametro(4, detalle_venta.getDescuento()));
+        lstPar.add(new Parametro(6, detalle_venta.getArticulo().getIdarticulo()));
   
         Conexion con = null;
         try {
@@ -52,7 +53,7 @@ public class Detalle_VentaImpl implements IDetalleVenta{
         lstPar.add(new Parametro(2, detalle_venta.getCantidad()));
         lstPar.add(new Parametro(3, detalle_venta.getPrecio_venta()));
         lstPar.add(new Parametro(4, detalle_venta.getDescuento()));
-   
+        lstPar.add(new Parametro(6, detalle_venta.getArticulo().getIdarticulo()));
         Conexion con = null;
         try {
             con = new Conexion();
@@ -112,7 +113,9 @@ public class Detalle_VentaImpl implements IDetalleVenta{
                 detalle_venta.setPrecio_venta(rst.getDouble(3));
                 detalle_venta.setDescuento(rst.getDouble(4));
                 
-
+                IArticulo articulodao=new ArticuloImpl();
+                Articulo articulo=articulodao.obtener(rst.getInt(6));
+                detalle_venta.setArticulo(articulo);
 
             }
         } catch (Exception e) {
@@ -148,6 +151,10 @@ public class Detalle_VentaImpl implements IDetalleVenta{
                 detalle_venta.setCantidad(rst.getInt(2));
                 detalle_venta.setPrecio_venta(rst.getDouble(3));
                 detalle_venta.setDescuento(rst.getDouble(4));
+                
+                IArticulo articulodao=new ArticuloImpl();
+                Articulo articulo=articulodao.obtener(rst.getInt(6));
+                detalle_venta.setArticulo(articulo);
 
                 lista.add(detalle_venta);
             }

@@ -16,11 +16,13 @@ public class KardexImpl implements Ikardex{
     public int insertar(kardex kardex) throws Exception {
         int numFilasAfectadas = 0;
         String sql = "insert into kardex  values "
-                + "(?,?,?)";
+                + "(?,?,?,?,?)";
         List<Parametro> lstPar = new ArrayList<>();
         lstPar.add(new Parametro(1, kardex.getIdkardex()));
-        lstPar.add(new Parametro(2, kardex.getDetalle_ingreso()));
-        lstPar.add(new Parametro(3, kardex.getDetalle_venta()));
+        lstPar.add(new Parametro(2, kardex.getDetalle_ingreso().getIddetalle_ingreso()));
+        lstPar.add(new Parametro(3, kardex.getDetalle_venta().getIddetalle_venta()));
+        lstPar.add(new Parametro(4, kardex.getCantidadVenta()));
+        lstPar.add(new Parametro(5, kardex.getCantidadCompra()));
  
   
         Conexion con = null;
@@ -46,10 +48,12 @@ public class KardexImpl implements Ikardex{
                 + "   SET idkardex=?, iddetalle_ingreso=?, iddetalle_venta=?"
                 + " where idkardex=?";
         List<Parametro> lstPar = new ArrayList<>();
-       lstPar.add(new Parametro(1, kardex.getIdkardex()));
-        lstPar.add(new Parametro(2, kardex.getDetalle_ingreso()));
-        lstPar.add(new Parametro(3, kardex.getDetalle_venta()));
-   
+               lstPar.add(new Parametro(1, kardex.getIdkardex()));
+        lstPar.add(new Parametro(2, kardex.getDetalle_ingreso().getIddetalle_ingreso()));
+        lstPar.add(new Parametro(3, kardex.getDetalle_venta().getIddetalle_venta()));
+        lstPar.add(new Parametro(4, kardex.getCantidadVenta()));
+        lstPar.add(new Parametro(5, kardex.getCantidadCompra()));
+ 
         Conexion con = null;
         try {
             con = new Conexion();
@@ -109,6 +113,8 @@ public class KardexImpl implements Ikardex{
                 Detalle_Venta detalle_venta=detalle_ventadao.obtener(rst.getInt(3));
                 
                 kardex.setDetalle_venta(detalle_venta);
+                kardex.setCantidadVenta(rst.getInt(4));
+                kardex.setCantidadCompra(rst.getInt(5));
 
             }
         } catch (Exception e) {
@@ -143,7 +149,11 @@ public class KardexImpl implements Ikardex{
                 
                 IDetalleVenta detalle_ventadao=new Detalle_VentaImpl();
                 Detalle_Venta detalle_venta=detalle_ventadao.obtener(rst.getInt(3));
+                
                 kardex.setDetalle_venta(detalle_venta);
+                kardex.setCantidadVenta(rst.getInt(4));
+                kardex.setCantidadCompra(rst.getInt(5));
+           
                 lista.add(kardex);
             }
         } catch (Exception e) {
@@ -153,6 +163,43 @@ public class KardexImpl implements Ikardex{
             con.desconectar();
         }
         return lista;
+    }
+    
+   @ Override
+   
+    public kardex obtenerKardex(String nombre) throws Exception {
+                kardex kardex = null;
+        String sql = "SELECT * FROM kardex where nombre=?;";
+        List<Parametro> lstPar = new ArrayList<>();
+        lstPar.add(new Parametro(1, nombre));
+        Conexion con = null;
+        try {
+            con = new Conexion();
+            con.conectar();
+            ResultSet rst = con.ejecutaQuery(sql, lstPar);
+            while (rst.next()) {
+                kardex = new kardex();
+                kardex.setIdkardex(rst.getInt(1));
+                
+                IDetalle_Ingreso detalle_ingresodao=new Detalle_IngresoImpl();
+                Detalle_Ingreso detalle_ingreso=detalle_ingresodao.obtener(rst.getInt(2));
+                kardex.setDetalle_ingreso(detalle_ingreso);
+                
+                IDetalleVenta detalle_ventadao=new Detalle_VentaImpl();
+                Detalle_Venta detalle_venta=detalle_ventadao.obtener(rst.getInt(3));
+                
+                kardex.setDetalle_venta(detalle_venta);
+                kardex.setCantidadVenta(rst.getInt(4));
+                kardex.setCantidadCompra(rst.getInt(5));
+
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            if(con!=null)
+            con.desconectar();
+        }
+        return kardex;
     }
 }
 
