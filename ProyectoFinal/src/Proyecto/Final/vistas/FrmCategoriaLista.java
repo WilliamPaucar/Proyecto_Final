@@ -23,7 +23,7 @@ public class FrmCategoriaLista extends JInternalFrame{
     JScrollPane jscTabla;
     DefaultTableModel modelo;
     public FrmCategoriaLista(){
-    this.setSize(800,600);
+    this.setSize(865,600);
     this.setLayout(new BorderLayout());
     this.setClosable(true);
     lblTitulo=new JLabel("Categorias Ingresadas");
