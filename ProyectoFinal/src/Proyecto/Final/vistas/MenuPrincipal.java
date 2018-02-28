@@ -108,6 +108,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jButtonProveedor1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Final/Img/icons8-proveedor-67.png"))); // NOI18N
         jButtonProveedor1.setContentAreaFilled(false);
         jButtonProveedor1.setPreferredSize(new java.awt.Dimension(67, 67));
+        jButtonProveedor1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonProveedor1ActionPerformed(evt);
+            }
+        });
 
         jButtonVendedor1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Final/Img/icons8-tarjeta-de-empleado-67.png"))); // NOI18N
         jButtonVendedor1.setContentAreaFilled(false);
@@ -374,6 +379,19 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButtonCategoria1ActionPerformed
 
+    private void jButtonProveedor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonProveedor1ActionPerformed
+        // TODO add your handling code here:
+        FrmProveedor menu= new FrmProveedor();
+        menu.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButtonProveedor1ActionPerformed
+ private void jButtonProveedorActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        // TODO add your handling code here:
+        FrmProveedor menu = new FrmProveedor();
+        menu.setVisible(true);
+        dispose();
+
+    }     
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
