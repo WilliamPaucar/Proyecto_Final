@@ -331,7 +331,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonDetalle_Ingreso1ActionPerformed
 
     private void jButtonCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCliente1ActionPerformed
-        FrmMenuCliente menu = new FrmMenuCliente();
+        MenuCliente menu = new MenuCliente();
         menu.setVisible(true);
         dispose();
 
