@@ -42,7 +42,6 @@ public class FrmProveedor extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         txtDireccion = new javax.swing.JTextArea();
         btnBuscarCod = new javax.swing.JButton();
-        btnBuscarRazonS = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         txtTelefono = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
@@ -53,13 +52,7 @@ public class FrmProveedor extends javax.swing.JFrame {
         txtNumeroD = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         txtUrl = new javax.swing.JTextField();
-        btnBuscarSectorC = new javax.swing.JButton();
-        btnBuscarTipoD = new javax.swing.JButton();
-        btnBuscarNumeroD = new javax.swing.JButton();
-        btnBuscarDireccion = new javax.swing.JButton();
-        btnBuscarTelefono = new javax.swing.JButton();
-        btnBuscarEmail = new javax.swing.JButton();
-        btnBuscarUrl = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         btnNuevo = new javax.swing.JButton();
@@ -78,7 +71,7 @@ public class FrmProveedor extends javax.swing.JFrame {
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(204, 204, 255)));
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
-        jLabel1.setText("                                   PROVEEDOR");
+        jLabel1.setText("    PROVEEDOR");
 
         jLabel2.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 51, 153));
@@ -114,13 +107,6 @@ public class FrmProveedor extends javax.swing.JFrame {
             }
         });
 
-        btnBuscarRazonS.setText("BUSCAR");
-        btnBuscarRazonS.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarRazonSActionPerformed(evt);
-            }
-        });
-
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel11.setText("TELEFONO");
 
@@ -148,64 +134,23 @@ public class FrmProveedor extends javax.swing.JFrame {
             }
         });
 
-        btnBuscarSectorC.setText("BUSCAR");
-        btnBuscarSectorC.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarSectorCActionPerformed(evt);
-            }
-        });
-
-        btnBuscarTipoD.setText("BUSCAR");
-        btnBuscarTipoD.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarTipoDActionPerformed(evt);
-            }
-        });
-
-        btnBuscarNumeroD.setText("BUSCAR");
-        btnBuscarNumeroD.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarNumeroDActionPerformed(evt);
-            }
-        });
-
-        btnBuscarDireccion.setText("BUSCAR");
-        btnBuscarDireccion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarDireccionActionPerformed(evt);
-            }
-        });
-
-        btnBuscarTelefono.setText("BUSCAR");
-        btnBuscarTelefono.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarTelefonoActionPerformed(evt);
-            }
-        });
-
-        btnBuscarEmail.setText("BUSCAR");
-        btnBuscarEmail.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarEmailActionPerformed(evt);
-            }
-        });
-
-        btnBuscarUrl.setText("BUSCAR");
-        btnBuscarUrl.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarUrlActionPerformed(evt);
-            }
-        });
+        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Gilda\\Desktop\\icons8-proveedor-67.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 549, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1))
+                .addGap(270, 270, 270)
+                .addComponent(jLabel8)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(613, 613, 613)
+                        .addComponent(jSeparator1))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -227,12 +172,7 @@ public class FrmProveedor extends javax.swing.JFrame {
                                     .addComponent(txtTipoD, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtRazonS, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtSectorC, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addGap(10, 10, 10)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnBuscarRazonS)
-                                    .addComponent(btnBuscarSectorC)
-                                    .addComponent(btnBuscarTipoD)
-                                    .addComponent(btnBuscarNumeroD)))))
+                                .addGap(83, 83, 83))))
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel3)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -249,25 +189,21 @@ public class FrmProveedor extends javax.swing.JFrame {
                             .addComponent(txtTelefono)
                             .addComponent(txtEmail)
                             .addComponent(txtUrl, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnBuscarTelefono)
-                            .addComponent(btnBuscarEmail)
-                            .addComponent(btnBuscarUrl))
-                        .addGap(0, 10, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jScrollPane3)
-                        .addGap(31, 31, 31)
-                        .addComponent(btnBuscarDireccion)))
-                .addContainerGap())
+                        .addGap(114, 114, 114))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8)))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -276,25 +212,19 @@ public class FrmProveedor extends javax.swing.JFrame {
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(60, 60, 60))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnBuscarDireccion)
-                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
-                            .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnBuscarTelefono))
+                            .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btnBuscarEmail)))
+                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtUrl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10)
-                            .addComponent(btnBuscarUrl))
+                            .addComponent(jLabel10))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -310,28 +240,22 @@ public class FrmProveedor extends javax.swing.JFrame {
                                     .addComponent(btnBuscarCod)
                                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnBuscarRazonS)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel4)
-                                .addComponent(txtRazonS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(txtRazonS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(9, 9, 9)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txtSectorC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btnBuscarSectorC)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(txtSectorC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(14, 14, 14)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
-                            .addComponent(txtTipoD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnBuscarTipoD))
+                            .addComponent(txtTipoD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel14)
-                            .addComponent(txtNumeroD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnBuscarNumeroD))
-                        .addGap(69, 69, 69))))
+                            .addComponent(txtNumeroD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(71, 71, 71))))
         );
 
         jPanel2.setBackground(new java.awt.Color(121, 187, 220));
@@ -343,7 +267,7 @@ public class FrmProveedor extends javax.swing.JFrame {
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 906, Short.MAX_VALUE)
+            .addGap(0, 894, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -356,7 +280,7 @@ public class FrmProveedor extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 78, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -416,33 +340,35 @@ public class FrmProveedor extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(btnNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnModificar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnEliminar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnGuardar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnListar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnActualizar)
+                .addGap(124, 124, 124))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnModificar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnEliminar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnGuardar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnListar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnActualizar))
+                        .addGap(21, 21, 21)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 873, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addContainerGap()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(4, 4, 4)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -459,7 +385,7 @@ public class FrmProveedor extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 924, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -492,28 +418,6 @@ public class FrmProveedor extends javax.swing.JFrame {
         }
         txtCodigo.setEnabled(false);
     }//GEN-LAST:event_btnBuscarCodActionPerformed
-
-    private void btnBuscarRazonSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarRazonSActionPerformed
-        IProveedor proveedorDao = new ProveedorImpl();
-        try {
-            proveedorB = proveedorDao.obtener_x_RazonS(txtRazonS.getText());
-            if (proveedorB != null) {
-                txtRazonS.setText(proveedorB.getRazon_social());
-                txtSectorC.setText(proveedorB.getSector_comercial());
-                txtTipoD.setText(proveedorB.getTipo_documento());
-                txtNumeroD.setText(proveedorB.getNum_documento());
-                txtDireccion.setText(proveedorB.getDireccion());
-                txtTelefono.setText(proveedorB.getTelefono());
-                txtEmail.setText(proveedorB.getEmail());
-                txtUrl.setText(proveedorB.getUrl());
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error al buscar: " + e.getMessage(),
-                "Error", JOptionPane.ERROR_MESSAGE);
-
-        }
-        txtCodigo.setEnabled(false);
-    }//GEN-LAST:event_btnBuscarRazonSActionPerformed
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
         limpiar();
@@ -583,162 +487,6 @@ public class FrmProveedor extends javax.swing.JFrame {
     private void txtUrlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUrlActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUrlActionPerformed
-
-    private void btnBuscarSectorCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarSectorCActionPerformed
-        IProveedor proveedorDao = new ProveedorImpl();
-        try {
-            proveedorB = proveedorDao.obtener_x_SectorC(txtSectorC.getText());
-            if (proveedorB != null) {
-                txtRazonS.setText(proveedorB.getRazon_social());
-                txtSectorC.setText(proveedorB.getSector_comercial());
-                txtTipoD.setText(proveedorB.getTipo_documento());
-                txtNumeroD.setText(proveedorB.getNum_documento());
-                txtDireccion.setText(proveedorB.getDireccion());
-                txtTelefono.setText(proveedorB.getTelefono());
-                txtEmail.setText(proveedorB.getEmail());
-                txtUrl.setText(proveedorB.getUrl());
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error al buscar: " + e.getMessage(),
-                "Error", JOptionPane.ERROR_MESSAGE);
-
-        }
-        txtCodigo.setEnabled(false);
-
-    }//GEN-LAST:event_btnBuscarSectorCActionPerformed
-
-    private void btnBuscarTipoDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarTipoDActionPerformed
-        IProveedor proveedorDao = new ProveedorImpl();
-        try {
-            proveedorB = proveedorDao.obtener_x_TipoD(txtTipoD.getText());
-            if (proveedorB != null) {
-                txtRazonS.setText(proveedorB.getRazon_social());
-                txtSectorC.setText(proveedorB.getSector_comercial());
-                txtTipoD.setText(proveedorB.getTipo_documento());
-                txtNumeroD.setText(proveedorB.getNum_documento());
-                txtDireccion.setText(proveedorB.getDireccion());
-                txtTelefono.setText(proveedorB.getTelefono());
-                txtEmail.setText(proveedorB.getEmail());
-                txtUrl.setText(proveedorB.getUrl());
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error al buscar: " + e.getMessage(),
-                "Error", JOptionPane.ERROR_MESSAGE);
-
-        }
-        txtCodigo.setEnabled(false);
-    }//GEN-LAST:event_btnBuscarTipoDActionPerformed
-
-    private void btnBuscarNumeroDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarNumeroDActionPerformed
-        IProveedor proveedorDao = new ProveedorImpl();
-        try {
-            proveedorB = proveedorDao.obtener_x_NumeroD(txtNumeroD.getText());
-            if (proveedorB != null) {
-                txtRazonS.setText(proveedorB.getRazon_social());
-                txtSectorC.setText(proveedorB.getSector_comercial());
-                txtTipoD.setText(proveedorB.getTipo_documento());
-                txtNumeroD.setText(proveedorB.getNum_documento());
-                txtDireccion.setText(proveedorB.getDireccion());
-                txtTelefono.setText(proveedorB.getTelefono());
-                txtEmail.setText(proveedorB.getEmail());
-                txtUrl.setText(proveedorB.getUrl());
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error al buscar: " + e.getMessage(),
-                "Error", JOptionPane.ERROR_MESSAGE);
-
-        }
-        txtCodigo.setEnabled(false);
-    }//GEN-LAST:event_btnBuscarNumeroDActionPerformed
-
-    private void btnBuscarDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarDireccionActionPerformed
-        IProveedor proveedorDao = new ProveedorImpl();
-        try {
-            proveedorB = proveedorDao.obtener_x_Direccion(txtDireccion.getText());
-            if (proveedorB != null) {
-                txtRazonS.setText(proveedorB.getRazon_social());
-                txtSectorC.setText(proveedorB.getSector_comercial());
-                txtTipoD.setText(proveedorB.getTipo_documento());
-                txtNumeroD.setText(proveedorB.getNum_documento());
-                txtDireccion.setText(proveedorB.getDireccion());
-                txtTelefono.setText(proveedorB.getTelefono());
-                txtEmail.setText(proveedorB.getEmail());
-                txtUrl.setText(proveedorB.getUrl());
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error al buscar: " + e.getMessage(),
-                "Error", JOptionPane.ERROR_MESSAGE);
-
-        }
-        txtCodigo.setEnabled(false);
-    }//GEN-LAST:event_btnBuscarDireccionActionPerformed
-
-    private void btnBuscarTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarTelefonoActionPerformed
-        IProveedor proveedorDao = new ProveedorImpl();
-        try {
-            proveedorB = proveedorDao.obtener_x_Telefono(txtTelefono.getText());
-            if (proveedorB != null) {
-                txtRazonS.setText(proveedorB.getRazon_social());
-                txtSectorC.setText(proveedorB.getSector_comercial());
-                txtTipoD.setText(proveedorB.getTipo_documento());
-                txtNumeroD.setText(proveedorB.getNum_documento());
-                txtDireccion.setText(proveedorB.getDireccion());
-                txtTelefono.setText(proveedorB.getTelefono());
-                txtEmail.setText(proveedorB.getEmail());
-                txtUrl.setText(proveedorB.getUrl());
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error al buscar: " + e.getMessage(),
-                "Error", JOptionPane.ERROR_MESSAGE);
-
-        }
-        txtCodigo.setEnabled(false);
-    }//GEN-LAST:event_btnBuscarTelefonoActionPerformed
-
-    private void btnBuscarEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarEmailActionPerformed
-        IProveedor proveedorDao = new ProveedorImpl();
-        try {
-            proveedorB = proveedorDao.obtener_x_Email(txtEmail.getText());
-            if (proveedorB != null) {
-                txtRazonS.setText(proveedorB.getRazon_social());
-                txtSectorC.setText(proveedorB.getSector_comercial());
-                txtTipoD.setText(proveedorB.getTipo_documento());
-                txtNumeroD.setText(proveedorB.getNum_documento());
-                txtDireccion.setText(proveedorB.getDireccion());
-                txtTelefono.setText(proveedorB.getTelefono());
-                txtEmail.setText(proveedorB.getEmail());
-                txtUrl.setText(proveedorB.getUrl());
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error al buscar: " + e.getMessage(),
-                "Error", JOptionPane.ERROR_MESSAGE);
-
-        }
-        txtCodigo.setEnabled(false);
-
-    }//GEN-LAST:event_btnBuscarEmailActionPerformed
-
-    private void btnBuscarUrlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarUrlActionPerformed
-        IProveedor proveedorDao = new ProveedorImpl();
-        try {
-            proveedorB = proveedorDao.obtener_x_Url(txtUrl.getText());
-            if (proveedorB != null) {
-                txtRazonS.setText(proveedorB.getRazon_social());
-                txtSectorC.setText(proveedorB.getSector_comercial());
-                txtTipoD.setText(proveedorB.getTipo_documento());
-                txtNumeroD.setText(proveedorB.getNum_documento());
-                txtDireccion.setText(proveedorB.getDireccion());
-                txtTelefono.setText(proveedorB.getTelefono());
-                txtEmail.setText(proveedorB.getEmail());
-                txtUrl.setText(proveedorB.getUrl());
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error al buscar: " + e.getMessage(),
-                "Error", JOptionPane.ERROR_MESSAGE);
-
-        }
-        txtCodigo.setEnabled(false);
-    }//GEN-LAST:event_btnBuscarUrlActionPerformed
 
     /**
      * @param args the command line arguments
@@ -861,14 +609,6 @@ public class FrmProveedor extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnBuscarCod;
-    private javax.swing.JButton btnBuscarDireccion;
-    private javax.swing.JButton btnBuscarEmail;
-    private javax.swing.JButton btnBuscarNumeroD;
-    private javax.swing.JButton btnBuscarRazonS;
-    private javax.swing.JButton btnBuscarSectorC;
-    private javax.swing.JButton btnBuscarTelefono;
-    private javax.swing.JButton btnBuscarTipoD;
-    private javax.swing.JButton btnBuscarUrl;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnListar;
@@ -886,6 +626,7 @@ public class FrmProveedor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
