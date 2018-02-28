@@ -368,7 +368,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jButtonCategoria1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCategoria1ActionPerformed
         // TODO add your handling code here:
-        FrmMenuCategoria menu = new FrmMenuCategoria();
+        FrmCategoriaMenu menu = new FrmCategoriaMenu();
         menu.setVisible(true);
         dispose();
 
