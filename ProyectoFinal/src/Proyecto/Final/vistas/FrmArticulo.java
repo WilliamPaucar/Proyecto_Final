@@ -40,7 +40,6 @@ public class FrmArticulo extends javax.swing.JFrame {
         txtDescripcion = new javax.swing.JTextArea();
         btnBuscarCod = new javax.swing.JButton();
         btnBuscarNombre = new javax.swing.JButton();
-        btnBuscarDescripcion = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jdkListar = new javax.swing.JDesktopPane();
         btnNuevo = new javax.swing.JButton();
@@ -112,13 +111,6 @@ public class FrmArticulo extends javax.swing.JFrame {
             }
         });
 
-        btnBuscarDescripcion.setText("BUSCAR");
-        btnBuscarDescripcion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarDescripcionActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -147,8 +139,7 @@ public class FrmArticulo extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(btnBuscarCod, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnBuscarNombre, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnBuscarDescripcion, javax.swing.GroupLayout.Alignment.LEADING)))
+                    .addComponent(btnBuscarNombre, javax.swing.GroupLayout.Alignment.LEADING)))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -176,8 +167,7 @@ public class FrmArticulo extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
-                    .addComponent(btnBuscarDescripcion))
+                    .addComponent(jLabel6))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
@@ -402,24 +392,6 @@ public class FrmArticulo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreActionPerformed
 
-    private void btnBuscarDescripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarDescripcionActionPerformed
-        IArticulo articuloDao = new ArticuloImpl();
-        try {
-
-            articuloC = articuloDao.obtener(Integer.parseInt(txtDescripcion.getText()));
-            if (articuloC != null) {
-                txtCodigo.setText(Integer.toString(articuloC.getIdarticulo()));
-                txtNombre.setText(articuloC.getNombre());
-                txtDescripcion.setText(articuloC.getDescripcion());
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error al buscar: " + e.getMessage(),
-                "Error", JOptionPane.ERROR_MESSAGE);
-
-        }
-        txtCodigo.setEnabled(false);
-    }//GEN-LAST:event_btnBuscarDescripcionActionPerformed
-
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -521,7 +493,6 @@ public class FrmArticulo extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnBuscarCod;
-    private javax.swing.JButton btnBuscarDescripcion;
     private javax.swing.JButton btnBuscarNombre;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
