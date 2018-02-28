@@ -19,13 +19,13 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author WILCXMAC
  */
-public class FrmVentaLista extends JFrame{
+public class FrmVentaLista extends JInternalFrame{
     
     JLabel lblTitulo;
     JTable tabla;
     DefaultTableModel modelo;
     public FrmVentaLista(){
-        this.setSize(800, 600);
+        this.setSize(854,600);
         this.setLayout(new BorderLayout());
 //        this.setClosable(true);
         this.setBackground(Color.getHSBColor(100,60,270).brighter());
@@ -60,13 +60,10 @@ public class FrmVentaLista extends JFrame{
             JOptionPane.showMessageDialog(this, e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
         }
         for(Venta vent : list){
-            modelo.addRow(new Object[]{vent.getIdventa(),vent.getCliente(),vent.getVendedor(),vent.getArticulo(),vent.getFecha(),
+            modelo.addRow(new Object[]{vent.getIdventa(),vent.getCliente(),vent.getVendedor(),vent.getArticulo().getNombre(),vent.getFecha(),
                 vent.getTipo_coprobante(),vent.getSerie(),vent.getCorrelativo(),vent.getIgv()});
         }
         tabla.setModel(modelo);
     }
-    public static void main(String[] args) {
-        FrmVentaLista frm=new FrmVentaLista();
-        frm.setVisible(true);
-    }
+
 }

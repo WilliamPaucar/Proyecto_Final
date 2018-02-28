@@ -121,7 +121,7 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return num_documento ;
+        return nombres ;
     }
 
 }

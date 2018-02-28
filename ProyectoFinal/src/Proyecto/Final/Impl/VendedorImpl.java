@@ -51,7 +51,7 @@ public class VendedorImpl implements IVendedor{
     public int modificar(Vendedor vendedor) throws Exception {
         int numFilasAfectadas = 0;
         String sql = "UPDATE vendedor"
-                + "    nombres=?, apellidos=?, sexo=?, fecha_nacimiento=?"
+                + "set nombres=?, apellidos=?, sexo=?, fecha_nacimiento=?"
                 + ", numero_documento=?, direccion=?, telefono=?, email=?, acceso=?, usuario=?, password=?"
                 + " where idvendedor=?";
         List<Parametro> lstPar = new ArrayList<>();
