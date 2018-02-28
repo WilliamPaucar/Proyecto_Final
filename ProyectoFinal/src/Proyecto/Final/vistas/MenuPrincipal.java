@@ -81,6 +81,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jButtonCategoria1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Final/Img/icons8-clasificación-de-respuestas-67.png"))); // NOI18N
         jButtonCategoria1.setContentAreaFilled(false);
         jButtonCategoria1.setPreferredSize(new java.awt.Dimension(67, 67));
+        jButtonCategoria1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCategoria1ActionPerformed(evt);
+            }
+        });
 
         jButtonCliente1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Final/Img/icons8-usuario-67.png"))); // NOI18N
         jButtonCliente1.setContentAreaFilled(false);
@@ -107,6 +112,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jButtonVendedor1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Final/Img/icons8-tarjeta-de-empleado-67.png"))); // NOI18N
         jButtonVendedor1.setContentAreaFilled(false);
         jButtonVendedor1.setPreferredSize(new java.awt.Dimension(67, 67));
+        jButtonVendedor1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVendedor1ActionPerformed(evt);
+            }
+        });
 
         jButtonVenta1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Proyecto/Final/Img/icons8-etiqueta-de-precio-67.png"))); // NOI18N
         jButtonVenta1.setContentAreaFilled(false);
@@ -328,6 +338,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jButtonDetalle_Ingreso1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetalle_Ingreso1ActionPerformed
         // TODO add your handling code here:
+        FrmMenuCategoria menu = new FrmMenuCategoria();
+        menu.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButtonDetalle_Ingreso1ActionPerformed
 
     private void jButtonCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCliente1ActionPerformed
@@ -336,6 +349,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         dispose();
 
     }//GEN-LAST:event_jButtonCliente1ActionPerformed
+                                                 
 
     private void jButtonKardex1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonKardex1ActionPerformed
         // TODO add your handling code here:
@@ -343,6 +357,22 @@ public class MenuPrincipal extends javax.swing.JFrame {
         menu.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButtonKardex1ActionPerformed
+
+    private void jButtonVendedor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVendedor1ActionPerformed
+        // TODO add your handling code here:
+        FrmMenuVendedor menu = new FrmMenuVendedor();
+        menu.setVisible(true);
+        dispose();
+
+    }//GEN-LAST:event_jButtonVendedor1ActionPerformed
+
+    private void jButtonCategoria1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCategoria1ActionPerformed
+        // TODO add your handling code here:
+        FrmMenuCategoria menu = new FrmMenuCategoria();
+        menu.setVisible(true);
+        dispose();
+
+    }//GEN-LAST:event_jButtonCategoria1ActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
