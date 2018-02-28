@@ -85,11 +85,11 @@ public class ArticuloImpl implements IArticulo{
     }
 
     @Override
-    public Articulo obtener(int codigo) throws Exception {
+    public Articulo obtener(int idarticulo) throws Exception {
         Articulo articulo = null;
-        String sql = "SELECT * FROM articulo where codigo=?;";
+        String sql = "SELECT * FROM articulo where idarticulo=?;";
         List<Parametro> lstPar = new ArrayList<>();
-        lstPar.add(new Parametro(1, codigo));
+        lstPar.add(new Parametro(1, idarticulo));
         Conexion con = null;
         try {
             con = new Conexion();
@@ -118,7 +118,7 @@ public class ArticuloImpl implements IArticulo{
     @Override
     public Articulo obtener_x_nombre(String nombre) throws Exception {
         Articulo articulo = null;
-        String sql = "SELECT * FROM articulo where nombres =?";
+        String sql = "SELECT * FROM articulo where nombre =?";
         List<Parametro> lstPar = new ArrayList<>();
         lstPar.add(new Parametro(1, nombre));
         Conexion con = null;
@@ -142,33 +142,7 @@ public class ArticuloImpl implements IArticulo{
         }
         return articulo;
     }
-    @Override
-    public Articulo obtener_x_descripcion(String descripcion) throws Exception {
-        Articulo articulo = null;
-        String sql = "SELECT * FROM articulo where descripcion =?";
-        List<Parametro> lstPar = new ArrayList<>();
-        lstPar.add(new Parametro(1, descripcion));
-        Conexion con = null;
-        try {
-            con = new Conexion();
-            con.conectar();
-            ResultSet rst = con.ejecutaQuery(sql, lstPar);
-            while (rst.next()) {
-                articulo = new Articulo();
-                articulo.setIdarticulo(rst.getInt(1));
-                articulo.setCodigo(rst.getInt(2));
-                articulo.setNombre(rst.getString(3));
-                articulo.setDescripcion(rst.getString(4));
-            }
-        } catch (Exception e) {
-            throw e;
-        } finally {
-            if(con!=null)
-            con.desconectar();
-        }
-        return articulo;
-    }
-    
+   
     @Override
     
     public List<Articulo> obtener() throws Exception {
