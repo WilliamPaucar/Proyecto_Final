@@ -63,7 +63,7 @@ public class CategoriaImpl implements ICategoria{
     public int modificar(Categoria categoria) throws Exception {
         int numFilasAfectadas = 0;
         String sql = "UPDATE categoria"
-                + "   SET idcategoria=?, nombre=?, descripcion=?, "
+                + "   SET nombre=?, descripcion=? "
                 + " where idcategoria=?";
         List<Parametro> lstPar = new ArrayList<>();
         lstPar.add(new Parametro(3, categoria.getIdcategoria()));
