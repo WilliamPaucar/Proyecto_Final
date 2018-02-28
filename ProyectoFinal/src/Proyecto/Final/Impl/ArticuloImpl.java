@@ -39,14 +39,14 @@ public class ArticuloImpl implements IArticulo{
     public int modificar(Articulo articulo) throws Exception {
         int numFilasAfectadas = 0;
         String sql = "UPDATE articulo"
-                + "   SET idarticulo=?, codigo=?, nombre=?, descripcion=?,idcategoria=?"
-                + " where codigo=?";
+                + "  SET codigo=?, nombre=?, descripcion=?,idcategoria=?"
+                + " where idarticulo=?";
         List<Parametro> lstPar = new ArrayList<>();
-        lstPar.add(new Parametro(1, articulo.getIdarticulo()));
-        lstPar.add(new Parametro(2, articulo.getCodigo()));
-        lstPar.add(new Parametro(3, articulo.getNombre()));
-        lstPar.add(new Parametro(4, articulo.getDescripcion()));
-        lstPar.add(new Parametro(5, articulo.getCategoria().getIdcategoria()));
+        lstPar.add(new Parametro(5, articulo.getIdarticulo()));
+        lstPar.add(new Parametro(1, articulo.getCodigo()));
+        lstPar.add(new Parametro(2, articulo.getNombre()));
+        lstPar.add(new Parametro(3, articulo.getDescripcion()));
+        lstPar.add(new Parametro(4, articulo.getCategoria().getIdcategoria()));
    
         Conexion con = null;
         try {
