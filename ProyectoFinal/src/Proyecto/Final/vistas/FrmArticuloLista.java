@@ -23,7 +23,7 @@ public class FrmArticuloLista extends JInternalFrame{
     JScrollPane jscTabla;
     DefaultTableModel modelo;
     public FrmArticuloLista(){
-    this.setSize(500,250);
+    this.setSize(852,300);
     this.setLayout(new BorderLayout());
     this.setClosable(true);
     lblTitulo=new JLabel("Articulos Ingresadas");
@@ -50,7 +50,7 @@ public class FrmArticuloLista extends JInternalFrame{
         }
         
         for(Articulo est:lista){
-            modelo.addRow(new Object[]{est.getIdarticulo(),est.getNombre(),est.getCodigo(),est.getDescripcion(),est.getCategoria().getNombre().toString()});
+            modelo.addRow(new Object[]{est.getIdarticulo(),est.getCodigo(),est.getNombre(),est.getDescripcion(),est.getCategoria().getNombre().toString()});
         }
         tabla.setModel(modelo);
     }
