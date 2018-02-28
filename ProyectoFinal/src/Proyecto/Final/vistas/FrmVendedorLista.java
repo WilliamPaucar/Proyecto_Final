@@ -26,9 +26,9 @@ public class FrmVendedorLista extends JInternalFrame{
     JTable tabla;
     DefaultTableModel modelo;
     public FrmVendedorLista(){
-        this.setSize(800, 600);
+        this.setSize(852,600);
         this.setLayout(new BorderLayout());
-        this.setClosable(true);
+    
         this.setBackground(Color.getHSBColor(100,60,270).brighter());
         lblTitulo=new JLabel("VENTAS REGISTRADAS ");
         tabla= new JTable();

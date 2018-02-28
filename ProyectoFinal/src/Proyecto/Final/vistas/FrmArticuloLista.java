@@ -23,17 +23,17 @@ public class FrmArticuloLista extends JInternalFrame{
     JScrollPane jscTabla;
     DefaultTableModel modelo;
     public FrmArticuloLista(){
-    this.setSize(852,300);
+    this.setSize(860,600);
     this.setLayout(new BorderLayout());
-    this.setClosable(true);
+    
     lblTitulo=new JLabel("Articulos Ingresadas");
     tabla = new JTable();
     jscTabla=new JScrollPane(tabla);
     this.add(lblTitulo,BorderLayout.NORTH);
     this.add(jscTabla,BorderLayout.CENTER);
-    cargarTabla();
+    cargarTablaArticulo();
     }
-    public void cargarTabla(){
+    public void cargarTablaArticulo(){
         modelo = new DefaultTableModel();
         modelo.addColumn("Id Articulo");
         modelo.addColumn("Codigo");
