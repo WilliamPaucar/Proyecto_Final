@@ -49,18 +49,19 @@ public class Detalle_IngresoImpl implements IDetalle_Ingreso{
     public int modificar(Detalle_Ingreso detalle_ingreso) throws Exception {
         int numFilasAfectadas = 0;
         String sql = "UPDATE detalle_ingreso"
-                + "   SET iddetalle_ingreso=?, codigo=?, nombre=?, descripcion=?,idcategoria=?"
-                + " where codigo=?";
+                + "   SET  ingreso=?, articulo=?, precio_compra=?,precio_venta=?, stock_inicial=?, stock_actual=?, fecha_produccion=?"
+                + ", fecha_vencimiento=?"
+                + " where iddetalle_ingreso=?";
         List<Parametro> lstPar = new ArrayList<>();
-        lstPar.add(new Parametro(1, detalle_ingreso.getIddetalle_ingreso()));
-        lstPar.add(new Parametro(2, detalle_ingreso.getIngreso().getIdingreso()));
-        lstPar.add(new Parametro(3, detalle_ingreso.getArticulo().getIdarticulo()));
-        lstPar.add(new Parametro(4, detalle_ingreso.getPrecio_compra()));
-        lstPar.add(new Parametro(5, detalle_ingreso.getPrecio_venta()));
-        lstPar.add(new Parametro(6, detalle_ingreso.getStock_inicial()));
-        lstPar.add(new Parametro(7, detalle_ingreso.getStock_actual()));
-        lstPar.add(new Parametro(8, detalle_ingreso.getFecha_produccion()));
-        lstPar.add(new Parametro(9, detalle_ingreso.getFecha_vencimiento()));
+        lstPar.add(new Parametro(9, detalle_ingreso.getIddetalle_ingreso()));
+        lstPar.add(new Parametro(1, detalle_ingreso.getIngreso().getIdingreso()));
+        lstPar.add(new Parametro(2, detalle_ingreso.getArticulo().getIdarticulo()));
+        lstPar.add(new Parametro(3, detalle_ingreso.getPrecio_compra()));
+        lstPar.add(new Parametro(4, detalle_ingreso.getPrecio_venta()));
+        lstPar.add(new Parametro(5, detalle_ingreso.getStock_inicial()));
+        lstPar.add(new Parametro(6, detalle_ingreso.getStock_actual()));
+        lstPar.add(new Parametro(7, detalle_ingreso.getFecha_produccion()));
+        lstPar.add(new Parametro(8, detalle_ingreso.getFecha_vencimiento()));
    
         Conexion con = null;
         try {

@@ -23,7 +23,7 @@ public class FrmDetalle_IngresoLista extends JInternalFrame{
     JScrollPane jscTabla;
     DefaultTableModel modelo;
     public FrmDetalle_IngresoLista(){
-    this.setSize(600,700);
+    this.setSize(853,600);
     this.setLayout(new BorderLayout());
     this.setClosable(true);
     lblTitulo=new JLabel("Detalle Ingresos");
