@@ -60,7 +60,7 @@ public class FrmVentaLista extends JInternalFrame{
             JOptionPane.showMessageDialog(this, e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
         }
         for(Venta vent : list){
-            modelo.addRow(new Object[]{vent.getIdventa(),vent.getCliente(),vent.getVendedor(),vent.getArticulo().getNombre(),vent.getFecha(),
+            modelo.addRow(new Object[]{vent.getIdventa(),vent.getCliente(),vent.getVendedor(),vent.getArticulo(),vent.getFecha(),
                 vent.getTipo_coprobante(),vent.getSerie(),vent.getCorrelativo(),vent.getIgv()});
         }
         tabla.setModel(modelo);
