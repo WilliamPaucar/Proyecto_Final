@@ -543,6 +543,7 @@ IVendedor vendedorDao = new VendedorImpl();
 
             vendedorB = clienteDao.obtener_x_nombre(txtNombre.getText());
             if (vendedorB != null) {
+                txtCodigo.setText(Integer.toString(vendedorB.getIdvendedor()));
                 txtNombre.setText(vendedorB.getNombres());
                 txtApellido.setText(vendedorB.getApellidos());
                 txtAcceso.setText(vendedorB.getAcceso());
