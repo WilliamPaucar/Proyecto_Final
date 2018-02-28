@@ -108,6 +108,14 @@ public class Detalle_Ingreso {
     public void setFecha_produccion(Date fecha_produccion) {
         this.fecha_produccion = fecha_produccion;
     }
+
+    @Override
+    public String toString() {
+        return articulo.getNombre() ;    
+    
+    }
+
+
     
     
 }

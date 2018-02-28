@@ -19,7 +19,7 @@ public class FrmClienteLista extends JInternalFrame{
     JTable tabla;
     DefaultTableModel modelo;
     public FrmClienteLista(){
-        this.setSize(852,300);
+        this.setSize(852,600);
         this.setLayout(new BorderLayout());
 
         this.setBackground(Color.BLACK);

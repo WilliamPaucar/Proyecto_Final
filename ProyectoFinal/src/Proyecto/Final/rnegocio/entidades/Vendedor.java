@@ -142,7 +142,7 @@ public class Vendedor {
 
     @Override
     public String toString() {
-        return numero_documento;
+        return nombres;
     }
 
  
